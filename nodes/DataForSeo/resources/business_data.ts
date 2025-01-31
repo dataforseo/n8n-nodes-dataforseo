@@ -38,7 +38,7 @@ export const BusinessDataOperations: INodeProperties[] = [
 
 	// Parameters
 	{
-		displayName: 'Ctaegories',
+		displayName: 'Categories',
 		name: 'categories',
 		type: 'fixedCollection',
 		placeholder: 'Add Category',

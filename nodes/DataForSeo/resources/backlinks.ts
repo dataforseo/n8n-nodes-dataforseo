@@ -49,7 +49,7 @@ export const BacklinksOperations: INodeProperties[] = [
 				name: 'Get Backlinks Pages Summary',
 				value: 'get-backlinks-page-summary',
 				action: 'Get backlinks pages summary',
-				description: 'Get an overview overview of backlinks and associated data in bulk',
+				description: 'Get an overview of backlinks and associated data in bulk',
 			},
 			{
 				name: 'Get Bulk Referring Domain Stats',
@@ -78,7 +78,7 @@ export const BacklinksOperations: INodeProperties[] = [
 		displayName: 'Target (Domain, Subdomain, URL)',
 		name: 'target',
 		type: 'string',
-		description: 'Domain, subdomain or webpage to get backlinks for',
+		description: 'Domain, subdomain or webpage to get data for',
 		hint: 'A domain or a subdomain should be specified without <b>https://</b> and <b>www.</b> A page should be specified with absolute URL (including <b>http://<b> or <b>https://<b>).',
 		displayOptions: {
 				show: {

@@ -1,7 +1,7 @@
 DataForSEO
 ==========
 
-With DataForSEO node  in N8N, you can retrieve marketing and SEO data such as Google rankings, keyword suggestions, backlink reports, etc. from the DataFoRSEO API.
+With DataForSEO node in N8N, you can retrieve marketing and SEO data such as Google rankings, keyword suggestions, backlink reports, etc. from the DataForSEO API.
 
 To use the DataForSEO node, you must have a DataForSEO account. You can create an account at [dataforseo.com](https://dataforseo.com/).
 
@@ -12,16 +12,16 @@ Connect DataForSEO to N8N
 
 To establish the connection, you must:
 
-1.  [Obtain your API credentials in DataForSEO.](#obtain-your-api-credentials-in-dataforseo "Obtain your API Credentials in DataForSEO")
+1.  [Obtain your DataForSEO API credentials .](#obtain-your-dataforseo-api-credentials "Obtain your DataForSEO API Credentials")
     
 2.  [Establish the connection in N8N.](#establish-the-connection-with-dataforseo-in-n8n "Establish the connection with DataForSEO in N8N")
     
 
-### Obtain your API Credentials in DataForSEO
+### Obtain your DataForSEO API Credentials
 
-To obtain your API credentials from your DataForSEO account:
+To obtain your DataForSEO API credentials:
 
-1.  Log in to your DataForSEO account.
+1.  Log in to your DataForSEO account dashboard.
     
 2.  In the left sidebar, click **API Access**.
     
@@ -34,9 +34,9 @@ You will use these values in the **API Login** and **API Password** fields in N8
 
 To establish the connection in N8N:
 
-1.  Log in to your N8N account, add a DataForSEO node to your workflow, and click **Create new credantial**.
+1.  Log in to your N8N account, add a DataForSEO node to your workflow, and click **Create new credential**.
     
-2.  Optional: Rename the credantial.
+2.  Optional: Rename the credential.
     
 3.  In the **API Login** and **API Password** fields, enter the values copied above.
     
@@ -57,8 +57,8 @@ After connecting the app, you can perform the following operations:
 + [Get Bulk Backlink Rank](#get-bulk-backlink-rank)
 + [Get Bulk Backlink Stats](#get-bulk-backlink-stats)
 + [Get Backlinks Pages Summary](#get-backlinks-pages-summary)
-+ [Get Bulk Reffering Domain Stats](#get-bulk-reffering-domain-stats)
-+ [Get Reffering Domains](#get-reffering-domains)
++ [Get Bulk Referring Domain Stats](#get-bulk-referring-domain-stats)
++ [Get Referring Domains](#get-referring-domains)
 + [Get Bulk Spam Scores](#get-bulk-spam-scores)
 #### SERP
 + [Get Parsed SERP](#get-parsed-serp)

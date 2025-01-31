@@ -231,11 +231,11 @@ export const KeywordsDataOperations: INodeProperties[] = [
 				value: 'competition_index',
 			},
 			{
-				name: 'Low Top Of Page BID',
+				name: 'Low Top Of Page Bid',
 				value: 'low_top_of_page_bid',
 			},
 			{
-				name: 'High Top Of Page BID',
+				name: 'High Top Of Page Bid',
 				value: 'high_top_of_page_bid',
 			},
 		],

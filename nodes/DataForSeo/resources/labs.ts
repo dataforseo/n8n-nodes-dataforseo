@@ -43,7 +43,7 @@ export const LabsOperations: INodeProperties[] = [
 				name: 'Get Organic Traffic Stats',
 				value: 'get-organic-traffic-stats',
 				action: 'Get organic traffic stats',
-				description: 'Get an estimation of monthly organic traffic a website or page',
+				description: 'Get an estimation of monthly organic traffic for a website or page',
 			},
 			{
 				name: 'Get Historical Traffic Stats',
@@ -109,7 +109,7 @@ export const LabsOperations: INodeProperties[] = [
 						type: 'string',
 						required: true,
 						default: '',
-						hint: 'Each keyword should be at least 3 characters long;. The keywords will be converted to lowercase format.',
+						hint: 'Each keyword should be at least 3 characters long. The keywords will be converted to lowercase format.',
 					},
 				],
 			},
@@ -244,7 +244,7 @@ export const LabsOperations: INodeProperties[] = [
 		name: 'closely_variants',
 		type: 'boolean',
 		default: false,
-		hint: 'If set to true the results will be based on the phrase-match search algorithm. \n If set to false the results will be based on the broad-match search algorithm.',
+		hint: 'If set to true, the results will be based on the phrase-match search algorithm. If set to false, the results will be based on the broad-match search algorithm.',
 		displayOptions: {
 				show: {
 						operation: ['get-keyword-ideas'],
@@ -256,7 +256,7 @@ export const LabsOperations: INodeProperties[] = [
 		name: 'ignore_synonyms',
 		type: 'boolean',
 		default: false,
-		hint: 'Ignore highly similar keywords. If set to true only core keywords will be returned, all highly similar keywords will be excluded.',
+		hint: 'Ignore highly similar keywords. If set to true, only core keywords will be returned, all highly similar keywords will be excluded.',
 		displayOptions: {
 				show: {
 						operation: ['get-domain-rank-overview', 'get-keyword-suggestions', 'get-ranked-keywords', 'get-keyword-ideas'],
@@ -264,8 +264,7 @@ export const LabsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include Serp Info?',
+		displayName: 'Include SERP Info?',
 		name: 'include_serp_info',
 		type: 'boolean',
 		default: false,
@@ -277,7 +276,7 @@ export const LabsOperations: INodeProperties[] = [
 	},
 	{
 		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include data from clickstream-based metrics in the result?',
+		displayName: 'Include clickstream-based metrics in the result?',
 		name: 'include_clickstream_data',
 		type: 'boolean',
 		default: false,
@@ -473,11 +472,11 @@ export const LabsOperations: INodeProperties[] = [
 					value: 'ranked_serp_element.serp_item.rank_group,asc'
 				},
 				{
-					name: 'Etv Descending',
+					name: 'ETV Descending',
 					value: 'ranked_serp_element.serp_item.etv,desc'
 				},
 				{
-					name: 'Etv Ascending',
+					name: 'ETV Ascending',
 					value: 'ranked_serp_element.serp_item.etv,asc'
 				}
 			],

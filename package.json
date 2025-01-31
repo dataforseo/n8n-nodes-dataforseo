@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "DataForSEO is an SEO and marketing data provider, empowering businesses with invaluable insights via APIs and databases.",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "dataforseo",
+    "backlinks",
+    "SERP"
   ],
   "license": "MIT",
   "homepage": "https://dataforseo.com/",
