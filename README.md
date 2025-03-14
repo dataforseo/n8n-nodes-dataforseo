@@ -62,6 +62,10 @@ After connecting the app, you can perform the following operations:
 + [Get Bulk Spam Scores](#get-bulk-spam-scores)
 #### SERP
 + [Get Parsed SERP](#get-parsed-serp)
++ [Get Finance Explore](#get-finance-explore)
++ [Get Finance Markets](#get-finance-markets)
++ [Get Finance Quote](#get-finance-quote)
++ [Search Google Finance Tickers](#search-google-finance-tickers)
 #### Business Data
 + [Search Business Listings](#search-business-listings)
 + [Get Business Listings Categories Aggregation](#get-business-listings-cstegories-aggregation)
@@ -197,6 +201,50 @@ Get Google Search results for the specified keyword.
 + **Depth**: Enter parsing depth, number of results in SERP, max value is 700.
 
 + **Target**: Enter the target domain, subdomain, or webpage. Note: Domain or a subdomain should be specified without `https://` and `www.`.
+
+### Get Finance Explore
+
+Get real-time data from the ‘Explore’ tab of Google Finance.
+
++ **Location**: Enter the full name of the search engine location. You can find the supported locations in the DataForSEO [Supported Locations page](https://docs.dataforseo.com/v3/serp/google/locations/).
+
++ **Language**: Enter the full name of the search engine language. You can find the list of supported languages in the DataForSEO [Supported Languages page](https://docs.dataforseo.com/v3/serp/google/languages/).
+
++ **News Type**: Select news type.
+
+### Get Finance Markets
+
+Get real-time data from the ‘Markets’ tab of Google Finance.
+
++ **Location**: Enter the full name of the search engine location. You can find the supported locations in the DataForSEO [Supported Locations page](https://docs.dataforseo.com/v3/serp/google/locations/).
+
++ **Language**: Enter the full name of the search engine language. You can find the list of supported languages in the DataForSEO [Supported Languages page](https://docs.dataforseo.com/v3/serp/google/languages/).
+
++ **Market Type**: Select market type.
+
+### Get Finance Quote
+
+Get real-time data from the ‘Quote’ tab of Google Finance.
+
++ **Keyword (Ticker or Stock Symbol)**: Enter Ticker symbol of publicly traded shares of a particular stock or security on a particular stock exchange.
+
++ **Location**: Enter the full name of the search engine location. You can find the supported locations in the DataForSEO [Supported Locations page](https://docs.dataforseo.com/v3/serp/google/locations/).
+
++ **Language**: Enter the full name of the search engine language. You can find the list of supported languages in the DataForSEO [Supported Languages page](https://docs.dataforseo.com/v3/serp/google/languages/).
+
++ **Window**: Select time window for google_finance_quote graph.
+
+### Search Google Finance Tickers
+
+Search by company name, market, or financial instrument to get Google Finance data on stocks, futures, and asset pairs, their value, growth trends, and identifiers.
+
++ **Keyword**: Enter Company name or financial instrument.
+
++ **Location**: Enter the full name of the search engine location. You can find the supported locations in the DataForSEO [Supported Locations page](https://docs.dataforseo.com/v3/serp/google/locations/).
+
++ **Language**: Enter the full name of the search engine language. You can find the list of supported languages in the DataForSEO [Supported Languages page](https://docs.dataforseo.com/v3/serp/google/languages/).
+
++ **Category**: Select Category of financial instruments to search for.
 
 ## Business Data
 
