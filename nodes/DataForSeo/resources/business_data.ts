@@ -402,7 +402,7 @@ export const BusinessDataOperations: INodeProperties[] = [
 		name: 'depth',
 		type: 'number',
 		typeOptions: {
-			maxValue: 8000,
+			maxValue: 4490,
 			minValue: 1,
 			numberPrecision: 0,
 		},

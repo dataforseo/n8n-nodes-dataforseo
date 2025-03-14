@@ -13,6 +13,7 @@ export const SerpOperations: INodeProperties[] = [
 						resource: ['serp'],
 				},
 		},
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 					name: 'Get Parsed SERP',
@@ -20,6 +21,30 @@ export const SerpOperations: INodeProperties[] = [
 					action: 'Get parsed serp',
 					description: 'Get Google Search results for the specified keyword',
 			},
+			{
+				name: 'Get Finance Explore',
+				value: 'get-finance-explore',
+				action: 'Get finance explore',
+				description: 'Get real-time data from the ‘Explore’ tab of Google Finance',
+		  },
+			{
+				name: 'Get Finance Markets',
+				value: 'get-finance-markets',
+				action: 'Get finance markets',
+				description: 'Get real-time data from the ‘Markets’ tab of Google Finance',
+			},
+			{
+				name: 'Get Finance Quote',
+				value: 'get-finance-quote',
+				action: 'Get finance quote',
+				description: 'Get real-time data from the ‘Quote’ tab of Google Finance',
+			},
+			{
+				name: 'Search Google Finance Tickers',
+				value: 'search-google-finance-tickers',
+				action: 'Search google finance tickers',
+				description: 'Search by company name, market, or financial instrument to get Google Finance data on stocks, futures, and asset pairs, their value, growth trends, and identifiers',
+			}
 		],
 		default: 'get-parsed-serp',
 	},
@@ -39,6 +64,32 @@ export const SerpOperations: INodeProperties[] = [
 		default: '',
 	},
 	{
+		displayName: 'Keyword (Ticker or Stock Symbol)',
+		name: 'keyword_finance',
+		type: 'string',
+		displayOptions: {
+				show: {
+						operation: ['get-finance-quote'],
+				},
+		},
+		required: true,
+		hint: 'Ticker symbol of publicly traded shares of a particular stock or security on a particular stock exchange.',
+		default: '',
+	},
+	{
+		displayName: 'Keyword',
+		name: 'keyword_finance_search',
+		type: 'string',
+		displayOptions: {
+				show: {
+						operation: ['search-google-finance-tickers'],
+				},
+		},
+		required: true,
+		hint: 'Company name or financial instrument.',
+		default: '',
+	},
+	{
 		displayName: 'Location',
 		name: 'location_name',
 		type: 'string',
@@ -46,7 +97,7 @@ export const SerpOperations: INodeProperties[] = [
 		hint: 'You can find the supported locations in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/google/locations/">Supported locations</a>.',
 		displayOptions: {
 				show: {
-						operation: ['get-parsed-serp'],
+						operation: ['get-parsed-serp', 'get-finance-explore', 'get-finance-markets', 'get-finance-quote', 'search-google-finance-tickers'],
 				},
 		},
 		required: true,
@@ -62,7 +113,7 @@ export const SerpOperations: INodeProperties[] = [
 		hint: 'You can find the supported languages in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/google/languages/">Supported languages</a>.',
 		displayOptions: {
 			show: {
-				operation: ['get-parsed-serp'],
+				operation: ['get-parsed-serp', 'get-finance-explore', 'get-finance-markets', 'get-finance-quote', 'search-google-finance-tickers'],
 			},
 		},
 	},
@@ -159,4 +210,185 @@ export const SerpOperations: INodeProperties[] = [
 			},
 		},
 	},
+	{
+		displayName: 'News Type',
+		name: 'news_type',
+		type: 'options',
+		options: [
+			{
+				name: 'Empty',
+				value: '',
+			},
+			{
+				name: 'Top Stories',
+				value: 'top_stories',
+			},
+			{
+				name: 'Local Market',
+				value: 'local_market',
+			},
+			{
+				name: 'World Markets',
+				value: 'world_markets',
+			},
+		],
+		default: 'top_stories',
+		displayOptions: {
+			show: {
+				operation: ['get-finance-explore'],
+			},
+		},
+	},
+	{
+		displayName: 'Market Type',
+		name: 'market_type',
+		type: 'options',
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+		options: [
+			{
+				name: 'Empty',
+				value: '',
+			},
+			{
+				name: 'Indexes',
+				value: 'indexes',
+			},
+			{
+				name: 'Indexes/Americas',
+				value: 'indexes/americas',
+			},
+			{
+				name: 'Indexes/Europe Middle East Africa',
+				value: 'indexes/europe-middle-east-africa',
+			},
+			{
+				name: 'Indexes/Asia Pacific',
+				value: 'indexes/asia-pacific',
+			},
+			{
+				name: 'Most Active',
+				value: 'most-active',
+			},
+			{
+				name: 'Gainers',
+				value: 'gainers',
+			},
+			{
+				name: 'Losers',
+				value: 'losers',
+			},
+			{
+				name: 'Climate Leaders',
+				value: 'climate-leaders',
+			},
+			{
+				name: 'Cryptocurrencies',
+				value: 'cryptocurrencies',
+			},
+			{
+				name: 'Currencies',
+				value: 'currencies',
+			},
+		],
+		default: 'most-active',
+		displayOptions: {
+			show: {
+				operation: ['get-finance-markets'],
+			},
+		},
+	},
+	{
+		displayName: 'Window',
+		name: 'window',
+		type: 'options',
+		hint: 'Time window for google_finance_quote graph.',
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+		options: [
+			{
+				name: 'Empty',
+				value: '',
+			},
+			{
+				name: '1D',
+				value: '1D',
+			},
+			{
+				name: '5D',
+				value: '5D',
+			},
+			{
+				name: '1M',
+				value: '1M',
+			},
+			{
+				name: '6M',
+				value: '6M',
+			},
+			{
+				name: 'YTD',
+				value: 'YTD',
+			},
+			{
+				name: '1Y',
+				value: '1Y',
+			},
+			{
+				name: '5Y',
+				value: '5Y',
+			},
+			{
+				name: 'MAX',
+				value: 'MAX',
+			}
+		],
+		default: '1D',
+		displayOptions: {
+			show: {
+				operation: ['get-finance-quote'],
+			},
+		},
+	},
+	{
+		displayName: 'Category',
+		name: 'category',
+		type: 'options',
+		hint: 'Сategory of financial instruments to search for.',
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+		options: [
+			{
+				name: 'Empty',
+				value: '',
+			},
+			{
+				name: 'All',
+				value: 'all',
+			},
+			{
+				name: 'Stock',
+				value: 'stock',
+			},
+			{
+				name: 'Index',
+				value: 'index',
+			},
+			{
+				name: 'Mutual Fund',
+				value: 'mutual_fund',
+			},
+			{
+				name: 'Currency',
+				value: 'currency',
+			},
+			{
+				name: 'Futures',
+				value: 'futures',
+			}
+		],
+		default: 'all',
+		displayOptions: {
+			show: {
+				operation: ['search-google-finance-tickers'],
+			},
+		},
+	}
 ];

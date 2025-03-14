@@ -35,7 +35,7 @@ import {
 	getRankedKeywords,
  } from './execute/labs';
 import { getPageAuditCheck, parsePageContent } from './execute/on_page';
-import { getParsedSerp } from './execute/serp';
+import { getFinanceExplore, getFinanceMarkets, getFinanceQuote, getParsedSerp, searchGoogleFinanceTickers } from './execute/serp';
 
 export class DataForSeo implements INodeType {
 	description: INodeTypeDescription = {
@@ -151,6 +151,10 @@ export class DataForSeo implements INodeType {
 			},
 			'serp': {
 				'get-parsed-serp': getParsedSerp,
+				'get-finance-explore': getFinanceExplore,
+				'get-finance-markets': getFinanceMarkets,
+				'get-finance-quote': getFinanceQuote,
+				'search-google-finance-tickers': searchGoogleFinanceTickers
 			},
 		};
 
