@@ -36,7 +36,7 @@ export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
 }
 
 export async function parsePageContent(ef: IExecuteFunctions, i: number) {
-	const additionalFields  = ef.getNodeParameter('additionalFieldsPageAudit', i) as IDataObject;
+	const additionalFields  = ef.getNodeParameter('additionalFieldsParsePage', i) as IDataObject;
 	const data = {
 		url: ef.getNodeParameter('url', i),
 		enable_javascript: ef.getNodeParameter('enable_javascript', i),
