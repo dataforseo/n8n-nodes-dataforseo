@@ -4,8 +4,8 @@ import {
 	IHttpRequestOptions,
 	NodeOperationError,
 } from 'n8n-workflow';
-import { parseFilters, parseMultiOptionItems, parseOrderByString } from './generalFunctions';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { parseFilters, parseMultiOptionItems, parseOrderByString } from '../../../functions/generalFunctions';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getBacklinks(ef: IExecuteFunctions, i: number) {
 	const filters = ef.getNodeParameter('filters', i) as unknown as string;

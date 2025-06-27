@@ -5,8 +5,8 @@ import {
 	NodeOperationError,
 	sleep,
 } from 'n8n-workflow';
-import { parseFilters, parseMultiOptionItems} from './generalFunctions';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { parseFilters, parseMultiOptionItems} from '../../../functions/generalFunctions';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getBusinessListings(ef: IExecuteFunctions, i: number) {
 	const filters = ef.getNodeParameter('filters', i) as unknown as string;

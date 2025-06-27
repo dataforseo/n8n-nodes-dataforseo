@@ -37,7 +37,11 @@
       "dist/credentials/DataForSeoApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/DataForSeo/DataForSeo.node.js"
+      "dist/nodes/DataForSeo/DataForSeo.node.js",
+      "dist/nodes/DataForSeoSerpApi/DataForSeoSerpApi.node.js",
+      "dist/nodes/DataForSeoKeywordsApi/DataForSeoKeywordsApi.node.js",
+      "dist/nodes/DataForSeoDomainAnalyticsApi/DataForSeoDomainAnalyticsApi.node.js",
+      "dist/nodes/DataForSeoLabsApi/DataForSeoLabsApi.node.js"
     ]
   },
   "devDependencies": {

@@ -4,8 +4,8 @@ import {
 	NodeOperationError,
 	IDataObject
 } from 'n8n-workflow';
-import { parseFilters, parseMultiOptionItems, parseOrderByString} from './generalFunctions';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { parseFilters, parseMultiOptionItems, parseOrderByString} from '../../../functions/generalFunctions';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getDomainRankOverview(ef: IExecuteFunctions, i: number) {
 	const params: IHttpRequestOptions = {

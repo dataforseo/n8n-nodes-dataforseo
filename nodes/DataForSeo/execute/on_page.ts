@@ -3,8 +3,8 @@ import {
 	IHttpRequestOptions,
 	IDataObject,
 } from 'n8n-workflow';
-import { parseCheckTreshold} from './generalFunctions';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { parseCheckTreshold} from '../../../functions/generalFunctions';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
 	let checksTreshold;
