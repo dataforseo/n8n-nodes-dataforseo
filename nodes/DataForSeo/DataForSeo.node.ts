@@ -35,7 +35,7 @@ import {
 	getRankedKeywords,
  } from './execute/labs';
 import { getPageAuditCheck, parsePageContent } from './execute/on_page';
-import { getFinanceExplore, getFinanceMarkets, getFinanceQuote, getParsedSerp, searchGoogleFinanceTickers } from './execute/serp';
+import { getFinanceExplore, getFinanceMarkets, getFinanceQuote, getGoogleAIModeSerp, getParsedSerp, searchGoogleFinanceTickers } from './execute/serp';
 
 export class DataForSeo implements INodeType {
 	description: INodeTypeDescription = {
@@ -154,7 +154,8 @@ export class DataForSeo implements INodeType {
 				'get-finance-explore': getFinanceExplore,
 				'get-finance-markets': getFinanceMarkets,
 				'get-finance-quote': getFinanceQuote,
-				'search-google-finance-tickers': searchGoogleFinanceTickers
+				'search-google-finance-tickers': searchGoogleFinanceTickers,
+				'get-google-ai-mode-serp': getGoogleAIModeSerp
 			},
 		};
 
@@ -170,11 +171,12 @@ export class DataForSeo implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			if (e instanceof NodeOperationError) {
+			throw e;
+			/*if (e instanceof NodeOperationError) {
 				throw e;
 			} else {
 				throw new NodeOperationError(this.getNode(), "Something went wrong");
-			}
+			}*/
 		}
 
 		return [this.helpers.returnJsonArray(responseData)];

@@ -75,3 +75,22 @@ export async function searchGoogleFinanceTickers(ef: IExecuteFunctions, i: numbe
 
 	return dataForSeoRequest(ef, params);
 }
+
+export async function getGoogleAIModeSerp(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/serp/google/ai_mode/live/advanced',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			location_name: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name', i),
+			device: ef.getNodeParameter('device', i) || null,
+			os: ef.getNodeParameter('os', i) || null,
+			calculate_rectangles	: ef.getNodeParameter('calculate_rectangles', i),
+			browser_screen_width: ef.getNodeParameter('browser_screen_width', i) || null,
+			browser_screen_height: ef.getNodeParameter('browser_screen_height', i) || null,
+			browser_screen_resolution_ratio: ef.getNodeParameter('browser_screen_resolution_ratio', i) || null
+		}]
+	};
+
+	return dataForSeoRequest(ef, params);
+}

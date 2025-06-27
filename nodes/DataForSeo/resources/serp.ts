@@ -16,10 +16,10 @@ export const SerpOperations: INodeProperties[] = [
 		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-					name: 'Get Parsed SERP',
-					value: 'get-parsed-serp',
-					action: 'Get parsed serp',
-					description: 'Get Google Search results for the specified keyword',
+				name: 'Get Parsed SERP',
+				value: 'get-parsed-serp',
+				action: 'Get parsed serp',
+				description: 'Get Google Search results for the specified keyword',
 			},
 			{
 				name: 'Get Finance Explore',
@@ -44,6 +44,12 @@ export const SerpOperations: INodeProperties[] = [
 				value: 'search-google-finance-tickers',
 				action: 'Search google finance tickers',
 				description: 'Search by company name, market, or financial instrument to get Google Finance data on stocks, futures, and asset pairs, their value, growth trends, and identifiers',
+			},
+			{
+				name: 'Get Google AI Mode SERP',
+				value: 'get-google-ai-mode-serp',
+				action: 'Get google ai mode serp',
+				description: 'Get search results from the AI Mode feature of Google Search',
 			}
 		],
 		default: 'get-parsed-serp',
@@ -57,7 +63,10 @@ export const SerpOperations: INodeProperties[] = [
 		hint: 'You can specify up to 700 symbols in the keyword field. All <b>%##</b> will be decoded (plus symbol <b>+</b> will be decoded to a space character). If you need to use the <b>%</b> symbol for your keyword, please specify it as <b>%25</b> If you need to use the <b>+</b> symbol for your keyword, please specify it as <b>%2B</b>',
 		displayOptions: {
 				show: {
-						operation: ['get-parsed-serp'],
+						operation: [
+							'get-parsed-serp',
+							'get-google-ai-mode-serp'
+						],
 				},
 		},
 		required: true,
@@ -97,7 +106,14 @@ export const SerpOperations: INodeProperties[] = [
 		hint: 'You can find the supported locations in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/google/locations/">Supported locations</a>.',
 		displayOptions: {
 				show: {
-						operation: ['get-parsed-serp', 'get-finance-explore', 'get-finance-markets', 'get-finance-quote', 'search-google-finance-tickers'],
+						operation: [
+							'get-parsed-serp',
+							'get-finance-explore',
+							'get-finance-markets',
+							'get-finance-quote',
+							'search-google-finance-tickers',
+							'get-google-ai-mode-serp'
+						],
 				},
 		},
 		required: true,
@@ -113,7 +129,14 @@ export const SerpOperations: INodeProperties[] = [
 		hint: 'You can find the supported languages in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/google/languages/">Supported languages</a>.',
 		displayOptions: {
 			show: {
-				operation: ['get-parsed-serp', 'get-finance-explore', 'get-finance-markets', 'get-finance-quote', 'search-google-finance-tickers'],
+				operation: [
+					'get-parsed-serp',
+					'get-finance-explore',
+					'get-finance-markets',
+					'get-finance-quote',
+					'search-google-finance-tickers',
+					'get-google-ai-mode-serp'
+				],
 			},
 		},
 	},
@@ -134,7 +157,10 @@ export const SerpOperations: INodeProperties[] = [
 		default: 'desktop',
 		displayOptions: {
 			show: {
-				operation: ['get-parsed-serp'],
+				operation: [
+					'get-parsed-serp',
+					'get-google-ai-mode-serp'
+				],
 			},
 		},
 	},
@@ -165,7 +191,10 @@ export const SerpOperations: INodeProperties[] = [
 		default: 'windows',
 		displayOptions: {
 			show: {
-				operation: ['get-parsed-serp'],
+				operation: [
+					'get-parsed-serp',
+					'get-google-ai-mode-serp'
+				],
 			},
 		},
 	},
@@ -390,5 +419,66 @@ export const SerpOperations: INodeProperties[] = [
 				operation: ['search-google-finance-tickers'],
 			},
 		},
-	}
+	},
+	{
+		displayName: 'Calcualte Pixel Rankings for SERP Elements?',
+		name: 'calculate_rectangles',
+		type: 'boolean',
+		default: false,
+		displayOptions: {
+				show: {
+						operation: [
+							'get-google-ai-mode-serp'
+						],
+				},
+		},
+	},
+	{
+		displayName: 'Browser Screen Width',
+		name: 'browser_screen_width',
+		type: 'number',
+		typeOptions: {
+			numberPrecision: 0,
+		},
+		displayOptions: {
+				show: {
+						operation: [
+							'get-google-ai-mode-serp'
+						],
+				},
+		},
+		default: null
+	},
+	{
+		displayName: 'Browser Screen Height',
+		name: 'browser_screen_height',
+		type: 'number',
+		typeOptions: {
+			numberPrecision: 0,
+		},
+		displayOptions: {
+				show: {
+						operation: [
+							'get-google-ai-mode-serp'
+						],
+				},
+		},
+		default: null
+	},
+	{
+		displayName: 'Browser Screen Resolution Ratio',
+		name: 'browser_screen_resolution_ratio',
+		type: 'number',
+		typeOptions: {
+			numberPrecision: 0,
+		},
+		displayOptions: {
+				show: {
+						operation: [
+							'get-google-ai-mode-serp'
+						],
+				},
+		},
+		default: null
+	},
 ];
