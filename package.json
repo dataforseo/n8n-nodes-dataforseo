@@ -41,7 +41,14 @@
       "dist/nodes/DataForSeoSerpApi/DataForSeoSerpApi.node.js",
       "dist/nodes/DataForSeoKeywordsApi/DataForSeoKeywordsApi.node.js",
       "dist/nodes/DataForSeoDomainAnalyticsApi/DataForSeoDomainAnalyticsApi.node.js",
-      "dist/nodes/DataForSeoLabsApi/DataForSeoLabsApi.node.js"
+      "dist/nodes/DataForSeoLabsApi/DataForSeoLabsApi.node.js",
+      "dist/nodes/DataForSeoBacklinksApi/DataForSeoBacklinksApi.node.js",
+      "dist/nodes/DataForSeoOnPageApi/DataForSeoOnPageApi.node.js",
+      "dist/nodes/DataForSeoContentAnalysisApi/DataForSeoContentAnalysisApi.node.js",
+      "dist/nodes/DataForSeoContentGenerationApi/DataForSeoContentGenerationApi.node.js",
+      "dist/nodes/DataForSeoMerchantApi/DataForSeoMerchantApi.node.js",
+      "dist/nodes/DataForSeoAppDataApi/DataForSeoAppDataApi.node.js",
+      "dist/nodes/DataForSeoBusinessDataApi/DataForSeoBusinessDataApi.node.js"
     ]
   },
   "devDependencies": {

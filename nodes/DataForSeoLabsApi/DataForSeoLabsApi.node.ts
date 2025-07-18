@@ -10,6 +10,12 @@ import { GoogleOperations } from '../DataForSeoLabsApi/resources/google';
 import { getBulkTrafficEstimation, getCategoriesForDomain, getCompetitorsDomain, getCategoriesForKeywords, getDomainIntersection, getDomainMetricsByCtaegories, getDomainRankOverview, getHistoricalBulkTrafficEstimation, getHistoricalKeywordData, getHistoricalRankOverview, getHistoricalSerps, getKeywordDifficulty, getKeywordIdeas, getKeywordOverview, getKeywordsForCategories, getKeywordsForSite, getKeywordSuggestions, getPageIntersection, getRankedKeywords, getRelatedKeywords, getRelevantPages, getSearchIntent, getSerpCompetitors, getSubdomains, getTopSearches } from './execute/google';
 import { getAmazonRankedKeywords, getAmazonRelatedKeywords, getBulkSearchVolume, getProductCompetitors, getProductKeywordIntersections, getProductRankOverview } from './execute/amazon';
 import { AmazonOperations } from './resources/amazon';
+import { getBingBulkKeywordDifficulty, getBingBulkTrafficEstimation, getBingCompetitorsDomain, getBingDomainIntersection, getBingDomainRankOverview, getBingPageIntersection, getBingRelatedKeywords, getBingRelevantPages, getBingSerpCompetitors, getBingSubdomains } from './execute/bing';
+import { BingOperations } from './resources/bing';
+import { getGooglePlayAppCompetitors, getGooglePlayAppIntersection, getGooglePlayBulkAppMetrics, getGooglePlayKeywordsForApp } from './execute/google_play';
+import { GooglePlayOperations } from './resources/google_play';
+import { AppStoreOperations } from './resources/app_store';
+import { getAppStoreAppCompetitors, getAppStoreAppIntersection, getAppStoreBulkAppMetrics, getAppStoreKeywordsForApp } from './execute/app_store';
 
 export class DataForSeoLabsApi implements INodeType {
 	description: INodeTypeDescription = {
@@ -73,7 +79,10 @@ export class DataForSeoLabsApi implements INodeType {
 				default: 'google',
 			},
 			...GoogleOperations,
-			...AmazonOperations
+			...AmazonOperations,
+			...BingOperations,
+			...GooglePlayOperations,
+			...AppStoreOperations
 		],
 	};
 
@@ -118,10 +127,28 @@ export class DataForSeoLabsApi implements INodeType {
 				'get-product-keyword-intersections': getProductKeywordIntersections
 			},
 			'bing': {
+				'get-bing-bulk-keyword-difficulty': getBingBulkKeywordDifficulty,
+				'get-bing-bulk-traffic-estimation': getBingBulkTrafficEstimation,
+				'get-bing-competitors-domain': getBingCompetitorsDomain,
+				'get-bing-domain-intersection': getBingDomainIntersection,
+				'get-bing-domain-rank-overview': getBingDomainRankOverview,
+				'get-bing-page-intersection': getBingPageIntersection,
+				'get-bing-related-keywords': getBingRelatedKeywords,
+				'get-bing-relevant-pages': getBingRelevantPages,
+				'get-bing-serp-competitors': getBingSerpCompetitors,
+				'get-bing-subdomains': getBingSubdomains
 			},
 			'google_paly': {
+				'get-google-play-bulk-app-metrics': getGooglePlayBulkAppMetrics,
+				'get-google-play-keywords-for-app': getGooglePlayKeywordsForApp,
+				'get-google-play-app-competitors': getGooglePlayAppCompetitors,
+				'get-google-play-app-intersection': getGooglePlayAppIntersection
 			},
 			'app_store': {
+				'get-app-store-bulk-app-metrics': getAppStoreBulkAppMetrics,
+				'get-app-store-keywords-for-app': getAppStoreKeywordsForApp,
+				'get-app-store-app-competitors': getAppStoreAppCompetitors,
+				'get-app-store-app-intersection': getAppStoreAppIntersection
 			}
 		};
 
@@ -137,12 +164,11 @@ export class DataForSeoLabsApi implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			throw e;
-			/*if (e instanceof NodeOperationError) {
+			if (e instanceof NodeOperationError) {
 				throw e;
 			} else {
 				throw new NodeOperationError(this.getNode(), "Something went wrong");
-			}*/
+			}
 		}
 
 		return [this.helpers.returnJsonArray(responseData)];

@@ -55,3 +55,45 @@ export function parseCheckTreshold(
 	}
 	return parsedTreshold;
 }
+
+export function parseKeywordFields(
+	keywordFields: IDataObject
+) {
+	let fieldsdValues = keywordFields.values as Array<any>;
+	let parsedFields = {};
+	if (fieldsdValues && fieldsdValues.length) {
+		parsedFields = fieldsdValues.reduce(function(result, item) {
+			let key1 = Object.keys(item)[0];
+			let key2 = Object.keys(item)[1];
+			result[item[key1]] = item[key2];
+			return result;
+		}, {});
+	}
+
+	if (!Object.keys(parsedFields).length) {
+		return null;
+	}
+
+	return parsedFields;
+}
+
+export function parseSpecifications(
+	specifications: IDataObject
+) {
+	let fieldsdValues = specifications.values as Array<any>;
+	let parsedFields = {};
+	if (fieldsdValues && fieldsdValues.length) {
+		parsedFields = fieldsdValues.reduce(function(result, item) {
+			let key1 = Object.keys(item)[0];
+			let key2 = Object.keys(item)[1];
+			result[item[key1]] = item[key2];
+			return result;
+		}, {});
+	}
+
+	if (!Object.keys(parsedFields).length) {
+		return null;
+	}
+
+	return parsedFields;
+}
