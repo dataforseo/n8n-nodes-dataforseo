@@ -85,9 +85,9 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		default: '',
 	},
 	{
-		displayName: 'Target Keyword Fields and Target Keywords',
+		displayName: 'Target Keyword Fields and Values',
 		name: 'keyword_fields',
-		placeholder: 'Add Filed',
+		placeholder: 'Add Field',
 		type: 'fixedCollection',
 		default: [],
 		typeOptions: {
@@ -275,7 +275,7 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		default: 0.4
 	},
 	{
-		displayName: 'Scale for Calculating the Domain_rank, and Url_rank Values',
+		displayName: 'Scale for Calculating the Domain_rank and Url_rank Values',
 		name: 'rank_scale',
 		type: 'options',
 		options: [

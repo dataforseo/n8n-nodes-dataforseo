@@ -173,7 +173,7 @@ export const GoogleTrendsOperations: INodeProperties[] = [
 		type: 'dateTime',
 		default: null,
 		description: 'Ending date of the time range',
-		hint: 'if you don’t specify this field, the today’s date will be used by default.',
+		hint: 'If you don’t specify this field, the today’s date will be used by default.',
 		displayOptions: {
 			show: {
 				operation: [
@@ -226,11 +226,11 @@ export const GoogleTrendsOperations: INodeProperties[] = [
 				value: 'past_5_years',
 			},
 			{
-				name: '2004 Present (for Web Only)',
+				name: '2004 - Present (Web Only)',
 				value: '2004_present',
 			},
 			{
-				name: '2008 Present (for News, Youtube, Images, Froogle)',
+				name: '2008 - Present (for News, Youtube, Images, Froogle)',
 				value: '2008_present',
 			}
 		],

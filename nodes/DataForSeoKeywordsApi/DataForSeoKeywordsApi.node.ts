@@ -8,7 +8,7 @@ import {
 } from 'n8n-workflow';
 import { getGoogleKeywordsForKeywords, getGoogleKeywordsForSite, getGoogleSearchVolume, getGoogleTrafficByKeywords, getLiveGoogleKeywordsForKeywords, getLiveGoogleKeywordsForSite, getLiveGoogleSearchVolume, getLiveGoogleTrafficByKeywords } from './execute/google_ads';
 import { GoogleAdsOperations } from './resources/google_ads';
-import { getBingAudienceEstimation, getBingKeywordPerfomance, getBingKeywordsForKeywords, getBingKeywordsForSite, getBingKeywordSuggestionsForUrl, getBingSearchVolume, getBingSearchVolumeHistory, getLiveBingAudienceEstimation, getLiveBingKeywordPerfomance, getLiveBingKeywordsForKeywords, getLiveBingKeywordsForSite, getLiveBingKeywordSuggestionsForUrl, getLiveBingSearchVolume, getLiveBingSearchVolumeHistory } from './execute/bing_ads';
+import { getBingAudienceEstimation, getBingKeywordperformance, getBingKeywordsForKeywords, getBingKeywordsForSite, getBingKeywordSuggestionsForUrl, getBingSearchVolume, getBingSearchVolumeHistory, getLiveBingAudienceEstimation, getLiveBingKeywordperformance, getLiveBingKeywordsForKeywords, getLiveBingKeywordsForSite, getLiveBingKeywordSuggestionsForUrl, getLiveBingSearchVolume, getLiveBingSearchVolumeHistory } from './execute/bing_ads';
 import { BingAdsOperations } from './resources/bing_ads';
 import { getGoogleTrendsExplore, getLiveGoogleTrendsExplore } from './execute/google_trends';
 import { GoogleTrendsOperations } from './resources/google_trends';
@@ -111,8 +111,8 @@ export class DataForSeoKeywordsApi implements INodeType {
 				'get-bing-keywords-for-site': getBingKeywordsForSite,
 				'get-live-bing-keywords-for-keywords': getLiveBingKeywordsForKeywords,
 				'get-bing-keywords-for-keywords': getBingKeywordsForKeywords,
-				'get-live-bing-keyword-perfomance': getLiveBingKeywordPerfomance,
-				'get-bing-keyword-perfomance': getBingKeywordPerfomance,
+				'get-live-bing-keyword-performance': getLiveBingKeywordperformance,
+				'get-bing-keyword-performance': getBingKeywordperformance,
 				'get-live-bing-keyword-suggestions-for-url': getLiveBingKeywordSuggestionsForUrl,
 				'get-bing-keyword-suggestions-for-url': getBingKeywordSuggestionsForUrl,
 				'get-live-bing-ads-audience-estimation': getLiveBingAudienceEstimation,

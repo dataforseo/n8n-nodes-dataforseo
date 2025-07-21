@@ -54,7 +54,7 @@ export const YouTubeOperations: INodeProperties[] = [
 			{
 				name: 'Get Live YouTube Comments Advanced',
 				value: 'get-live-youtube-comments-advanced',
-				action: 'Get live youtube comments  advanced',
+				action: 'Get live youtube comments advanced',
 				description: 'Get Advanced YouTube Comments (live)'
 			},
 			{

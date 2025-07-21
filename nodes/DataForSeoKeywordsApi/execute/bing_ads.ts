@@ -196,8 +196,8 @@ export async function getBingKeywordsForKeywords(ef: IExecuteFunctions, i: numbe
 	return dataForSeoPOSTGETRequest(ef, params, '/keywords_data/bing/keywords_for_keywords/task_get/');
 }
 
-export async function getLiveBingKeywordPerfomance(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_perfomance', i) as IDataObject;
+export async function getLiveBingKeywordperformance(ef: IExecuteFunctions, i: number) {
+	const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
 	const parsedKeywords = parseMultiOptionItems(keywords);
 
 	const params: IHttpRequestOptions = {
@@ -206,8 +206,8 @@ export async function getLiveBingKeywordPerfomance(ef: IExecuteFunctions, i: num
 			keywords: parsedKeywords.length ? parsedKeywords : null,
 			device: ef.getNodeParameter('device', i) || null,
 			match: ef.getNodeParameter('match', i) || null,
-			location_name: ef.getNodeParameter('location_name_perfomance', i),
-			language_name: ef.getNodeParameter('language_name_perfomance', i),
+			location_name: ef.getNodeParameter('location_name_performance', i),
+			language_name: ef.getNodeParameter('language_name_performance', i),
 			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
 		}]
 	};
@@ -215,8 +215,8 @@ export async function getLiveBingKeywordPerfomance(ef: IExecuteFunctions, i: num
 	return dataForSeoRequest(ef, params);
 }
 
-export async function getBingKeywordPerfomance(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_perfomance', i) as IDataObject;
+export async function getBingKeywordperformance(ef: IExecuteFunctions, i: number) {
+	const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
 	const parsedKeywords = parseMultiOptionItems(keywords);
 
 	const params: IHttpRequestOptions = {
@@ -225,8 +225,8 @@ export async function getBingKeywordPerfomance(ef: IExecuteFunctions, i: number)
 			keywords: parsedKeywords.length ? parsedKeywords : null,
 			device: ef.getNodeParameter('device', i) || null,
 			match: ef.getNodeParameter('match', i) || null,
-			location_name: ef.getNodeParameter('location_name_perfomance', i),
-			language_name: ef.getNodeParameter('language_name_perfomance', i),
+			location_name: ef.getNodeParameter('location_name_performance', i),
+			language_name: ef.getNodeParameter('language_name_performance', i),
 			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
 		}]
 	};

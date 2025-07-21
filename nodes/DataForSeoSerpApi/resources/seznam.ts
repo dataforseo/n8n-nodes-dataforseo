@@ -262,7 +262,7 @@ export const SeznamOperations: INodeProperties[] = [
 		},
 	},
 		{
-		displayName: 'Calcualte Pixel Rankings for SERP Elements',
+		displayName: 'Calculate Pixel Rankings for SERP Elements?',
 		name: 'calculate_rectangles',
 		type: 'boolean',
 		default: false,

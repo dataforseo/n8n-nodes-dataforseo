@@ -58,7 +58,7 @@ export const BaiduOperations: INodeProperties[] = [
 		displayName: 'Location',
 		name: 'location_name',
 		type: 'string',
-		description: 'Full name of search engine location',
+		description: 'Full name of the search engine location',
 		hint: 'You can find the supported locations in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/baidu/locations/?bash">Supported locations</a>.',
 		displayOptions: {
 			show: {
@@ -78,7 +78,7 @@ export const BaiduOperations: INodeProperties[] = [
 		type: 'string',
 		required: true,
 		default: '',
-		description: 'Full name of search engine language',
+		description: 'Full name of the search engine language',
 		hint: 'You can find the supported languages in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/baidu/languages/?bash">Supported languages</a>.',
 		displayOptions: {
 			show: {

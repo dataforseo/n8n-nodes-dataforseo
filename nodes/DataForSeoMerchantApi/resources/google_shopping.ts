@@ -72,7 +72,7 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 		displayName: 'Keyword',
 		name: 'keyword',
 		type: 'string',
-		hint: 'You can specify up to 700 characters in the keyword filed. All %## will be decoded (plus character ‘+’ will be decoded to a space character).',
+		hint: 'You can specify up to 700 characters in the keyword field. All %## will be decoded (plus character ‘+’ will be decoded to a space character).',
 		displayOptions: {
 				show: {
 						operation: [

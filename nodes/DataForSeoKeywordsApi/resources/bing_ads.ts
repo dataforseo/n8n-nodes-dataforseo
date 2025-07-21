@@ -64,15 +64,15 @@ export const BingAdsOperations: INodeProperties[] = [
 				description: 'Get relevant keyword suggestions for the specified terms',
 			},
 			{
-				name: 'Get Live Bing Keyword Perfomance',
-				value: 'get-live-bing-keyword-perfomance',
-				action: 'Get live bing keyword perfomance',
+				name: 'Get Live Bing Keyword Performance',
+				value: 'get-live-bing-keyword-performance',
+				action: 'Get live bing keyword performance',
 				description: 'Get a set of keyword performance stats for a group of keywords depending on the specified match type, location and language parameters (live)',
 			},
 			{
-				name: 'Get Bing Keyword Perfomance',
-				value: 'get-bing-keyword-perfomance',
-				action: 'Get bing keyword perfomance',
+				name: 'Get Bing Keyword Performance',
+				value: 'get-bing-keyword-performance',
+				action: 'Get bing keyword performance',
 				description: 'Get a set of keyword performance stats for a group of keywords depending on the specified match type, location and language parameters',
 			},
 			{
@@ -179,7 +179,7 @@ export const BingAdsOperations: INodeProperties[] = [
 	},
 	{
 		displayName: 'Keywords',
-		name: 'keywords_perfomance',
+		name: 'keywords_performance',
 		placeholder: 'Add keyword',
 		type: 'fixedCollection',
 		required: true,
@@ -207,8 +207,8 @@ export const BingAdsOperations: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				operation: [
-					'get-live-bing-keyword-perfomance',
-					'get-bing-keyword-perfomance'
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance'
 				],
 			}
 		},
@@ -336,15 +336,15 @@ export const BingAdsOperations: INodeProperties[] = [
 	},
 		{
 		displayName: 'Location',
-		name: 'location_name_perfomance',
+		name: 'location_name_performance',
 		type: 'string',
 		description: 'Full name of the search engine location',
 		hint: 'Example: London,England,United Kingdom. You can find the supported locations in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/keywords_data/bing/keyword_performance/locations_and_languages/?bash">Supported locations</a>.',
 		displayOptions: {
 				show: {
 						operation: [
-							'get-live-bing-keyword-perfomance',
-							'get-bing-keyword-perfomance'
+							'get-live-bing-keyword-performance',
+							'get-bing-keyword-performance'
 						],
 				},
 		},
@@ -353,15 +353,15 @@ export const BingAdsOperations: INodeProperties[] = [
 	},
 	{
 		displayName: 'Language',
-		name: 'language_name_perfomance',
+		name: 'language_name_performance',
 		type: 'string',
 		description: 'Full name of the search engine language',
 		hint: 'Example: English. You can find the supported languages in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/keywords_data/bing/keyword_performance/locations_and_languages/?bash">Supported languages</a>.',
 		displayOptions: {
 			show: {
 				operation: [
-					'get-live-bing-keyword-perfomance',
-					'get-bing-keyword-perfomance'
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance'
 				],
 			},
 		},
@@ -400,8 +400,8 @@ export const BingAdsOperations: INodeProperties[] = [
 					'get-bing-keywords-for-site',
 					'get-live-bing-keywords-for-keywords',
 					'get-bing-keywords-for-keywords',
-					'get-live-bing-keyword-perfomance',
-					'get-bing-keyword-perfomance',
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance',
 					'get-live-bing-search-volume',
 					'get-bing-search-volume'
 				],
@@ -540,8 +540,8 @@ export const BingAdsOperations: INodeProperties[] = [
 					'get-bing-keywords-for-site',
 					'get-live-bing-keywords-for-keywords',
 					'get-bing-keywords-for-keywords',
-					'get-live-bing-keyword-perfomance',
-					'get-bing-keyword-perfomance',
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance',
 					'get-live-bing-search-volume',
 					'get-bing-search-volume'
 				],
@@ -574,8 +574,8 @@ export const BingAdsOperations: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				operation: [
-					'get-live-bing-keyword-perfomance',
-					'get-bing-keyword-perfomance'
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance'
 				],
 			},
 		},

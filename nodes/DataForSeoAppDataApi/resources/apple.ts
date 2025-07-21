@@ -54,7 +54,7 @@ export const AppleOperations: INodeProperties[] = [
 		displayName: 'Keyword',
 		name: 'keyword',
 		type: 'string',
-		hint: 'You can specify up to 700 characters in the keyword filed. All %## will be decoded (plus character ‘+’ will be decoded to a space character).',
+		hint: 'You can specify up to 700 characters in the keyword field. All %## will be decoded (plus character ‘+’ will be decoded to a space character).',
 		displayOptions: {
 			show: {
 				operation: [
@@ -69,7 +69,7 @@ export const AppleOperations: INodeProperties[] = [
 		displayName: 'App Collection',
 		name: 'app_collection',
 		type: 'options',
-		description: 'App collection on App Store from which apps will be collected',
+		description: 'App collection on the App Store from which apps will be collected',
 		options: [
 			{
 				name: 'Top Free IOS',
@@ -110,7 +110,7 @@ export const AppleOperations: INodeProperties[] = [
 		displayName: 'ID of the App',
 		name: 'app_id',
 		type: 'string',
-		hint: 'ID of the mobile application on App Store.',
+		hint: 'ID of the mobile application on the App Store.',
 		displayOptions: {
 			show: {
 				operation: [
@@ -313,7 +313,7 @@ export const AppleOperations: INodeProperties[] = [
 		},
 	},
 		{
-		displayName: 'Keyword in the App’s Description',
+		displayName: 'Keyword in the App\'s Description',
 		name: 'description',
 		type: 'string',
 		hint: 'Can contain up to 200 characters.',
@@ -327,7 +327,7 @@ export const AppleOperations: INodeProperties[] = [
 		default: ''
 	},
 	{
-		displayName: 'Keyword in the App’s Title',
+		displayName: 'Keyword in the App\'s Title',
 		name: 'title',
 		type: 'string',
 		hint: 'Can contain up to 200 characters.',

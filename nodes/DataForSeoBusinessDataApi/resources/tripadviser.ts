@@ -24,7 +24,7 @@ export const TripAdvisorOperations: INodeProperties[] = [
 			{
 				name: 'Get Tripadvisor Reviews',
 				value: 'get-tripadvisor-reviews',
-				action: 'Get tripadvisor rviews',
+				action: 'Get tripadvisor reviews',
 				description: 'Get results from the “Reviews” element on the Tripadvisor platform',
 			}
 		],
@@ -36,7 +36,7 @@ export const TripAdvisorOperations: INodeProperties[] = [
 		displayName: 'Keyword',
 		name: 'keyword',
 		type: 'string',
-		hint: 'You can specify up to 700 characters in the keyword filed. All %## will be decoded (plus character ‘+’ will be decoded to a space character). This field can also be used to pass the following parameters: cid, place id, spp.',
+		hint: 'You can specify up to 700 characters in the keyword field. All %## will be decoded (plus character ‘+’ will be decoded to a space character). This field can also be used to pass the following parameters: cid, place id, spp.',
 		displayOptions: {
 				show: {
 						operation: [

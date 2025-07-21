@@ -376,7 +376,7 @@ export const BingOperations: INodeProperties[] = [
 		default: null
 	},
 	{
-		displayName: 'Calcualte Pixel Rankings for SERP Elements in Advanced Results?',
+		displayName: 'Calculate Pixel Rankings for SERP Elements in Advanced Results?',
 		name: 'calculate_rectangles',
 		type: 'boolean',
 		hint: "If set to true, the related_result element in the response will be provided as a snippet of its parent organic result.",

@@ -111,7 +111,7 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'topselling_new_paid',
 			},
 			{
-				name: 'Popgrossing',
+				name: 'Topgrossing',
 				value: 'topgrossing',
 			},
 			{

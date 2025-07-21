@@ -289,7 +289,7 @@ export const AmazonOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Include Data for The Seed Keyword?',
+		displayName: 'Include Data for the Seed Keyword?',
 		name: 'include_seed_keyword',
 		type: 'boolean',
 		default: false,

@@ -188,6 +188,92 @@ export async function getGoogleOrganicSERPHTML(ef: IExecuteFunctions, i: number)
 	return dataForSeoPOSTGETRequest(ef, params, '/serp/google/organic/task_get/html/');
 }
 
+export async function getLiveGoogleAiModeSERPAdvanced(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/serp/google/ai_mode/live/advanced',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			priority: ef.getNodeParameter('priority', i) || null,
+			location_name: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name_ai', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			device: ef.getNodeParameter('device', i) || null,
+			os: ef.getNodeParameter('os', i) || null,
+			calculate_rectangles: ef.getNodeParameter('calculate_rectangles', i) || null,
+			browser_screen_width: ef.getNodeParameter('browser_screen_width', i) || null,
+			browser_screen_height: ef.getNodeParameter('browser_screen_height', i) || null,
+			browser_screen_resolution_ratio: ef.getNodeParameter('browser_screen_resolution_ratio', i) || null
+		}]
+	};
+
+	return dataForSeoRequest(ef, params);
+}
+
+export async function getLiveGoogleAiModeSERPHtml(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/serp/google/ai_mode/live/html',
+		body: [{
+			url: ef.getNodeParameter('url', i) || null,
+			keyword: ef.getNodeParameter('keyword', i),
+			location_name: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name_ai', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			device: ef.getNodeParameter('device', i) || null,
+			os: ef.getNodeParameter('os', i) || null,
+			se_domain: ef.getNodeParameter('se_domain', i) || null,
+			depth: ef.getNodeParameter('depth', i) || null,
+			max_crawl_pages: ef.getNodeParameter('max_crawl_pages', i) || null,
+			search_param: ef.getNodeParameter('search_param', i) || null,
+			load_async_ai_overview: ef.getNodeParameter('load_async_ai_overview', i),
+			expand_ai_overview: ef.getNodeParameter('expand_ai_overview', i)
+		}]
+	};
+
+	return dataForSeoRequest(ef, params);
+}
+
+export async function getGoogleAiModeSERPAdvanced(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/serp/google/ai_mode/task_post',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			priority: ef.getNodeParameter('priority', i) || null,
+			location_name: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name_ai', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			device: ef.getNodeParameter('device', i) || null,
+			os: ef.getNodeParameter('os', i) || null,
+			calculate_rectangles: ef.getNodeParameter('calculate_rectangles', i) || null,
+			browser_screen_width: ef.getNodeParameter('browser_screen_width', i) || null,
+			browser_screen_height: ef.getNodeParameter('browser_screen_height', i) || null,
+			browser_screen_resolution_ratio: ef.getNodeParameter('browser_screen_resolution_ratio', i) || null
+		}]
+	};
+
+	return dataForSeoPOSTGETRequest(ef, params, '/serp/google/ai_mode/task_get/advanced/');
+}
+
+export async function getGoogleAiModeSERPHTML(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/serp/google/ai_mode/task_post',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			priority: ef.getNodeParameter('priority', i) || null,
+			location_name: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name_ai', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			device: ef.getNodeParameter('device', i) || null,
+			os: ef.getNodeParameter('os', i) || null,
+			calculate_rectangles: ef.getNodeParameter('calculate_rectangles', i) || null,
+			browser_screen_width: ef.getNodeParameter('browser_screen_width', i) || null,
+			browser_screen_height: ef.getNodeParameter('browser_screen_height', i) || null,
+			browser_screen_resolution_ratio: ef.getNodeParameter('browser_screen_resolution_ratio', i) || null
+		}]
+	};
+
+	return dataForSeoPOSTGETRequest(ef, params, '/serp/google/ai_mode/task_get/html/');
+}
+
 export async function getLiveGoogleMapsSERPAdvanced(ef: IExecuteFunctions, i: number) {
 	const params: IHttpRequestOptions = {
 		url: '/serp/google/maps/live/advanced',

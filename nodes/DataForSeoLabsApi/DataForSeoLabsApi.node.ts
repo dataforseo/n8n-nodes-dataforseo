@@ -69,7 +69,7 @@ export class DataForSeoLabsApi implements INodeType {
 						},
 						{
 							name: 'Google Play',
-							value: 'google_paly',
+							value: 'google_play',
 						},
 						{
 							name: 'App Store',
@@ -138,7 +138,7 @@ export class DataForSeoLabsApi implements INodeType {
 				'get-bing-serp-competitors': getBingSerpCompetitors,
 				'get-bing-subdomains': getBingSubdomains
 			},
-			'google_paly': {
+			'google_play': {
 				'get-google-play-bulk-app-metrics': getGooglePlayBulkAppMetrics,
 				'get-google-play-keywords-for-app': getGooglePlayKeywordsForApp,
 				'get-google-play-app-competitors': getGooglePlayAppCompetitors,

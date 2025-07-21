@@ -18,7 +18,7 @@ export const NaverOperations: INodeProperties[] = [
 			{
 				name: 'Get Naver Organic SERP Regular',
 				value: 'get-naver-organic-serp-regular',
-				action: 'Get yanaverhoo organic SERP regular',
+				action: 'Get naver organic SERP regular',
 				description: 'Get Regular Naver Search results for the specified keyword',
 			},
 			{

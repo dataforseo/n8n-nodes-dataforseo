@@ -18,7 +18,7 @@ export const WhoisOperations: INodeProperties[] = [
 				name: 'Get Live Domain Whois Overview',
 				value: 'get-live-domain-whois-overview',
 				action: 'Get live domain whois overview',
-				description: 'Get Whois data enriched with backlink stats, and ranking and traffic info from organic and paid search results (live)',
+				description: 'Get Whois data enriched with backlink stats and ranking and traffic info from organic and paid search results (live)',
 			}
 		],
 		default: 'get-live-domain-whois-overview',

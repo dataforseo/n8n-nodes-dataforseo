@@ -25,7 +25,7 @@ export const AmazonOperations: INodeProperties[] = [
 				name: 'Get Products HTML',
 				value: 'get-amazon-products-html',
 				action: 'Get products html',
-				description: 'Get tresults from Amazon product listings according to the specified keyword (product name), location, and language parameters (html)',
+				description: 'Get results from Amazon product listings according to the specified keyword (product name), location, and language parameters (html)',
 			},
 			{
 				name: 'Get Product ASINs Advanced',
@@ -453,7 +453,7 @@ export const AmazonOperations: INodeProperties[] = [
 				value: 'featured',
 			},
 			{
-				name: 'Avg Ccustomer Review',
+				name: 'Avg Customer Review',
 				value: 'avg_customer_review',
 			},
 			{

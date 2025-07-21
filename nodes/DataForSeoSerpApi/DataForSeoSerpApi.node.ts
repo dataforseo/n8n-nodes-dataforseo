@@ -58,7 +58,11 @@ import {
 	getLiveGoogleFinanceExploreSERPAdvanced,
 	getLiveGoogleFinanceExploreSERPHTML,
 	getGoogleFinanceExploreSERPAdvanced,
-	getGoogleFinanceExploreSERPHTML
+	getGoogleFinanceExploreSERPHTML,
+	getGoogleAiModeSERPAdvanced,
+	getGoogleAiModeSERPHTML,
+	getLiveGoogleAiModeSERPAdvanced,
+	getLiveGoogleAiModeSERPHtml
 } from './execute/google';
 import { getBingLocalPackSERPHTML, getBingLocalPackSERPRegular, getBingOrganicSERPAdvanced, getBingOrganicSERPHTML, getBingOrganicSERPRegular, getLiveBingLocalPackSERPHTML, getLiveBingLocalPackSERPRegular, getLiveBingOrganicSERPAdvanced, getLiveBingOrganicSERPHTML, getLiveBingOrganicSERPRegular } from './execute/bing';
 import { BingOperations } from './resources/bing';
@@ -164,6 +168,10 @@ export class DataForSeoSerpApi implements INodeType {
 				'get-google-organic-serp-regular': getGoogleOrganicSERPRegular,
 				'get-google-organic-serp-advanced': getGoogleOrganicSERPAdvanced,
 				'get-google-organic-serp-html': getGoogleOrganicSERPHTML,
+				'get-live-google-ai-mode-serp-advanced': getLiveGoogleAiModeSERPAdvanced,
+				'get-live-google-ai-mode-serp-html': getLiveGoogleAiModeSERPHtml,
+				'get-google-ai-mode-serp-advanced': getGoogleAiModeSERPAdvanced,
+				'get-google-ai-mode-serp-html': getGoogleAiModeSERPHTML,
 				'get-live-google-maps-serp-advanced': getLiveGoogleMapsSERPAdvanced,
 				'get-google-maps-serp-advanced': getGoogleMapsSERPAdvanced,
 				'get-live-google-local-finder-serp-advanced': getLiveGoogleLocalFinderSERPAdvanced,
@@ -268,11 +276,12 @@ export class DataForSeoSerpApi implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			if (e instanceof NodeOperationError) {
+			throw e;
+			/*if (e instanceof NodeOperationError) {
 				throw e;
 			} else {
 				throw new NodeOperationError(this.getNode(), "Something went wrong");
-			}
+			}*/
 		}
 
 		return [this.helpers.returnJsonArray(responseData)];

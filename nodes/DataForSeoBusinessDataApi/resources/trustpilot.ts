@@ -24,7 +24,7 @@ export const TrustpilotOperations: INodeProperties[] = [
 			{
 				name: 'Get Trustpilot Reviews',
 				value: 'get-trustpilot-reviews',
-				action: 'Get trustpilot rviews',
+				action: 'Get trustpilot reviews',
 				description: 'Get reviews published on the Trustpilot platform for the local establishment',
 			}
 		],
@@ -36,7 +36,7 @@ export const TrustpilotOperations: INodeProperties[] = [
 		displayName: 'Keyword',
 		name: 'keyword',
 		type: 'string',
-		hint: 'You can specify up to 700 characters in the keyword filed. All %## will be decoded (plus character ‘+’ will be decoded to a space character). This field can also be used to pass the following parameters: cid, place id, spp.',
+		hint: 'You can specify up to 700 characters in the keyword field. All %## will be decoded (plus character ‘+’ will be decoded to a space character). This field can also be used to pass the following parameters: cid, place id, spp.',
 		displayOptions: {
 				show: {
 						operation: [

@@ -153,7 +153,7 @@ export const DataforseoTrendsOperations: INodeProperties[] = [
 		type: 'dateTime',
 		default: null,
 		description: 'Ending date of the time range',
-		hint: 'If you don’t specify this field, the today’s date will be used by default.',
+		hint: 'If you don’t specify this field, today’s date will be used by default.',
 		displayOptions: {
 			show: {
 				operation: [

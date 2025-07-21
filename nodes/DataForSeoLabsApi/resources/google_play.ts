@@ -11,7 +11,7 @@ export const GooglePlayOperations: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
-				resource: ['google_paly'],
+				resource: ['google_play'],
 			},
 		},
 		options: [

@@ -720,7 +720,7 @@ export const OnPageOperations: INodeProperties[] = [
 				value: 'desktop',
 			},
 			{
-				name: 'Modile',
+				name: 'Mobile',
 				value: 'mobile',
 			},
 			{
@@ -1373,7 +1373,7 @@ export const OnPageOperations: INodeProperties[] = [
 	{
 		displayName: 'Custom Threshold Values for Checks',
 		name: 'checks_threshold',
-		placeholder: 'Add Treshold',
+		placeholder: 'Add Threshold',
 		type: 'fixedCollection',
 		default: [],
 		typeOptions: {
@@ -1382,7 +1382,7 @@ export const OnPageOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'tresholdValues',
-				displayName: 'Treshold',
+				displayName: 'Threshold',
 				values: [
 					{
 						displayName: 'Check Name',

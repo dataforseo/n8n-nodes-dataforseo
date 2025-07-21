@@ -52,6 +52,30 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get HTML Google Search results for the specified keyword'
 			},
 			{
+				name: 'Get Live Google AI Mode SERP Advanced',
+				value: 'get-live-google-ai-mode-serp-advanced',
+				action: 'Get live google ai mode SERP advanced',
+				description: 'Get Advanced search results from the AI Mode feature of Google Search (live)'
+			},
+			{
+				name: 'Get Live Google AI Mode SERP HTML',
+				value: 'get-live-google-ai-mode-serp-html',
+				action: 'Get live google ai mode SERP HTML',
+				description: 'Get HTML search results from the AI Mode feature of Google Search (live)'
+			},
+			{
+				name: 'Get Google AI Mode SERP Advanced',
+				value: 'get-google-ai-mode-serp-advanced',
+				action: 'Get google ai mode SERP advanced',
+				description: 'Get Advanced search results from the AI Mode feature of Google Search'
+			},
+			{
+				name: 'Get Google AI Mode SERP HTML',
+				value: 'get-google-ai-mode-serp-html',
+				action: 'Get google ai mode SERP HTML',
+				description: 'Get HTML search results from the AI Mode feature of Google Search'
+			},
+			{
 				name: 'Get Live Google Maps SERP Advanced',
 				value: 'get-live-google-maps-serp-advanced',
 				action: 'Get live google maps SERP advanced',
@@ -151,13 +175,13 @@ export const GoogleOperations: INodeProperties[] = [
 				name: 'Get Google Search By Image SERP Advanced',
 				value: 'get-google-search-by-image-serp-advanced',
 				action: 'Get google search by image SERP advanced',
-				description: 'Get Advanced Google Search By Image Search results'
+				description: 'Get Advanced Google Search By Image results'
 			},
 			{
 				name: 'Get Google Search By Image SERP HTML',
 				value: 'get-google-search-by-image-serp-html',
 				action: 'Get google search by image SERP html',
-				description: 'Get HTML Google Search By Image Search results'
+				description: 'Get HTML Google Search By Image results'
 			},
 			{
 				name: 'Get Google Jobs SERP Advanced',
@@ -300,7 +324,7 @@ export const GoogleOperations: INodeProperties[] = [
 			{
 				name: 'Get Finance Quote SERP HTML',
 				value: 'get-google-finance-quote-serp-html',
-				action: 'Get  google finance quote SERP html',
+				action: 'Get google finance quote SERP html',
 				description: 'Get HTML Google Finance Quote SERP results'
 			},
 			{
@@ -357,7 +381,11 @@ export const GoogleOperations: INodeProperties[] = [
 							'get-live-google-dataset-serp-advanced',
 							'get-google-dataset-serp-advanced',
 							'get-live-google-ads-advertisers-serp-advanced',
-							'get-google-ads-advertisers-serp-advanced'
+							'get-google-ads-advertisers-serp-advanced',
+							'get-google-ai-mode-serp-advanced',
+							'get-google-ai-mode-serp-html',
+							'get-live-google-ai-mode-serp-advanced',
+							'get-live-google-ai-mode-serp-html'
 						],
 				},
 		},
@@ -523,7 +551,10 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-finance-markets-serp-html',
 					'get-google-finance-quote-serp-advanced',
 					'get-google-finance-quote-serp-html',
-					'get-google-finance-ticker-search-advanced'
+					'get-google-finance-ticker-search-advanced',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced'
 				],
 			},
 		},
@@ -576,7 +607,11 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-finance-quote-serp-advanced',
 					'get-google-finance-quote-serp-html',
 					'get-live-google-finance-ticker-search-advanced',
-					'get-google-finance-ticker-search-advanced'
+					'get-google-finance-ticker-search-advanced',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced',
+					'get-live-google-ai-mode-serp-html'
 				],
 				},
 		},
@@ -718,6 +753,25 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Language',
+		name: 'language_name_ai',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'Full name of search engine language',
+		hint: 'You can find the supported languages in the DataForSEO documentation. <a href="https://docs.dataforseo.com/v3/serp/google/ai_mode/languages/?bash">Supported languages</a>.',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced',
+					'get-live-google-ai-mode-serp-html'
+				],
+			},
+		},
+	},
+	{
 		displayName: 'GPS Coordinates of a Location',
 		name: 'location_coordinate',
 		type: 'string',
@@ -749,7 +803,11 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-images-serp-advanced',
 					'get-google-images-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -867,7 +925,11 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-local-finder-serp-advanced',
 					'get-live-google-local-finder-serp-html',
 					'get-google-local-finder-serp-advanced',
-					'get-google-local-finder-serp-html'
+					'get-google-local-finder-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -949,7 +1011,11 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-local-finder-serp-advanced',
 					'get-live-google-local-finder-serp-html',
 					'get-google-local-finder-serp-advanced',
-					'get-google-local-finder-serp-html'
+					'get-google-local-finder-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1054,7 +1120,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-images-serp-advanced',
 					'get-google-images-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1210,7 +1277,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-dataset-serp-advanced',
 					'get-google-dataset-serp-advanced',
 					'get-live-google-ads-search-advanced',
-					'get-google-ads-search-advanced'
+					'get-google-ads-search-advanced',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1256,7 +1324,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-images-serp-advanced',
 					'get-live-google-images-serp-html',
 					'get-google-images-serp-advanced',
-					'get-google-images-serp-html'
+					'get-google-images-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1310,7 +1379,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-images-serp-advanced',
 					'get-google-images-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1339,13 +1409,14 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-images-serp-advanced',
 					'get-google-images-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
 	},
 	{
-		displayName: 'Calcualte Pixel Rankings for SERP Elements in Advanced Results?',
+		displayName: 'Calculate Pixel Rankings for SERP Elements in Advanced Results?',
 		name: 'calculate_rectangles',
 		type: 'boolean',
 		hint: "If set to true, the related_result element in the response will be provided as a snippet of its parent organic result.",
@@ -1361,7 +1432,10 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-news-serp-advanced',
 					'get-google-news-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced'
 				],
 			},
 		},
@@ -1381,7 +1455,10 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-news-serp-advanced',
 					'get-google-news-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced'
 				],
 			},
 		},
@@ -1402,7 +1479,10 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-news-serp-advanced',
 					'get-google-news-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced'
 				],
 			},
 		},
@@ -1429,7 +1509,10 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-google-news-serp-advanced',
 					'get-google-news-serp-html',
 					'get-google-search-by-image-serp-advanced',
-					'get-google-search-by-image-serp-html'
+					'get-google-search-by-image-serp-html',
+					'get-google-ai-mode-serp-advanced',
+					'get-google-ai-mode-serp-html',
+					'get-live-google-ai-mode-serp-advanced'
 				],
 			},
 		},
@@ -1462,7 +1545,7 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Load Asynchronous AI Overview',
 		name: 'load_async_ai_overview',
 		type: 'boolean',
-		hint: "Set to true to obtain ai_overview items is SERPs even if they are loaded asynchronically.",
+		hint: "Set to true to obtain ai_overview items in SERPs even if they are loaded asynchronically.",
 		default: false,
 		displayOptions: {
 			show: {
@@ -1471,7 +1554,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-organic-serp-html',
 					'get-google-organic-serp-regular',
 					'get-google-organic-serp-advanced',
-					'get-google-organic-serp-html'
+					'get-google-organic-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1488,7 +1572,8 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-live-google-organic-serp-html',
 					'get-google-organic-serp-regular',
 					'get-google-organic-serp-advanced',
-					'get-google-organic-serp-html'
+					'get-google-organic-serp-html',
+					'get-live-google-ai-mode-serp-html'
 				],
 			},
 		},
@@ -1497,7 +1582,7 @@ export const GoogleOperations: INodeProperties[] = [
 	{
 		displayName: 'Remove Specific Parameters From URLs',
 		name: 'remove_from_url',
-		placeholder: 'Add paremeter',
+		placeholder: 'Add parameter',
 		type: 'fixedCollection',
 		required: true,
 		description: 'You can specify up to 10 parameters to remove from URLs in the result',
@@ -1654,11 +1739,11 @@ export const GoogleOperations: INodeProperties[] = [
 						default: 'fulltime',
 						options: [
 							{
-								name: 'Fulltime',
+								name: 'Full Time',
 								value: 'fulltime'
 							},
 							{
-								name: 'Partime',
+								name: 'Part Time',
 								value: 'partime'
 							},
 							{
