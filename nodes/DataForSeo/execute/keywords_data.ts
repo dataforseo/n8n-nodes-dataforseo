@@ -4,8 +4,8 @@ import {
 	IDataObject,
 	NodeOperationError,
 } from 'n8n-workflow';
-import { parseMultiOptionItems} from './generalFunctions';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { parseMultiOptionItems} from '../../../functions/generalFunctions';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getGoogleSearchVolume(ef: IExecuteFunctions, i: number) {
 	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;

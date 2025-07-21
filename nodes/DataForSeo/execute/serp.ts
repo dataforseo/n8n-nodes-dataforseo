@@ -2,7 +2,7 @@ import {
 	IExecuteFunctions,
 	IHttpRequestOptions,
 } from 'n8n-workflow';
-import { dataForSeoRequest } from './dataForSeoRequest';
+import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getParsedSerp(ef: IExecuteFunctions, i: number) {
 	const params: IHttpRequestOptions = {
