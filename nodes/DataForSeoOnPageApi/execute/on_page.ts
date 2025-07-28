@@ -5,7 +5,7 @@ import {
 	IDataObject,
 	sleep
 } from 'n8n-workflow';
-import { parseCheckTreshold, parseFilters, parseMultiOptionItems, parseOrderByString} from '../../../functions/generalFunctions';
+import { parseCheckThreshold, parseFilters, parseMultiOptionItems, parseOrderByString} from '../../../functions/generalFunctions';
 import { dataForSeoPOSTGETRequest, dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 async function getResponse(ef: IExecuteFunctions, i: number, options: IHttpRequestOptions) {
@@ -22,7 +22,7 @@ async function getResponse(ef: IExecuteFunctions, i: number, options: IHttpReque
 	const parsedCheckSpellExeptions = parseMultiOptionItems(checkSpellExeptions);
 
 	const checkTreshold = ef.getNodeParameter('checks_threshold', i) as IDataObject;
-	const parsedCheckTreshold = parseCheckTreshold(checkTreshold);
+	const parsedCheckTreshold = parseCheckThreshold(checkTreshold);
 
 	const disablePageChecks = ef.getNodeParameter('disable_page_checks', i) as IDataObject;
 	const parsedDisablePageChecks = parseMultiOptionItems(disablePageChecks);
@@ -410,7 +410,7 @@ export async function getLiveParsedContent(ef: IExecuteFunctions, i: number) {
 
 export async function getLiveInstantPages(ef: IExecuteFunctions, i: number) {
 	const checkTreshold = ef.getNodeParameter('checks_threshold', i) as IDataObject;
-	const parsedCheckTreshold = parseCheckTreshold(checkTreshold);
+	const parsedCheckTreshold = parseCheckThreshold(checkTreshold);
 
 	const params: IHttpRequestOptions = {
 		url: '/on_page/instant_pages',

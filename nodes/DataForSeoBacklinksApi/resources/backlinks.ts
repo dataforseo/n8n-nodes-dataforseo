@@ -83,7 +83,7 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get an overview of backlink data for the target domain available during a period between the two indicated dates',
 			},
 			{
-				name: 'Get New&Lost Backlinks Timeseries Summary',
+				name: 'Get New & Lost Backlinks Timeseries Summary',
 				value: 'get-new-and-lost-backlinks-timeseries-summary',
 				action: 'Get new and lost backlinks timeseries summary',
 				description: 'Get the number of new and lost backlinks and referring domains for the domain specified in the target field',
@@ -113,13 +113,13 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get the number of referring domains for up to 1,000 domains, subdomains, and pages',
 			},
 			{
-				name: 'Get Bulk New&Lost Backlinks',
+				name: 'Get Bulk New & Lost Backlinks',
 				value: 'get-bulk-new-and-lost-backlinks',
 				action: 'Get bulk new and lost backlinks',
 				description: 'Get the number of new and lost backlinks for up to 1,000 domains, subdomains, and pages',
 			},
 			{
-				name: 'Get Bulk New&Lost Referring Domains',
+				name: 'Get Bulk New & Lost Referring Domains',
 				value: 'get-bulk-new-and-lost-referring-domains',
 				action: 'Get bulk new and lost referring domains',
 				description: 'Get the number of new and lost referring domains for up to 1,000 domains, subdomains, and pages',

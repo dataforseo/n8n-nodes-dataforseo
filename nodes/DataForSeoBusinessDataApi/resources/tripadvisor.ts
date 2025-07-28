@@ -16,7 +16,7 @@ export const TripAdvisorOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get Tripadviser Business Data',
+				name: 'Get Tripadvisor Business Data',
 				value: 'search-tripadvisor-business-data',
 				action: 'Search tripadvisor business data',
 				description: 'Get a list of business profiles listed on the Tripadvisor platform',

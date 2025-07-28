@@ -718,7 +718,7 @@ export async function getLiveGoogleAutocompleteSERPAdvanced(ef: IExecuteFunction
 			location_name: ef.getNodeParameter('location_name', i),
 			language_name: ef.getNodeParameter('language_name', i),
 			cursor_pointer: ef.getNodeParameter('cursor_pointer', i) || null,
-			depclientth: ef.getNodeParameter('client', i) || null
+			client: ef.getNodeParameter('client', i) || null
 		}]
 	};
 
@@ -734,7 +734,7 @@ export async function getGoogleAutocompleteSERPAdvanced(ef: IExecuteFunctions, i
 			location_name: ef.getNodeParameter('location_name', i),
 			language_name: ef.getNodeParameter('language_name', i),
 			cursor_pointer: ef.getNodeParameter('cursor_pointer', i) || null,
-			depclientth: ef.getNodeParameter('client', i) || null
+			client: ef.getNodeParameter('client', i) || null
 		}]
 	};
 

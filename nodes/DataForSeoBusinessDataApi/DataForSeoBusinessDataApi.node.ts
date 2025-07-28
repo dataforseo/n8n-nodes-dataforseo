@@ -14,7 +14,7 @@ import { getTrustpilotReviews, searchTrustpilotBusinessInfo } from './execute/tr
 import { getTripadvisorReviews, searchTripadvisorBusinessData } from './execute/tripadvisor';
 import { getFacebookData, getPinterestData, getRedditData } from './execute/social_media';
 import { TrustpilotOperations } from './resources/trustpilot';
-import { TripAdvisorOperations } from './resources/tripadviser';
+import { TripAdvisorOperations } from './resources/tripadvisor';
 import { SocialMediaOperations } from './resources/social_media';
 
 export class DataForSeoBusinessDataApi implements INodeType {
@@ -138,12 +138,11 @@ export class DataForSeoBusinessDataApi implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			throw e;
-			/*if (e instanceof NodeOperationError) {
+			if (e instanceof NodeOperationError) {
 				throw e;
 			} else {
 				throw new NodeOperationError(this.getNode(), "Something went wrong");
-			}*/
+			}
 		}
 
 		return [this.helpers.returnJsonArray(responseData)];

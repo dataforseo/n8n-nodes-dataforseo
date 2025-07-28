@@ -164,7 +164,7 @@ export const OnPageOperations: INodeProperties[] = [
 				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
 				displayName: 'Custom threshold values for checks',
 				name: 'checks_threshold',
-				placeholder: 'Add Treshold',
+				placeholder: 'Add Threshold',
 				type: 'fixedCollection',
 				default: [],
 				typeOptions: {
@@ -172,8 +172,8 @@ export const OnPageOperations: INodeProperties[] = [
 				},
 				options: [
 					{
-						name: 'tresholdValues',
-						displayName: 'Treshold',
+						name: 'thresholdValues',
+						displayName: 'Threshold',
 						values: [
 							{
 								displayName: 'Check Name',

@@ -1381,7 +1381,7 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'tresholdValues',
+				name: 'thresholdValues',
 				displayName: 'Threshold',
 				values: [
 					{
@@ -1765,7 +1765,7 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Applies Mobile Emulation?',
+		displayName: 'Apply Mobile Emulation?',
 		name: 'for_mobile',
 		type: 'boolean',
 		hint: 'If set to true, Lighthouse will use mobile device and screen emulation to test the page against mobile environment.',

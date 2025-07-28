@@ -64,13 +64,13 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends',
 			},
 			{
-				name: 'Get Ctagories For Domain',
+				name: 'Get Categories For Domain',
 				value: 'get-categories-for-domain',
 				action: 'Get categories for domain',
 				description: 'Get Google product or service categories that include keywords the domain ranks for in search',
 			},
 			{
-				name: 'Get Ctagories For Keywords',
+				name: 'Get Categories For Keywords',
 				value: 'get-categories-for-keywords',
 				action: 'Get categories for keywords',
 				description: 'Get Google product and service categories related for each specified keyword',
@@ -162,7 +162,7 @@ export const GoogleOperations: INodeProperties[] = [
 			{
 				name: 'Get Historical Bulk Traffic Estimation',
 				value: 'get-historical-bulk-traffic-estimation',
-				action: 'Get historycal bulk traffic estimation',
+				action: 'Get historical bulk traffic estimation',
 				description: 'Get historical monthly traffic volumes for up to 1,000 domains collected within the specified time range through October 2020',
 			},
 		],
@@ -481,7 +481,7 @@ export const GoogleOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'values',
-				displayName: 'Ctaegory Code',
+				displayName: 'Category Code',
 				values: [
 					{
 						displayName: 'Category Code',
@@ -516,7 +516,7 @@ export const GoogleOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'values',
-				displayName: 'Ctaegory Code',
+				displayName: 'Category Code',
 				values: [
 					{
 						displayName: 'Category Code',
@@ -825,9 +825,10 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Whether to Intersect Keywords?',
+		displayName: 'Intersection Mode for Keywords',
 		name: 'intersection_mode',
 		type: 'options',
+		hint: 'Select Union to get results based on keywords any URL from the pages field ranks for, or select Intersect for results based on keywords all URLs rank for in the same SERP.',
 		options: [
 			{
 				name: 'Empty',
@@ -1330,7 +1331,7 @@ export const GoogleOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Whether to Exclude World’s Largest Websites?',
+		displayName: 'Exclude World’s Largest Websites?',
 		name: 'exclude_top_domains',
 		type: 'boolean',
 		default: false,

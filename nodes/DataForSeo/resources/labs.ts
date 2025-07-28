@@ -193,7 +193,7 @@ export const LabsOperations: INodeProperties[] = [
 		hint: 'Example: United Kingdom. You can find the supported locations in the DataForSEO documentation. <a href="https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages">Supported locations</a>',
 		displayOptions: {
 				show: {
-						operation: ['get-domain-rank-overview'],
+						operation: ['get-domain-rank-overview', 'get-ranked-keywords'],
 				},
 		},
 		default: '',
@@ -206,7 +206,7 @@ export const LabsOperations: INodeProperties[] = [
 		hint: 'Example: English. You can find the supported languages in the DataForSEO documentation. <a href="https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages">Supported languages</a>',
 		displayOptions: {
 				show: {
-						operation: ['get-domain-rank-overview'],
+						operation: ['get-domain-rank-overview', 'get-ranked-keywords'],
 				},
 		},
 		default: '',
@@ -220,7 +220,7 @@ export const LabsOperations: INodeProperties[] = [
 		hint: 'You can find the supported locations in the DataForSEO documentation. <a href="https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages">Supported locations</a>',
 		displayOptions: {
 				show: {
-						operation: ['get-keyword-suggestions', 'get-ranked-keywords', 'get-keyword-difficulty', 'get-organic-traffic-stats', 'get-historical-traffic-stats', 'get-keyword-ideas'],
+						operation: ['get-keyword-suggestions', 'get-keyword-difficulty', 'get-organic-traffic-stats', 'get-historical-traffic-stats', 'get-keyword-ideas'],
 				},
 		},
 		default: '',
@@ -234,7 +234,7 @@ export const LabsOperations: INodeProperties[] = [
 		hint: 'You can find the supported languages in the DataForSEO documentation. <a href="https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages">Supported languages</a>',
 		displayOptions: {
 				show: {
-						operation: ['get-keyword-suggestions', 'get-ranked-keywords', 'get-keyword-difficulty', 'get-organic-traffic-stats', 'get-historical-traffic-stats', 'get-keyword-ideas'],
+						operation: ['get-keyword-suggestions', 'get-keyword-difficulty', 'get-organic-traffic-stats', 'get-historical-traffic-stats', 'get-keyword-ideas'],
 				},
 		},
 		default: '',

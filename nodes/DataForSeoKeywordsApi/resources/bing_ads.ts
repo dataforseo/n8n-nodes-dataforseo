@@ -827,7 +827,7 @@ export const BingAdsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Desired Bid Aetting Value in USD',
+		displayName: 'Desired Bid Setting Value in USD',
 		name: 'bid',
 		type: 'number',
 		typeOptions: {
@@ -845,7 +845,7 @@ export const BingAdsOperations: INodeProperties[] = [
 		default: null
 	},
 	{
-		displayName: 'Daily Campaign Budge Value in USD',
+		displayName: 'Daily Campaign Budget Value in USD',
 		name: 'daily_budget',
 		type: 'number',
 		typeOptions: {

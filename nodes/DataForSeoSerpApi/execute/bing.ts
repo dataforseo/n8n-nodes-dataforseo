@@ -166,7 +166,7 @@ export async function getLiveBingLocalPackSERPRegular(ef: IExecuteFunctions, i: 
 
 export async function getLiveBingLocalPackSERPHTML(ef: IExecuteFunctions, i: number) {
 	const params: IHttpRequestOptions = {
-		url: '/serp/bing/local_pack/live/regular',
+		url: '/serp/bing/local_pack/live/html',
 		body: [{
 			url: ef.getNodeParameter('url', i) || null,
 			keyword: ef.getNodeParameter('keyword', i),

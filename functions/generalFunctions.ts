@@ -40,20 +40,20 @@ export function parseOrderByString(
 	return parsedOrderBy;
 }
 
-export function parseCheckTreshold(
-	checkTreshold: IDataObject
+export function parseCheckThreshold(
+	checkThreshold: IDataObject
 ) {
-	let tresholdValues = checkTreshold.tresholdValues as Array<any>;
-	let parsedTreshold = {};
-	if (tresholdValues && tresholdValues.length) {
-		parsedTreshold = tresholdValues.reduce(function(result, item) {
+	let thresholdValues = checkThreshold.thresholdValues as Array<any>;
+	let parsedThreshold = {};
+	if (thresholdValues && thresholdValues.length) {
+		parsedThreshold = thresholdValues.reduce(function(result, item) {
 			let key1 = Object.keys(item)[0];
 			let key2 = Object.keys(item)[1];
 			result[item[key1]] = item[key2];
 			return result;
 		}, {});
 	}
-	return parsedTreshold;
+	return parsedThreshold;
 }
 
 export function parseKeywordFields(

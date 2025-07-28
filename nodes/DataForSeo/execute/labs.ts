@@ -74,8 +74,8 @@ export async function getRankedKeywords(ef: IExecuteFunctions, i: number) {
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/ranked_keywords/live',
 		body: [{
-			location_name: ef.getNodeParameter('location_name_required', i),
-			language_name: ef.getNodeParameter('language_name_required', i),
+			location_name: ef.getNodeParameter('location_name', i) || null,
+			language_name: ef.getNodeParameter('language_name', i) || null,
 			target: ef.getNodeParameter('target', i),
 			limit: ef.getNodeParameter('limit', i) || null,
 			offset: ef.getNodeParameter('offset', i) || null,

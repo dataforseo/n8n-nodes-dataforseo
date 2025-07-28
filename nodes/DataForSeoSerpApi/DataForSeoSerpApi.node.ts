@@ -276,12 +276,11 @@ export class DataForSeoSerpApi implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			throw e;
-			/*if (e instanceof NodeOperationError) {
+			if (e instanceof NodeOperationError) {
 				throw e;
 			} else {
 				throw new NodeOperationError(this.getNode(), "Something went wrong");
-			}*/
+			}
 		}
 
 		return [this.helpers.returnJsonArray(responseData)];

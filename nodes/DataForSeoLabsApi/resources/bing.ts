@@ -30,7 +30,7 @@ export const BingOperations: INodeProperties[] = [
 			{
 				name: 'Get Competitors Domain',
 				value: 'get-bing-competitors-domain',
-				action: 'Get competitord domain',
+				action: 'Get competitor domain',
 				description: 'Get a full overview of ranking and traffic data of the competitor domains from organic and paid search',
 			},
 			{
@@ -515,9 +515,10 @@ export const BingOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Whether to Intersect Keywords?',
+		displayName: 'Intersection Mode for Keywords',
 		name: 'intersection_mode',
 		type: 'options',
+		hint: 'Select Union to get results based on keywords any URL from the pages field ranks for, or select Intersect for results based on keywords all URLs rank for in the same SERP.',
 		options: [
 			{
 				name: 'Empty',
@@ -752,7 +753,7 @@ export const BingOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Whether to Exclude World’s Largest Websites?',
+		displayName: 'Exclude World’s Largest Websites?',
 		name: 'exclude_top_domains',
 		type: 'boolean',
 		default: false,

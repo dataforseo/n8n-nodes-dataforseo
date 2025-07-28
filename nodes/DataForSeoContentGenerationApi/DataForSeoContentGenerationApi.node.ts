@@ -69,7 +69,6 @@ export class DataForSeoContentGenerationApi implements INodeType {
 				responseData.push(await fn(this, i));
 			}
 		} catch (e) {
-			throw e;
 			if (e instanceof NodeOperationError) {
 				throw e;
 			} else {

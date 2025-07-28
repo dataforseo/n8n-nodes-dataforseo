@@ -3,7 +3,7 @@ import {
 	IHttpRequestOptions,
 	IDataObject,
 } from 'n8n-workflow';
-import { parseCheckTreshold} from '../../../functions/generalFunctions';
+import { parseCheckThreshold} from '../../../functions/generalFunctions';
 import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
@@ -21,7 +21,7 @@ export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
 	for (let key in additionalFields) {
 		if (key == 'checks_threshold') {
 			checksTreshold = additionalFields.checks_threshold as IDataObject;
-			Object.assign(data, {checks_threshold: parseCheckTreshold(checksTreshold)});
+			Object.assign(data, {checks_threshold: parseCheckThreshold(checksTreshold)});
 		} else {
 			Object.assign(data, {[key]: additionalFields[key]});
 		}

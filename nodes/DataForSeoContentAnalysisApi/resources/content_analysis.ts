@@ -275,7 +275,7 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		default: 0.4
 	},
 	{
-		displayName: 'Scale for Calculating the Domain_rank and Url_rank Values',
+		displayName: 'Scale for Calculating the Domain Rank and URL Rank Values',
 		name: 'rank_scale',
 		type: 'options',
 		options: [
