@@ -369,12 +369,35 @@ export const TechnologiesOperations: INodeProperties[] = [
 					operation: [
 						'get-live-aggregation-technologies',
 						'get-live-technologies-summary',
-						'get-live-domains-by-technology',
-						'get-live-domains-by-html-terms'
+						'get-live-domains-by-technology'
 					],
 			},
 		},
 		default: 'as_is',
+	},
+		{
+		displayName: 'Search Mode',
+		name: 'mode_html',
+		type: 'options',
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+		options: [
+			{
+				name: 'Strict Entry',
+				value: 'strict_entry',
+			},
+			{
+				name: 'Entry',
+				value: 'entry',
+			}
+		],
+		displayOptions: {
+			show: {
+					operation: [
+						'get-live-domains-by-html-terms'
+					],
+			},
+		},
+		default: 'entry',
 	},
 	{
 		displayName: 'Filters',

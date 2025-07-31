@@ -40,7 +40,7 @@ export async function dataForSeoPOSTGETRequest(ef: IExecuteFunctions, options: I
 		let responseReceived = false;
 		let j = 0;
 		let statusCode;
-		while (j<100 || !responseReceived) {
+		while (j<150 || !responseReceived) {
 			sleep(200);
 			responseData = await dataForSeoRequest(ef, taskOptions)
 			statusCode = responseData['tasks'][0]['status_code'];

@@ -168,7 +168,7 @@ export async function getLiveDomainsByHTMLTerms(ef: IExecuteFunctions, i: number
 		body: [{
 			search_terms: parsedTerms.length ? parsedTerms : null,
 			keywords: parsedKeywords.length ? parsedKeywords : null,
-			mode: ef.getNodeParameter('mode', i) || null,
+			mode: ef.getNodeParameter('mode_html', i) || null,
 			filters: parsedFilters.length ? parsedFilters : null,
 			order_by: orderBy.length ? orderBy : null,
 			limit: ef.getNodeParameter('limit', i) || null,

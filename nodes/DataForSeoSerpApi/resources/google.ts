@@ -1540,8 +1540,7 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 		default: null
 	},
-
-		{
+	{
 		displayName: 'Load Asynchronous AI Overview',
 		name: 'load_async_ai_overview',
 		type: 'boolean',
