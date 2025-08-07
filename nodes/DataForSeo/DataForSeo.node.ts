@@ -36,6 +36,8 @@ import {
  } from './execute/labs';
 import { getPageAuditCheck, parsePageContent } from './execute/on_page';
 import { getFinanceExplore, getFinanceMarkets, getFinanceQuote, getGoogleAIModeSerp, getParsedSerp, searchGoogleFinanceTickers } from './execute/serp';
+import { AiOptimizationOperations } from './resources/ai_optimization';
+import { getAiKeywordSearchVolume } from './execute/ai_optimization';
 
 export class DataForSeo implements INodeType {
 	description: INodeTypeDescription = {
@@ -99,6 +101,10 @@ export class DataForSeo implements INodeType {
 							name: 'Labs',
 							value: 'labs',
 						},
+						{
+							name: 'AI Optimization',
+							value: 'ai_optimization',
+						}
 				],
 				default: 'backlinks',
 			},
@@ -108,6 +114,7 @@ export class DataForSeo implements INodeType {
 			...OnPageOperations,
 			...KeywordsDataOperations,
 			...LabsOperations,
+			...AiOptimizationOperations
 		],
 	};
 
@@ -157,6 +164,9 @@ export class DataForSeo implements INodeType {
 				'search-google-finance-tickers': searchGoogleFinanceTickers,
 				'get-google-ai-mode-serp': getGoogleAIModeSerp
 			},
+			'ai_optimization': {
+				'get-ai-keyword-search-volume': getAiKeywordSearchVolume
+			}
 		};
 
 		const fn = mapping[resource][operation];
