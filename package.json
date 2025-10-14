@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-dataforseo",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "DataForSEO is an SEO and marketing data provider, empowering businesses with invaluable insights via APIs and databases.",
   "keywords": [
     "n8n-community-node-package",
