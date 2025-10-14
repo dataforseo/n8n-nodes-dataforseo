@@ -16,6 +16,7 @@ export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
 		enable_javascript: ef.getNodeParameter('enable_javascript', i),
 		enable_browser_rendering: ef.getNodeParameter('enable_browser_rendering', i),
 		enable_xhr: ef.getNodeParameter('enable_xhr', i),
+		validate_micromarkup: ef.getNodeParameter('validate_micromarkup', i)
 	};
 
 	for (let key in additionalFields) {

@@ -401,4 +401,17 @@ export const OnPageOperations: INodeProperties[] = [
 			},
 		],
 	},
+	{
+		displayName: 'Enable Microdata Validation?',
+		name: 'validate_micromarkup',
+		type: 'boolean',
+		default: false,
+		displayOptions: {
+				show: {
+						operation: [
+							'get-page-audit-check'
+						],
+				},
+		},
+	}
 ];
