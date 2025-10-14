@@ -93,6 +93,19 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Enable Microdata Validation?',
+		name: 'validate_micromarkup',
+		type: 'boolean',
+		default: false,
+		displayOptions: {
+				show: {
+						operation: [
+							'get-page-audit-check'
+						],
+				},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFieldsPageAudit',
 		type: 'collection',
@@ -273,19 +286,6 @@ export const OnPageOperations: INodeProperties[] = [
 				default: null,
 			},
 		],
-	},
-	{
-		displayName: 'Enable Microdata Validation?',
-		name: 'validate_micromarkup',
-		type: 'boolean',
-		default: false,
-		displayOptions: {
-				show: {
-						operation: [
-							'get-page-audit-check'
-						],
-				},
-		},
 	},
 	{
 		displayName: 'Additional Fields',
