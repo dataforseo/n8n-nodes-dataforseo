@@ -37,6 +37,10 @@
     "name": "DataForSEO",
     "email": "info@dataforseo.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dataforseo/n8n-nodes-dataforseo"
+  },
   "engines": {
     "node": ">=18.10",
     "pnpm": ">=9.1"
