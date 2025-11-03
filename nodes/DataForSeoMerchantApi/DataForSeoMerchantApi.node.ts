@@ -8,7 +8,7 @@ import {
 } from 'n8n-workflow';
 import { GoogleShoppingOperations } from './resources/google_shopping';
 import { getAmazonProductAsinsAdvnced, getAmazonProductAsinsHtml, getAmazonProductsAdvnced, getAmazonProductsHtml, getAmazonSellersAdvnced, getAmazonSellersHtml } from './execute/amazon';
-import { getProductInfo, getProductReviews, getProductsAdvnced, getProductsHTML, getProductSpecificationAdvnced, getProductSpecificationHtml, getSellersAdvnced, getSellersHtml } from './execute/google_shopping';
+import { getProductInfo, getProductReviews, getProductsAdvnced, getProductsHTML, getSellersAdvnced } from './execute/google_shopping';
 import { AmazonOperations } from './resources/amazon';
 
 export class DataForSeoMerchantApi implements INodeType {
@@ -74,9 +74,6 @@ export class DataForSeoMerchantApi implements INodeType {
 				'get-products-advanced': getProductsAdvnced,
 				'get-products-html': getProductsHTML,
 				'get-sellers-advanced': getSellersAdvnced,
-				'get-sellers-html': getSellersHtml,
-				'get-product-specification-advanced': getProductSpecificationAdvnced,
-				'get-product-specification-html': getProductSpecificationHtml,
 				'get-product-info': getProductInfo,
 				'get-product-reviews': getProductReviews
 			},
@@ -89,6 +86,13 @@ export class DataForSeoMerchantApi implements INodeType {
 				'get-amazon-sellers-html': getAmazonSellersHtml
 			}
 		};
+
+		if (
+			resource == 'google_shopping'
+			&& (operation == 'get-sellers-html' || operation == 'get-product-specification-advanced' || operation == 'get-product-specification-html')
+		) {
+			throw new NodeOperationError(this.getNode(), "This function is no longer available");
+		}
 
 		const fn = mapping[resource][operation];
 		if (!fn) {

@@ -34,19 +34,19 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 				description: 'Get the list of sellers that listed the specified product on Google Shopping (advanced)',
 			},
 			{
-				name: 'Get Sellers HTML',
+				name: 'Get Sellers HTML (Deprecated)',
 				value: 'get-sellers-html',
 				action: 'Get sellers html',
 				description: 'Get the list of sellers that listed the specified product on Google Shopping (html)',
 			},
 			{
-				name: 'Get Product Specification Advanced',
+				name: 'Get Product Specification Advanced (Deprectaed)',
 				value: 'get-product-specification-advanced',
 				action: 'Get product specification advanced',
 				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (advanced)',
 			},
 			{
-				name: 'Get Product Specification HTML',
+				name: 'Get Product Specification HTML (Deprecated)',
 				value: 'get-product-specification-html',
 				action: 'Get product specification html',
 				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (html)',
@@ -96,8 +96,7 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 							'get-sellers-html',
 							'get-product-specification-advanced',
 							'get-product-specification-html',
-							'get-product-info',
-							'get-product-reviews'
+							'get-product-info'
 						],
 				},
 		},
@@ -115,7 +114,22 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 							'get-sellers-html',
 							'get-product-specification-advanced',
 							'get-product-specification-html',
+							'get-product-info'
+						],
+				},
+		},
+		default: '',
+	},
+	{
+		displayName: 'Global Product Identifier on Google Shopping',
+		name: 'gid',
+		type: 'string',
+		hint: 'required field if product_id or data_docid is not specified. You can get this value for a certain product by making a separate request to the <a href="https://docs.dataforseo.com/v3/merchant/google/products/task_post/">Google Shopping Products endpoint</a>.',
+		displayOptions: {
+				show: {
+						operation: [
 							'get-product-info',
+							'get-sellers-advanced',
 							'get-product-reviews'
 						],
 				},
