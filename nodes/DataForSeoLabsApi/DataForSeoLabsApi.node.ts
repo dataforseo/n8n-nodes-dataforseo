@@ -161,7 +161,11 @@ export class DataForSeoLabsApi implements INodeType {
 			const items = this.getInputData();
 
 			for (let i = 0; i < items.length; i++) {
-				responseData.push(await fn(this, i));
+				const result = await fn(this, i);
+				responseData.push({
+						json: result,
+						pairedItem: { item: i }
+				});
 			}
 		} catch (e) {
 			if (e instanceof NodeOperationError) {
