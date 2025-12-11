@@ -97,3 +97,33 @@ export function parseSpecifications(
 
 	return parsedFields;
 }
+
+export function parseLlmMentionsTarget(
+	target: IDataObject
+) {
+	let values = target.values as Array<any>;
+	let parsedTarget = [];
+	if (values && values.length) {
+		parsedTarget = values.reduce(function(result, item) {
+			if (item['domain']) {
+				result.push({
+					domain: item['domain'],
+					search_filter: item['search_filter'] ? item['search_filter'] : null,
+					search_scope: item['search_scope'].length ? item['search_scope'] : null,
+					include_subdomains: item['include_subdomains']
+				});
+			} else {
+				result.push({
+					keyword: item['keyword'] ? item['keyword'] : null,
+					search_filter: item['search_filter'] ? item['search_filter'] : null,
+					search_scope: item['search_scope'].length ? item['search_scope'] : null,
+					match_type: item['match_type'] ? item['match_type'] : null
+				});
+			}
+
+			return result;
+		}, []);
+	}
+
+	return parsedTarget;
+}

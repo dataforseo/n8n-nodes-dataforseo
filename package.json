@@ -75,7 +75,8 @@
       "dist/nodes/DataForSeoContentGenerationApi/DataForSeoContentGenerationApi.node.js",
       "dist/nodes/DataForSeoMerchantApi/DataForSeoMerchantApi.node.js",
       "dist/nodes/DataForSeoAppDataApi/DataForSeoAppDataApi.node.js",
-      "dist/nodes/DataForSeoBusinessDataApi/DataForSeoBusinessDataApi.node.js"
+      "dist/nodes/DataForSeoBusinessDataApi/DataForSeoBusinessDataApi.node.js",
+      "dist/nodes/DataForSeoAiOptimizationApi/DataForSeoAiOptimizationApi.node.js"
     ]
   },
   "devDependencies": {

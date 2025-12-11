@@ -413,6 +413,34 @@ After connecting the app, you can perform the following operations:
 + [Get Facebook Data](https://docs.dataforseo.com/v3/business_data/social_media/facebook/live/?bash)
 + [Get Reddit Data](https://docs.dataforseo.com/v3/business_data/social_media/reddit/live/?bash)
 
+## DataForSEO AI Optimization API
+
+### Keyword Data
++ [Get AI Keyword Search Volume](https://docs.dataforseo.com/v3/ai_optimization/ai_keyword_data/keywords_search_volume/live/)
+
+### ChatGPT
++ [Get Live ChatGPT LLM Responses](https://docs.dataforseo.com/v3/ai_optimization/chat_gpt/llm_responses/live/)
++ [Get Live ChatGPT LLM Scraper Results Advanced](https://docs.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/live/advanced/)
++ [Get Live ChatGPT LLM Scraper Results HTML](https://docs.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/live/html/)
++ [Get ChatGPT LLM Scraper Results Advanced](https://docs.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/task_get/advanced/)
++ [Get ChatGPT LLM Scraper Results HTML](https://docs.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/task_get/html/)
+
+### Claude
++ [Get Live Claude LLM Responses](https://docs.dataforseo.com/v3/ai_optimization/claude/llm_responses/live/)
+
+### Gemini
++ [Get Live Gemini LLM Responses](https://docs.dataforseo.com/v3/ai_optimization/gemini/llm_responses/live/)
+
+### Perplexity
++ [Get Live Perplexity LLM Responses](https://docs.dataforseo.com/v3/ai_optimization/perplexity/llm_responses/live/)
+
+### LLM Mentions
++ [Get Live LLM Mentions](https://docs.dataforseo.com/v3/ai_optimization/llm_mentions/search/live/)
++ [Get Live LLM Mentions Top Pages](https://docs.dataforseo.com/v3/ai_optimization/llm_mentions/top_pages/live/)
++ [Get Live LLM Mentions Top Domains](https://docs.dataforseo.com/v3/ai_optimization/llm_mentions/top_domains/live/)
++ [Get Live LLM Mentions Aggregated Metrics](https://docs.dataforseo.com/v3/ai_optimization/llm_mentions/aggregated_metrics/live/)
++ [Get Live LLM Mentions Cross Aggregated Metrics](https://docs.dataforseo.com/v3/ai_optimization/llm_mentions/cross_aggregated_metrics/live/)
+
 Example DataForSEO Workflow Configurations
 --------------------------
 
