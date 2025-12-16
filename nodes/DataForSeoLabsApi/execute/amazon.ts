@@ -8,8 +8,15 @@ import { parseFilters, parseMultiOptionItems, parseOrderByString} from '../../..
 import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getBulkSearchVolume(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/amazon/bulk_search_volume/live',

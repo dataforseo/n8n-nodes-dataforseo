@@ -104,6 +104,37 @@ export const BingAdsOperations: INodeProperties[] = [
 	},
 
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-bing-search-volume-history',
+					'get-bing-search-volume-history',
+					'get-live-bing-search-volume',
+					'get-bing-search-volume',
+					'get-live-bing-keywords-for-keywords',
+					'get-bing-keywords-for-keywords',
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Keywords',
 		name: 'keywords',
 		placeholder: 'Add keyword',
@@ -138,6 +169,28 @@ export const BingAdsOperations: INodeProperties[] = [
 					'get-live-bing-search-volume',
 					'get-bing-search-volume'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>1000</b>',
+		hint: 'The maximum number of characters for each keyword: <b>100</b>.The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-bing-search-volume-history',
+					'get-bing-search-volume-history',
+					'get-live-bing-search-volume',
+					'get-bing-search-volume'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -174,6 +227,26 @@ export const BingAdsOperations: INodeProperties[] = [
 					'get-live-bing-keywords-for-keywords',
 					'get-bing-keywords-for-keywords'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+		{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_for_keywords_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>200</b>',
+		hint: 'The maximum number of characters for each keyword: <b>100</b>.The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-bing-keywords-for-keywords',
+					'get-bing-keywords-for-keywords'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -210,6 +283,26 @@ export const BingAdsOperations: INodeProperties[] = [
 					'get-live-bing-keyword-performance',
 					'get-bing-keyword-performance'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_performance_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>1000</b>',
+		hint: 'The maximum number of characters for each keyword: <b>80</b>. The maximum number of words for each keyword phrase: 10. The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-bing-keyword-performance',
+					'get-bing-keyword-performance'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

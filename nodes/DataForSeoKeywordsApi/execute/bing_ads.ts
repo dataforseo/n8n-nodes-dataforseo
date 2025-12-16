@@ -7,8 +7,15 @@ import { parseMultiOptionItems} from '../../../functions/generalFunctions';
 import { dataForSeoPOSTGETRequest, dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getLiveBingSearchVolume(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/search_volume/live',
@@ -29,8 +36,15 @@ export async function getLiveBingSearchVolume(ef: IExecuteFunctions, i: number) 
 }
 
 export async function getBingSearchVolume(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/search_volume/task_post',
@@ -51,8 +65,15 @@ export async function getBingSearchVolume(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getLiveBingSearchVolumeHistory(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const devices = ef.getNodeParameter('device_sv', i) as IDataObject;
 	const parsedDevices = parseMultiOptionItems(devices);
@@ -75,8 +96,15 @@ export async function getLiveBingSearchVolumeHistory(ef: IExecuteFunctions, i: n
 }
 
 export async function getBingSearchVolumeHistory(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const devices = ef.getNodeParameter('device_sv', i) as IDataObject;
 	const parsedDevices = parseMultiOptionItems(devices);
@@ -148,8 +176,15 @@ export async function getLiveBingKeywordsForKeywords(ef: IExecuteFunctions, i: n
 	const keywordsNegaive = ef.getNodeParameter('keywords_negative', i) as IDataObject;
 	const parsedKeywordsNegative = parseMultiOptionItems(keywordsNegaive);
 
-	const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/keywords_for_keywords/live',
@@ -174,8 +209,15 @@ export async function getBingKeywordsForKeywords(ef: IExecuteFunctions, i: numbe
 	const keywordsNegaive = ef.getNodeParameter('keywords_negative', i) as IDataObject;
 	const parsedKeywordsNegative = parseMultiOptionItems(keywordsNegaive);
 
-	const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/keywords_for_keywords/task_post',
@@ -197,8 +239,15 @@ export async function getBingKeywordsForKeywords(ef: IExecuteFunctions, i: numbe
 }
 
 export async function getLiveBingKeywordperformance(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/keyword_performance/live',
@@ -216,8 +265,15 @@ export async function getLiveBingKeywordperformance(ef: IExecuteFunctions, i: nu
 }
 
 export async function getBingKeywordperformance(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/bing/keyword_performance/task_post',

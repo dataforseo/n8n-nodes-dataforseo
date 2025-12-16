@@ -176,6 +176,36 @@ export const BacklinksOperations: INodeProperties[] = [
 		default: '',
 	},
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-bulk-ranks',
+					'get-bulk-backlinks',
+					'get-bulk-spam-scores',
+					'get-bulk-referring-domains',
+					'get-bulk-new-and-lost-backlinks',
+					'get-bulk-new-and-lost-referring-domains',
+					'get-bulk-pages-summary'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Target Domains, Subdomains or Webpages',
 		name: 'targets_1000',
 		placeholder: 'Add target',
@@ -213,6 +243,31 @@ export const BacklinksOperations: INodeProperties[] = [
 					'get-bulk-new-and-lost-referring-domains',
 					'get-bulk-pages-summary'
 				],
+				input_mode: ['manual']
+			},
+		},
+	},
+	{
+		displayName: 'Target Domains, Subdomains or Webpages JSON Array',
+		name: 'targets_1000_json',
+		type: 'json',
+		required: true,
+		default: '',
+		description: 'You can specify up to 1000 pages, domains, or subdomains in each request',
+		hint: 'A domain or a subdomain should be specified without <b>https://</b> and <b>www.</b>. A page should be specified with absolute URL (including <b>http://</b> or <b>https://</b>).',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-bulk-ranks',
+					'get-bulk-backlinks',
+					'get-bulk-spam-scores',
+					'get-bulk-referring-domains',
+					'get-bulk-new-and-lost-backlinks',
+					'get-bulk-new-and-lost-referring-domains',
+					'get-bulk-pages-summary'
+				],
+				input_mode: ['json']
 			},
 		},
 	},
@@ -248,7 +303,7 @@ export const BacklinksOperations: INodeProperties[] = [
 				operation: [
 					'get-domain-intersection',
 					'get-page-intersection',
-				],
+				]
 			},
 		},
 	},

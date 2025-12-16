@@ -57,6 +57,30 @@ export const AmazonOperations: INodeProperties[] = [
 
 	// Parameters
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-bulk-search-volume'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Target Keywords',
 		name: 'keywords',
 		placeholder: 'Add keyword',
@@ -88,6 +112,25 @@ export const AmazonOperations: INodeProperties[] = [
 				operation: [
 					'get-bulk-search-volume'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Target Keywords JSON Array',
+		name: 'keywords_json',
+		type: 'json',
+		required: true,
+		description: 'UTF-8 encoding. Maximum number of keywords you can specify in this array: 1000.',
+		hint: 'Each keyword should be at least 3 characters long. The keywords will be converted to lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-bulk-search-volume'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

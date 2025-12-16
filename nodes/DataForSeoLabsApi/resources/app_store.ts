@@ -45,6 +45,30 @@ export const AppStoreOperations: INodeProperties[] = [
 
 	// Parameters
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-app-store-bulk-app-metrics'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'IDs of the App',
 		name: 'app_ids',
 		placeholder: 'Add app',
@@ -76,6 +100,25 @@ export const AppStoreOperations: INodeProperties[] = [
 				operation: [
 					'get-app-store-bulk-app-metrics'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+		{
+		displayName: 'IDs of the App JSON Array',
+		name: 'app_ids_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of IDs you can specify in this field is 1000',
+		hint: 'You can find the ID in the URL of every app listed on App Store.',
+		validateType: 'array',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-app-store-bulk-app-metrics'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

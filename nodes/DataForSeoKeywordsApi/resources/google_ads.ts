@@ -69,6 +69,35 @@ export const GoogleAdsOperations: INodeProperties[] = [
 
 	// Parameters
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-google-search-volume',
+					'get-google-search-volume',
+					'get-live-google-ad-traffic-by-keywords',
+					'get-google-ad-traffic-by-keywords',
+					'get-live-google-keywords-for-keywords',
+					'get-google-keywords-for-keywords'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Keywords',
 		name: 'keywords',
 		placeholder: 'Add keyword',
@@ -103,6 +132,28 @@ export const GoogleAdsOperations: INodeProperties[] = [
 					'get-live-google-ad-traffic-by-keywords',
 					'get-google-ad-traffic-by-keywords'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+		{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>1000</b>',
+		hint: 'The maximum number of characters for each keyword: <b>80</b>. The maximum number of words for each keyword phrase: <b>10</b>. The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-google-search-volume',
+					'get-google-search-volume',
+					'get-live-google-ad-traffic-by-keywords',
+					'get-google-ad-traffic-by-keywords'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -227,6 +278,26 @@ export const GoogleAdsOperations: INodeProperties[] = [
 					'get-live-google-keywords-for-keywords',
 					'get-google-keywords-for-keywords'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+		{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_for_keywords_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>20</b>',
+		hint: 'The maximum number of characters for each keyword: <b>80</b>. The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-google-keywords-for-keywords',
+					'get-google-keywords-for-keywords'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

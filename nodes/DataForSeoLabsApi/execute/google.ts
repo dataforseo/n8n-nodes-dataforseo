@@ -128,8 +128,15 @@ export async function getKeywordIdeas(ef: IExecuteFunctions, i: number) {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
-	const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+		const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_200_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/keyword_ideas/live',
@@ -152,8 +159,15 @@ export async function getKeywordIdeas(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getKeywordDifficulty(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/bulk_keyword_difficulty/live',
@@ -168,8 +182,15 @@ export async function getKeywordDifficulty(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getSearchIntent(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/search_intent/live',
@@ -183,8 +204,15 @@ export async function getSearchIntent(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getKeywordOverview(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_700_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/keyword_overview/live',
@@ -201,8 +229,15 @@ export async function getKeywordOverview(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getHistoricalKeywordData(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_700_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/historical_keyword_data/live',
@@ -253,8 +288,15 @@ export async function getCategoriesForDomain(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getCategoriesForKeywords(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/google/categories_for_keywords/live',
@@ -383,8 +425,15 @@ export async function getTopSearches(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getSerpCompetitors(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_200_json', i);
+	}
 
 	const orderBy = ef.getNodeParameter('order_by', i) as IDataObject;
 	const parsedOrderBy = parseOrderByString(orderBy);
@@ -723,8 +772,15 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getBulkTrafficEstimation(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets', i) as IDataObject;
+	  parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_json', i);
+	}
 
 	const itemTypes = ef.getNodeParameter('item_types', i) as Array<string>;
 
@@ -743,8 +799,15 @@ export async function getBulkTrafficEstimation(ef: IExecuteFunctions, i: number)
 }
 
 export async function getHistoricalBulkTrafficEstimation(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets', i) as IDataObject;
+	  parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_json', i);
+	}
 
 	const itemTypes = ef.getNodeParameter('item_types', i) as Array<string>;
 

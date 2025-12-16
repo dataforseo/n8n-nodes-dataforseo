@@ -171,6 +171,38 @@ export const GoogleOperations: INodeProperties[] = [
 
 	// Parameters
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-keyword-ideas',
+					'get-serp-competitors',
+					'get-keyword-difficulty',
+					'get-search-intent',
+					'get-categories-for-keywords',
+					'get-keyword-overview',
+					'get-historical-keyword-data',
+					'get-bulk-traffic-estimation',
+					'get-historical-bulk-traffic-estimation'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Target Domains, Subdomains and Webpages',
 		name: 'targets',
 		placeholder: 'Add target',
@@ -203,6 +235,26 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-bulk-traffic-estimation',
 					'get-historical-bulk-traffic-estimation'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Target Domains, Subdomains and Webpages JSON Array',
+		name: 'targets_json',
+		type: 'json',
+		required: true,
+		description: 'You can set up to 1000 domains, subdomains or webpages',
+		hint: 'Domains and subdomains should be specified without <b>https://</b> and <b>www.</b>. Pages should be specified with absolute URL, including <b>https://</b> and <b>www.</b>.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-bulk-traffic-estimation',
+					'get-historical-bulk-traffic-estimation'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -391,6 +443,26 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-keyword-ideas',
 					'get-serp-competitors'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_200_json',
+		type: 'json',
+		required: true,
+		description: 'UTF-8 encoding. Maximum number of keywords you can specify in this array: 200.',
+		hint: 'Each keyword should be at least 3 characters long. The keywords will be converted to lowercase format.',
+		validateType: 'array',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-keyword-ideas',
+					'get-serp-competitors'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -428,6 +500,27 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-search-intent',
 					'get-categories-for-keywords'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_1000_json',
+		type: 'json',
+		required: true,
+		description: 'UTF-8 encoding. Maximum number of keywords you can specify in this array: 1000.',
+		hint: 'Each keyword should be at least 3 characters long. The keywords will be converted to lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-keyword-difficulty',
+					'get-search-intent',
+					'get-categories-for-keywords'
+				],
+				input_mode: ['json']
 			}
 		},
 	},
@@ -464,6 +557,26 @@ export const GoogleOperations: INodeProperties[] = [
 					'get-keyword-overview',
 					'get-historical-keyword-data'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_700_json',
+		type: 'json',
+		required: true,
+		description: 'UTF-8 encoding. Maximum number of keywords you can specify in this array: 700.',
+		hint: 'Each keyword should be at least 3 characters long. The keywords will be converted to lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-keyword-overview',
+					'get-historical-keyword-data'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

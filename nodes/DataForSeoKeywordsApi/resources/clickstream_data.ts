@@ -38,6 +38,32 @@ export const ClickstreamDataOperations: INodeProperties[] = [
 	},
 
 	{
+		displayName: 'Input Mode',
+		name: 'input_mode',
+		type: 'options',
+		options: [
+			{
+				name: 'Manual',
+				value: 'manual'
+			},
+			{
+				name: "JSON",
+				value: "json"
+			}
+		],
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-dataforseo-search-volume',
+					'get-live-clickstream-global-search-volume',
+					'get-live-bulk-clickstream-search-volume'
+				]
+			},
+		},
+		required: true,
+		default: 'manual',
+	},
+	{
 		displayName: 'Keywords',
 		name: 'keywords',
 		placeholder: 'Add keyword',
@@ -71,6 +97,27 @@ export const ClickstreamDataOperations: INodeProperties[] = [
 					'get-live-clickstream-global-search-volume',
 					'get-live-bulk-clickstream-search-volume'
 				],
+				input_mode: ['manual']
+			}
+		},
+	},
+	{
+		displayName: 'Keywords JSON Array',
+		name: 'keywords_json',
+		type: 'json',
+		required: true,
+		description: 'The maximum number of keywords you can specify: <b>1000</b>',
+		hint: 'The keywords you specify will be converted to a lowercase format.',
+		default: '',
+		validateType: 'array',
+		displayOptions: {
+			show: {
+				operation: [
+					'get-live-dataforseo-search-volume',
+					'get-live-clickstream-global-search-volume',
+					'get-live-bulk-clickstream-search-volume'
+				],
+				input_mode: ['json']
 			}
 		},
 	},

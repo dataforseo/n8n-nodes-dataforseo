@@ -7,8 +7,15 @@ import { parseMultiOptionItems} from '../../../functions/generalFunctions';
 import { dataForSeoPOSTGETRequest, dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getLiveGoogleSearchVolume(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/search_volume/live',
@@ -29,8 +36,15 @@ export async function getLiveGoogleSearchVolume(ef: IExecuteFunctions, i: number
 }
 
 export async function getGoogleSearchVolume(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/search_volume/live',
@@ -92,8 +106,15 @@ export async function getGoogleKeywordsForSite(ef: IExecuteFunctions, i: number)
 }
 
 export async function getLiveGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/keywords_for_keywords/live',
@@ -114,8 +135,15 @@ export async function getLiveGoogleKeywordsForKeywords(ef: IExecuteFunctions, i:
 }
 
 export async function getGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/keywords_for_keywords/task_post',
@@ -136,8 +164,15 @@ export async function getGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: num
 }
 
 export async function getLiveGoogleTrafficByKeywords(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/ad_traffic_by_keywords/live',
@@ -160,8 +195,15 @@ export async function getLiveGoogleTrafficByKeywords(ef: IExecuteFunctions, i: n
 }
 
 export async function getGoogleTrafficByKeywords(ef: IExecuteFunctions, i: number) {
-	const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
-	const parsedKeywords = parseMultiOptionItems(keywords);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords;
+
+	if (input_mode == 'manual') {
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+	  parsedKeywords = parseMultiOptionItems(keywords);
+	} else {
+		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/keywords_data/google_ads/ad_traffic_by_keywords/task_post',

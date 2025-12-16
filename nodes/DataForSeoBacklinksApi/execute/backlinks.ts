@@ -492,8 +492,15 @@ export async function getNewAndLostBacklinksTimeseriesSummary(ef: IExecuteFuncti
 }
 
 export async function getBulkRanks(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_ranks/live',
@@ -507,8 +514,15 @@ export async function getBulkRanks(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getBulkBacklinks(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_backlinks/live',
@@ -521,8 +535,15 @@ export async function getBulkBacklinks(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getBulkSpamScores(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_spam_score/live',
@@ -535,8 +556,15 @@ export async function getBulkSpamScores(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getBulkReferringDomains(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_referring_domains/live',
@@ -549,8 +577,15 @@ export async function getBulkReferringDomains(ef: IExecuteFunctions, i: number) 
 }
 
 export async function getBulkNewAndLostBacklinks(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_new_lost_backlinks/live',
@@ -564,8 +599,15 @@ export async function getBulkNewAndLostBacklinks(ef: IExecuteFunctions, i: numbe
 }
 
 export async function getBulkNewAndLostReferringDomains(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_new_lost_referring_domains/live',
@@ -579,8 +621,15 @@ export async function getBulkNewAndLostReferringDomains(ef: IExecuteFunctions, i
 }
 
 export async function getBulkPagesSummary(ef: IExecuteFunctions, i: number) {
-	const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
-	const parsedTargets = parseMultiOptionItems(targets);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedTargets;
+
+	if (input_mode == 'manual') {
+		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
+		parsedTargets = parseMultiOptionItems(targets);
+	} else {
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/backlinks/bulk_pages_summary/live',

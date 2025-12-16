@@ -8,8 +8,15 @@ import { parseFilters, parseMultiOptionItems, parseOrderByString} from '../../..
 import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getAppStoreBulkAppMetrics(ef: IExecuteFunctions, i: number) {
-	const ids = ef.getNodeParameter('app_ids', i) as IDataObject;
-	const parsedIds = parseMultiOptionItems(ids);
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedIds;
+
+	if (input_mode == 'manual') {
+		const ids = ef.getNodeParameter('app_ids', i) as IDataObject;
+	  parsedIds = parseMultiOptionItems(ids);
+	} else {
+		parsedIds = ef.getNodeParameter('app_ids_json', i);
+	}
 
 	const params: IHttpRequestOptions = {
 		url: '/dataforseo_labs/apple/bulk_app_metrics/live',
