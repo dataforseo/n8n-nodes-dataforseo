@@ -11,43 +11,43 @@ export const ContentGenerationOperations: INodeProperties[] = [
 		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Generate Text From Initial Input',
+				name: 'Generate Text From Initial Input (Deprecated)',
 				value: 'generate-text-from-initial-input',
 				action: 'Get generated text from input',
 				description: 'Get a text generated based on the part of the text you define and other available parameters',
 			},
 			{
-				name: 'Generate Text By Topic',
+				name: 'Generate Text By Topic(Deprecated)',
 				value: 'generate-text-by-topic',
 				action: 'Generate text by topic',
 				description: 'Get a text generated based on the topic and other parameters you specify',
 			},
 			{
-				name: 'Generate Meta Tags',
+				name: 'Generate Meta Tags (Deprecated)',
 				value: 'generate-meta-tags',
 				action: 'Generate meta tags',
 				description: 'Get title and description meta tags for a text specified in the request',
 			},
 			{
-				name: 'Generate Sub Topics',
+				name: 'Generate Sub Topics (Deprecated)',
 				value: 'generate-sub-topics',
 				action: 'Generate sub topics',
 				description: 'Get 10 subtopics generated based on the topic and other parameters you specify',
 			},
 			{
-				name: 'Paraphrase Text',
+				name: 'Paraphrase Text (Deprecated)',
 				value: 'paraphrase-text',
 				action: 'Paraphrase text',
 				description: 'Get a paraphrased version of the text you specify',
 			},
 			{
-				name: 'Check Grammar',
+				name: 'Check Grammar (Deprecated)',
 				value: 'check-grammar',
 				action: 'Check grammar',
 				description: 'Get grammar and spelling corrections for the text you specify',
 			},
 			{
-				name: 'Get Text Summary',
+				name: 'Get Text Summary (Deprecated)',
 				value: 'get-text-summary',
 				action: 'Get text summary',
 				description: 'Get statistical data based on the given text, such as the number of words and sentences, vocabulary density, and text readability',
