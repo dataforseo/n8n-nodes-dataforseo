@@ -12,7 +12,7 @@ import { geChatGptLlmResultsAdvanced, geChatGptLlmResultsHTML, getLiveChatGptLlm
 import { ChatGptOperations } from './resources/chat_gpt';
 import { ClaudeOperations } from './resources/claude';
 import { getLiveClaudeLlmResponses } from './execute/claude';
-import { getLiveGeminiLlmResponses } from './execute/gemini';
+import { getLiveGeminiLlmResponses, getGeminiLlmScraperResultsAdvanced, getGeminiLlmScraperResultsHTML, getLiveGeminiLlmScraperResultsAdvanced, getLiveGeminiLlmScraperResultsHTML } from './execute/gemini';
 import { GeminiOperations } from './resources/gemini';
 import { getLivePerplexityLlmResponses } from './execute/perplexity';
 import { LlmMentionsOperations } from './resources/llm_mentions';
@@ -112,7 +112,11 @@ export class DataForSeoAiOptimizationApi implements INodeType {
 				'get-live-claude-llm-responses': getLiveClaudeLlmResponses,
 			},
 			'gemini': {
-				'get-live-gemini-llm-responses': getLiveGeminiLlmResponses
+				'get-live-gemini-llm-responses': getLiveGeminiLlmResponses,
+				'get-live-gemini-llm-scraper-results-advanced': getLiveGeminiLlmScraperResultsAdvanced,
+				'get-live-gemini-llm-scraper-results-html': getLiveGeminiLlmScraperResultsHTML,
+				'get-gemini-llm-scraper-results-advanced': getGeminiLlmScraperResultsAdvanced,
+				'get-gemini-llm-scraper-results-html': getGeminiLlmScraperResultsHTML
 			},
 			'perplexity': {
 				'get-live-perplexity-llm-responses': getLivePerplexityLlmResponses

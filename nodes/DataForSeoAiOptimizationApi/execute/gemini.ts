@@ -4,7 +4,7 @@ import {
 	IHttpRequestOptions
 } from 'n8n-workflow';
 
-import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
+import { dataForSeoRequest, dataForSeoPOSTGETRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getLiveGeminiLlmResponses(ef: IExecuteFunctions, i: number) {
 	let messages = ef.getNodeParameter('message_chain', i) as IDataObject;
@@ -23,4 +23,64 @@ export async function getLiveGeminiLlmResponses(ef: IExecuteFunctions, i: number
 	};
 
 	return dataForSeoRequest(ef, params);
+}
+
+export async function getLiveGeminiLlmScraperResultsAdvanced(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/ai_optimization/gemini/llm_scraper/live/advanced',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			location_name	: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
+		}]
+	};
+
+	return dataForSeoRequest(ef, params);
+}
+
+export async function getLiveGeminiLlmScraperResultsHTML(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/ai_optimization/gemini/llm_scraper/live/html',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			location_name	: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			expand_citations: ef.getNodeParameter('expand_citations', i)
+		}]
+	};
+
+	return dataForSeoRequest(ef, params);
+}
+
+export async function getGeminiLlmScraperResultsAdvanced(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/ai_optimization/gemini/llm_scraper/task_post',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			priority: ef.getNodeParameter('priority', i) || null,
+			location_name	: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
+		}]
+	};
+
+	return dataForSeoPOSTGETRequest(ef, params, '/ai_optimization/gemini/llm_scraper/task_get/advanced/');
+}
+
+export async function getGeminiLlmScraperResultsHTML(ef: IExecuteFunctions, i: number) {
+	const params: IHttpRequestOptions = {
+		url: '/ai_optimization/gemini/llm_scraper/task_post',
+		body: [{
+			keyword: ef.getNodeParameter('keyword', i),
+			priority: ef.getNodeParameter('priority', i) || null,
+			location_name	: ef.getNodeParameter('location_name', i),
+			language_name: ef.getNodeParameter('language_name', i),
+			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
+			expand_citations: ef.getNodeParameter('expand_citations', i)
+		}]
+	};
+
+	return dataForSeoPOSTGETRequest(ef, params, '/ai_optimization/gemini/llm_scraper/task_get/html/');
 }
