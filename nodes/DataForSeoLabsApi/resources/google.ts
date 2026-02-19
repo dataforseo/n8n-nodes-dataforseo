@@ -1113,7 +1113,6 @@ export const GoogleOperations: INodeProperties[] = [
 						'get-categories-for-domain',
 						'get-domain-metrics-by-categories',
 						'get-serp-competitors',
-						'get-ranked-keywords',
 						'get-competitors-domain',
 						'get-domain-intersection',
 						'get-subdomains',
@@ -1121,6 +1120,44 @@ export const GoogleOperations: INodeProperties[] = [
 						'get-page-intersection',
 						'get-bulk-traffic-estimation',
 						'get-historical-bulk-traffic-estimation'
+					],
+			},
+		},
+		default: [],
+	},
+	{
+		displayName: 'Item Types',
+		name: 'item_types',
+		type: 'multiOptions',
+		placeholder: 'Add Item Type',
+		hint: 'Indicates the type of search results included in the response',
+		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
+		options: [
+			{
+				name: 'Organic',
+				value: 'organic'
+			},
+			{
+				name: 'Paid',
+				value: 'paid'
+			},
+			{
+				name: 'Featured Snippet',
+				value: 'featured_snippet'
+			},
+			{
+				name: 'Local Pack',
+				value: 'local_pack'
+			},
+			{
+				name: 'AI Overview Reference',
+				value: 'ai_overview_reference'
+			},
+		],
+		displayOptions: {
+			show: {
+					operation: [
+						'get-ranked-keywords'
 					],
 			},
 		},
