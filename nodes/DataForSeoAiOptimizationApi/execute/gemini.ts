@@ -31,8 +31,7 @@ export async function getLiveGeminiLlmScraperResultsAdvanced(ef: IExecuteFunctio
 		body: [{
 			keyword: ef.getNodeParameter('keyword', i),
 			location_name	: ef.getNodeParameter('location_name', i),
-			language_name: ef.getNodeParameter('language_name', i),
-			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
+			language_name: ef.getNodeParameter('language_name', i)
 		}]
 	};
 
@@ -46,7 +45,6 @@ export async function getLiveGeminiLlmScraperResultsHTML(ef: IExecuteFunctions, 
 			keyword: ef.getNodeParameter('keyword', i),
 			location_name	: ef.getNodeParameter('location_name', i),
 			language_name: ef.getNodeParameter('language_name', i),
-			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
 			expand_citations: ef.getNodeParameter('expand_citations', i)
 		}]
 	};
@@ -61,8 +59,7 @@ export async function getGeminiLlmScraperResultsAdvanced(ef: IExecuteFunctions, 
 			keyword: ef.getNodeParameter('keyword', i),
 			priority: ef.getNodeParameter('priority', i) || null,
 			location_name	: ef.getNodeParameter('location_name', i),
-			language_name: ef.getNodeParameter('language_name', i),
-			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null
+			language_name: ef.getNodeParameter('language_name', i)
 		}]
 	};
 
@@ -77,7 +74,6 @@ export async function getGeminiLlmScraperResultsHTML(ef: IExecuteFunctions, i: n
 			priority: ef.getNodeParameter('priority', i) || null,
 			location_name	: ef.getNodeParameter('location_name', i),
 			language_name: ef.getNodeParameter('language_name', i),
-			location_coordinate: ef.getNodeParameter('location_coordinate', i) || null,
 			expand_citations: ef.getNodeParameter('expand_citations', i)
 		}]
 	};

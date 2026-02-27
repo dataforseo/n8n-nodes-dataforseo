@@ -25,13 +25,13 @@ export const GeminiOperations: INodeProperties[] = [
 				name: 'Get Live Gemini LLM Scraper Results Advanced',
 				value: 'get-live-gemini-llm-scraper-results-advanced',
 				action: 'Get live gemini llm scraper results advanced',
-				description: 'Provides live advanced results from Gemini searches',
+				description: 'Instantly provides advanced results from Gemini searches',
 			},
 			{
 				name: 'Get Live Gemini LLM Scraper Results HTML',
 				value: 'get-live-gemini-llm-scraper-results-html',
 				action: 'Get live gemini llm scraper results html',
-				description: 'Provides raw HTML page of the Gemini LLM Scraper results for the specified keyword, language, and location',
+				description: 'Instantly retrieves a raw HTML page of Gemini results for a specified keyword, language, and location',
 			},
 			{
 				name: 'Get Gemini LLM Scraper Results Advanced',
@@ -43,7 +43,7 @@ export const GeminiOperations: INodeProperties[] = [
 				name: 'Get Gemini LLM Scraper Results HTML',
 				value: 'get-gemini-llm-scraper-results-html',
 				action: 'Get gemini llm scraper results html',
-				description: 'Provides advanced results from Gemini searches',
+				description: 'Provides a raw HTML page of Gemini results for a specified keyword, language, and location',
 			}
 		],
 		default: 'get-live-gemini-llm-responses',
@@ -255,7 +255,7 @@ export const GeminiOperations: INodeProperties[] = [
 		name: 'location_name',
 		type: 'string',
 		required: true,
-		hint: 'Full name of the location. Example: English. You can find the supported locations in the <a href="https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locations">DataForSEO documentation</a>',
+		hint: 'Full name of the location. Example: English. You can find the supported locations in the <a href="https://docs.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locations/">DataForSEO documentation</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -273,24 +273,7 @@ export const GeminiOperations: INodeProperties[] = [
 		name: 'language_name',
 		type: 'string',
 		required: true,
-		hint: 'Full name of the language. Example: English. You can find the supported languages in the <a href="https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages">DataForSEO documentation</a>',
-		default: '',
-		displayOptions: {
-			show: {
-				operation: [
-					'get-gemini-llm-scraper-results-advanced',
-					'get-gemini-llm-scraper-results-html',
-					'get-live-gemini-llm-scraper-results-advanced',
-					'get-live-gemini-llm-scraper-results-html'
-				],
-			},
-		}
-	},
-	{
-		displayName: 'GPS Coordinates of a Location',
-		name: 'location_coordinate',
-		type: 'string',
-		hint: 'Parameter should be specified in the “latitude,longitude” format. Example: 52.6178549,-155.352142',
+		hint: 'Full name of the language. Example: English. You can find the supported languages in the <a href="https://docs.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages/">DataForSEO documentation</a>',
 		default: '',
 		displayOptions: {
 			show: {
