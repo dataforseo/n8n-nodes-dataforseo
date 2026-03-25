@@ -1,7 +1,7 @@
 import {
 	INodeType,
 	INodeTypeDescription,
-	NodeConnectionType,
+	NodeConnectionTypes,
 	IExecuteFunctions,
 	INodeExecutionData,
 	NodeOperationError,
@@ -30,10 +30,10 @@ export class DataForSeoKeywordsApi implements INodeType {
 				name: 'DataForSeo Keywords Data API',
 		},
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-inputs-wrong-regular-node
-		inputs: [NodeConnectionType.Main],
+		inputs: [NodeConnectionTypes.Main],
 
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-outputs-wrong
-		outputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 				{
 						name: 'dataForSeoApi',
