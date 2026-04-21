@@ -1,7 +1,7 @@
 import {
 	INodeType,
 	INodeTypeDescription,
-	NodeConnectionTypes,
+
 	IExecuteFunctions,
 	INodeExecutionData,
 	NodeOperationError,
@@ -22,11 +22,8 @@ export class DataForSeoOnPageApi implements INodeType {
 		defaults: {
 				name: 'DataForSeo OnPage API',
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-inputs-wrong-regular-node
-		inputs: [NodeConnectionTypes.Main],
-
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-outputs-wrong
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ["main"],
+		outputs: ["main"],
 		credentials: [
 				{
 						name: 'dataForSeoApi',
