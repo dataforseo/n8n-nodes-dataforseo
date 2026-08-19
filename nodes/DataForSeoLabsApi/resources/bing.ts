@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -688,7 +687,6 @@ export const BingOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		typeOptions: {
-			// eslint-disable-next-line n8n-nodes-base/node-param-type-options-max-value-present
 			maxValue: 1000,
 			minValue: 1,
 			numberPrecision: 0,

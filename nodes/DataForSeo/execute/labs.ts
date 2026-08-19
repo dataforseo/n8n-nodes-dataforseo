@@ -33,7 +33,7 @@ export async function getKeywordSuggestions(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -60,7 +60,7 @@ export async function getRankedKeywords(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -152,7 +152,7 @@ export async function getKeywordIdeas(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 

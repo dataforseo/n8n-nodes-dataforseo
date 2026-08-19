@@ -13,7 +13,6 @@ export const NaverOperations: INodeProperties[] = [
 						resource: ['naver'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Get Naver Organic SERP Regular',

@@ -13,7 +13,6 @@ export const ClickstreamDataOperations: INodeProperties[] = [
 						resource: ['clickstream_data'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Get Live DataForSEO Search Volume',

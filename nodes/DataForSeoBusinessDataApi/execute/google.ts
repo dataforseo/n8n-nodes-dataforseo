@@ -58,7 +58,7 @@ export async function getGoogleHotelSearchesLive(ef: IExecuteFunctions, i: numbe
 	const stars = ef.getNodeParameter('stars', i) as IDataObject;
 	const parsedStars = parseMultiOptionItems(stars);
 
-	const amenities = ef.getNodeParameter('amenities', i) as Array<String>;
+	const amenities = ef.getNodeParameter('amenities', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/business_data/google/hotel_searches/live',
@@ -94,7 +94,7 @@ export async function getGoogleHotelSearches(ef: IExecuteFunctions, i: number) {
 	const stars = ef.getNodeParameter('stars', i) as IDataObject;
 	const parsedStars = parseMultiOptionItems(stars);
 
-	const amenities = ef.getNodeParameter('amenities', i) as Array<String>;
+	const amenities = ef.getNodeParameter('amenities', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/business_data/google/hotel_searches/task_post',

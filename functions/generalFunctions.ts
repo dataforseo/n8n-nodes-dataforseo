@@ -14,23 +14,23 @@ export function parseFilters(
 export function parseMultiOptionItems(
 	items:IDataObject
 ) {
-	let values = items.values as Array<any>;
-	let parsedItems = [];
+	const values = (items.values as Array<{ value: string }>) ?? [];
 	if (values && values.length) {
-		parsedItems = values.reduce(function(result, item) {
-			result.push(item['value']);
-			return result;
-		}, []);
+  	const parsedItems: string[] = values.map((item) => item.value);
+		return parsedItems;
 	}
 
-	return parsedItems;
+	return [];
 }
 
 export function parseOrderByString(
 	orderBy: IDataObject
 ) {
-	let values = orderBy.values as Array<any>;
-	let parsedOrderBy = new Array<string>;
+	type OrderByItem = { fieldName?: string; direction?: string };
+
+	const values = (orderBy.values as OrderByItem[]) ?? [];
+
+	const parsedOrderBy = new Array<string>;
 	for (const key in values) {
 		if (Object.prototype.hasOwnProperty.call(values, key) && values[key] && values[key]['fieldName']) {
 			parsedOrderBy.push(values[key]['fieldName'] + ',' + values[key]['direction']);
@@ -43,28 +43,30 @@ export function parseOrderByString(
 export function parseCheckThreshold(
 	checkThreshold: IDataObject
 ) {
-	let thresholdValues = checkThreshold.thresholdValues as Array<any>;
+	const thresholdValues = checkThreshold.thresholdValues as  Record<string, number>[] ?? [];
+
 	let parsedThreshold = {};
 	if (thresholdValues && thresholdValues.length) {
 		parsedThreshold = thresholdValues.reduce(function(result, item) {
-			let key1 = Object.keys(item)[0];
-			let key2 = Object.keys(item)[1];
+			const key1 = Object.keys(item)[0];
+			const key2 = Object.keys(item)[1];
 			result[item[key1]] = item[key2];
 			return result;
 		}, {});
 	}
+
 	return parsedThreshold;
 }
 
 export function parseKeywordFields(
 	keywordFields: IDataObject
 ) {
-	let fieldsdValues = keywordFields.values as Array<any>;
+	const fieldsdValues = keywordFields.values as Record<string, string | number>[] ?? [];
 	let parsedFields = {};
 	if (fieldsdValues && fieldsdValues.length) {
 		parsedFields = fieldsdValues.reduce(function(result, item) {
-			let key1 = Object.keys(item)[0];
-			let key2 = Object.keys(item)[1];
+			const key1 = Object.keys(item)[0];
+			const key2 = Object.keys(item)[1];
 			result[item[key1]] = item[key2];
 			return result;
 		}, {});
@@ -80,12 +82,12 @@ export function parseKeywordFields(
 export function parseSpecifications(
 	specifications: IDataObject
 ) {
-	let fieldsdValues = specifications.values as Array<any>;
+	const fieldsdValues = specifications.values as Record<string, string | number>[] ?? [];
 	let parsedFields = {};
 	if (fieldsdValues && fieldsdValues.length) {
 		parsedFields = fieldsdValues.reduce(function(result, item) {
-			let key1 = Object.keys(item)[0];
-			let key2 = Object.keys(item)[1];
+			const key1 = Object.keys(item)[0];
+			const key2 = Object.keys(item)[1];
 			result[item[key1]] = item[key2];
 			return result;
 		}, {});
@@ -101,22 +103,45 @@ export function parseSpecifications(
 export function parseLlmMentionsTarget(
 	target: IDataObject
 ) {
-	let values = target.values as Array<any>;
-	let parsedTarget = [];
+	type TargetItem = {
+		domain?: string;
+		keyword?: string;
+		search_filter?: string;
+		search_scope?: string;
+		include_subdomains?: boolean;
+		match_type?: string;
+	};
+
+	type ParsedTarget =
+	| {
+			domain: string;
+			search_filter: string | null;
+			search_scope: string | null;
+			include_subdomains?: boolean;
+	  }
+	| {
+			keyword: string | null;
+			search_filter: string | null;
+			search_scope: string | null;
+			match_type: string | null;
+	  };
+
+	const values = (target.values as TargetItem[]) ?? [];
+	let parsedTarget: ParsedTarget[] = [];
 	if (values && values.length) {
-		parsedTarget = values.reduce(function(result, item) {
+		parsedTarget = values.reduce<ParsedTarget[]>(function(result, item) {
 			if (item['domain']) {
 				result.push({
 					domain: item['domain'],
 					search_filter: item['search_filter'] ? item['search_filter'] : null,
-					search_scope: item['search_scope'].length ? item['search_scope'] : null,
+					search_scope: item['search_scope']?.length ? item['search_scope'] : null,
 					include_subdomains: item['include_subdomains']
 				});
 			} else {
 				result.push({
 					keyword: item['keyword'] ? item['keyword'] : null,
 					search_filter: item['search_filter'] ? item['search_filter'] : null,
-					search_scope: item['search_scope'].length ? item['search_scope'] : null,
+					search_scope: item['search_scope']?.length ? item['search_scope'] : null,
 					match_type: item['match_type'] ? item['match_type'] : null
 				});
 			}

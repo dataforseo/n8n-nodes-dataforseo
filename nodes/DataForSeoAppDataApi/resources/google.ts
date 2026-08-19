@@ -521,7 +521,6 @@ export const GoogleOperations: INodeProperties[] = [
 		description: 'Max number of results to return',
 		type: 'number',
 		typeOptions: {
-			// eslint-disable-next-line n8n-nodes-base/node-param-type-options-max-value-present
 			maxValue: 1000,
 			minValue: 1,
 			numberPrecision: 0,

@@ -1,9 +1,11 @@
 import {
 	INodeType,
 	INodeTypeDescription,
+	NodeConnectionTypes,
 	IExecuteFunctions,
 	INodeExecutionData,
 	NodeOperationError,
+	IDataObject,
 } from 'n8n-workflow';
 import { getLiveAggregationTechnologies, getLiveDomainsByHTMLTerms, getLiveDomainsByTechnology, getLiveDomainTechnologies, getLiveTechnologiesSummary, getLiveTechnologyStats } from './execute/technologies';
 import { TechnologiesOperations } from './resources/technologies';
@@ -14,36 +16,29 @@ export class DataForSeoDomainAnalyticsApi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DataForSEO Domain Analytics API',
 		name: 'dataForSeoDomainAnalyticsApi',
-		icon: 'file:dataforseo.svg',
+		icon: { light: 'file:../../icons/dataforseo.svg', dark: 'file:../../icons/dataforseo.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'DataForSEO Domain Analytics API',
+		usableAsTool: true,
 		defaults: {
 				name: 'DataForSeo Domain Analytics API',
 		},
-		inputs: ["main"],
-		outputs: ["main"],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 				{
 						name: 'dataForSeoApi',
 						required: true,
 				},
 		],
-		requestDefaults: {
-			method: 'POST',
-			baseURL: 'https://api.dataforseo.com/v3',
-			headers: {
-					'Content-Type': 'application/json',
-			},
-		},
 		properties: [
 			{
 				displayName: 'Resource',
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
 						{
 							// eslint-disable-next-line n8n-nodes-base/node-param-resource-with-plural-option
@@ -63,7 +58,7 @@ export class DataForSeoDomainAnalyticsApi implements INodeType {
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-		let responseData = [];
+		const responseData = [];
 		const resource = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
 		const mapping: ResourceOperationFunctions = {
@@ -85,21 +80,26 @@ export class DataForSeoDomainAnalyticsApi implements INodeType {
 			throw new NodeOperationError(this.getNode(), "Something went wrong");
 		}
 
-		try {
-			const items = this.getInputData();
+		const items = this.getInputData();
 
-			for (let i = 0; i < items.length; i++) {
+		for (let i = 0; i < items.length; i++) {
+			try {
 				const result = await fn(this, i);
 				responseData.push({
 						json: result,
 						pairedItem: { item: i }
 				});
-			}
-		} catch (e) {
-			if (e instanceof NodeOperationError) {
-				throw e;
-			} else {
-				throw new NodeOperationError(this.getNode(), "Something went wrong");
+			} catch (error) {
+				if (this.continueOnFail()) {
+					responseData.push({ json: items[i].json, error, pairedItem: i });
+				} else {
+					if (error.context) {
+						error.context.itemIndex = i;
+					}
+					throw new NodeOperationError(this.getNode(), error, {
+						itemIndex: i,
+					});
+				}
 			}
 		}
 
@@ -109,6 +109,6 @@ export class DataForSeoDomainAnalyticsApi implements INodeType {
 
 type ResourceOperationFunctions = {
 	[resource: string]: {
-		[operation: string]: (ef: IExecuteFunctions, i: number) => Promise<any>;
+		[operation: string]: (ef: IExecuteFunctions, i: number) => Promise<IDataObject>;
 	}
 };

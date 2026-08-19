@@ -8,13 +8,13 @@ import { dataForSeoPOSTGETRequest, dataForSeoRequest } from '../../../functions/
 
 export async function getLiveGoogleSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -37,13 +37,13 @@ export async function getLiveGoogleSearchVolume(ef: IExecuteFunctions, i: number
 
 export async function getGoogleSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -107,13 +107,13 @@ export async function getGoogleKeywordsForSite(ef: IExecuteFunctions, i: number)
 
 export async function getLiveGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -136,13 +136,13 @@ export async function getLiveGoogleKeywordsForKeywords(ef: IExecuteFunctions, i:
 
 export async function getGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -165,13 +165,13 @@ export async function getGoogleKeywordsForKeywords(ef: IExecuteFunctions, i: num
 
 export async function getLiveGoogleTrafficByKeywords(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -196,13 +196,13 @@ export async function getLiveGoogleTrafficByKeywords(ef: IExecuteFunctions, i: n
 
 export async function getGoogleTrafficByKeywords(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {

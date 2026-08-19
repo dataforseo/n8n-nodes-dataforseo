@@ -9,15 +9,15 @@ import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 import { parseFilters, parseLlmMentionsTarget, parseOrderByString } from '../../../functions/generalFunctions';
 
 export async function getLiveLlmMentions(ef: IExecuteFunctions, i: number) {
-	let target = ef.getNodeParameter('target', i) as IDataObject;
-	let parsedTarget = parseLlmMentionsTarget(target);
+	const target = ef.getNodeParameter('target', i) as IDataObject;
+	const parsedTarget = parseLlmMentionsTarget(target);
 
 	const filters = ef.getNodeParameter('filters', i) as unknown as string;
 	let parsedFilters = [];
 	if (filters) {
 		try {
 			parsedFilters = parseFilters(filters);
-		} catch (e) {
+		} catch {
 			throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 		}
 	}
@@ -46,15 +46,15 @@ export async function getLiveLlmMentions(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getLiveLlmMentionsTopPages(ef: IExecuteFunctions, i: number) {
-	let target = ef.getNodeParameter('target', i) as IDataObject;
-	let parsedTarget = parseLlmMentionsTarget(target);
+	const target = ef.getNodeParameter('target', i) as IDataObject;
+	const parsedTarget = parseLlmMentionsTarget(target);
 
 	const filters = ef.getNodeParameter('initial_dataset_filters', i) as unknown as string;
 	let parsedFilters = [];
 	if (filters) {
 		try {
 			parsedFilters = parseFilters(filters);
-		} catch (e) {
+		} catch {
 			throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 		}
 	}
@@ -77,15 +77,15 @@ export async function getLiveLlmMentionsTopPages(ef: IExecuteFunctions, i: numbe
 }
 
 export async function getLiveLlmMentionsTopDomains(ef: IExecuteFunctions, i: number) {
-	let target = ef.getNodeParameter('target', i) as IDataObject;
-	let parsedTarget = parseLlmMentionsTarget(target);
+	const target = ef.getNodeParameter('target', i) as IDataObject;
+	const parsedTarget = parseLlmMentionsTarget(target);
 
 	const filters = ef.getNodeParameter('initial_dataset_filters', i) as unknown as string;
 	let parsedFilters = [];
 	if (filters) {
 		try {
 			parsedFilters = parseFilters(filters);
-		} catch (e) {
+		} catch {
 			throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 		}
 	}
@@ -108,15 +108,15 @@ export async function getLiveLlmMentionsTopDomains(ef: IExecuteFunctions, i: num
 }
 
 export async function getLiveLlmMentionsAggregatedMetrics(ef: IExecuteFunctions, i: number) {
-	let target = ef.getNodeParameter('target', i) as IDataObject;
-	let parsedTarget = parseLlmMentionsTarget(target);
+	const target = ef.getNodeParameter('target', i) as IDataObject;
+	const parsedTarget = parseLlmMentionsTarget(target);
 
 	const filters = ef.getNodeParameter('initial_dataset_filters', i) as unknown as string;
 	let parsedFilters = [];
 	if (filters) {
 		try {
 			parsedFilters = parseFilters(filters);
-		} catch (e) {
+		} catch {
 			throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 		}
 	}
@@ -137,47 +137,47 @@ export async function getLiveLlmMentionsAggregatedMetrics(ef: IExecuteFunctions,
 }
 
 export async function getLiveLlmMentionsCrossAggregatedMetrics(ef: IExecuteFunctions, i: number) {
-	let targets = [];
+	const targets = [];
 
-	let key1 = ef.getNodeParameter('aggregation_key1', i) || null;
+	const key1 = ef.getNodeParameter('aggregation_key1', i) || null;
 	if (key1) {
-		let target1 = ef.getNodeParameter('target1', i) as IDataObject;
+		const target1 = ef.getNodeParameter('target1', i) as IDataObject;
 		targets.push({
 			aggregation_key: key1,
 			target: parseLlmMentionsTarget(target1)
 		});
 	}
 
-	let key2 = ef.getNodeParameter('aggregation_key2', i) || null;
+	const key2 = ef.getNodeParameter('aggregation_key2', i) || null;
 	if (key2) {
-		let target2 = ef.getNodeParameter('target2', i) as IDataObject;
+		const target2 = ef.getNodeParameter('target2', i) as IDataObject;
 		targets.push({
 			aggregation_key: key2,
 			target: parseLlmMentionsTarget(target2)
 		});
 	}
 
-	let key3 = ef.getNodeParameter('aggregation_key3', i) || null;
+	const key3 = ef.getNodeParameter('aggregation_key3', i) || null;
 	if (key3) {
-		let target3 = ef.getNodeParameter('target3', i) as IDataObject;
+		const target3 = ef.getNodeParameter('target3', i) as IDataObject;
 		targets.push({
 			aggregation_key: key3,
 			target: parseLlmMentionsTarget(target3)
 		});
 	}
 
-	let key4 = ef.getNodeParameter('aggregation_key4', i) || null;
+	const key4 = ef.getNodeParameter('aggregation_key4', i) || null;
 	if (key4) {
-		let target4 = ef.getNodeParameter('target4', i) as IDataObject;
+		const target4 = ef.getNodeParameter('target4', i) as IDataObject;
 		targets.push({
 			aggregation_key: key4,
 			target: parseLlmMentionsTarget(target4)
 		});
 	}
 
-	let key5 = ef.getNodeParameter('aggregation_key5', i) || null;
+	const key5 = ef.getNodeParameter('aggregation_key5', i) || null;
 	if (key5) {
-		let target5 = ef.getNodeParameter('target5', i) as IDataObject;
+		const target5 = ef.getNodeParameter('target5', i) as IDataObject;
 		targets.push({
 			aggregation_key: key5,
 			target: parseLlmMentionsTarget(target5)
@@ -189,7 +189,7 @@ export async function getLiveLlmMentionsCrossAggregatedMetrics(ef: IExecuteFunct
 	if (filters) {
 		try {
 			parsedFilters = parseFilters(filters);
-		} catch (e) {
+		} catch {
 			throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 		}
 	}

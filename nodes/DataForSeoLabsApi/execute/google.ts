@@ -18,7 +18,7 @@ export async function getKeywordsForSite(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -52,7 +52,7 @@ export async function getRelatedKeywords(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -88,7 +88,7 @@ export async function getKeywordSuggestions(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -124,18 +124,18 @@ export async function getKeywordIdeas(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
-		const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_200_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_200_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -160,13 +160,13 @@ export async function getKeywordIdeas(ef: IExecuteFunctions, i: number) {
 
 export async function getKeywordDifficulty(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -183,13 +183,13 @@ export async function getKeywordDifficulty(ef: IExecuteFunctions, i: number) {
 
 export async function getSearchIntent(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -205,13 +205,13 @@ export async function getSearchIntent(ef: IExecuteFunctions, i: number) {
 
 export async function getKeywordOverview(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_700_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_700_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -230,13 +230,13 @@ export async function getKeywordOverview(ef: IExecuteFunctions, i: number) {
 
 export async function getHistoricalKeywordData(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_700', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_700_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_700_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -262,7 +262,7 @@ export async function getCategoriesForDomain(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -289,13 +289,13 @@ export async function getCategoriesForDomain(ef: IExecuteFunctions, i: number) {
 
 export async function getCategoriesForKeywords(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_1000', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -323,7 +323,7 @@ export async function getKeywordsForCategories(ef: IExecuteFunctions, i: number)
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -361,7 +361,7 @@ export async function getDomainMetricsByCtaegories(ef: IExecuteFunctions, i: num
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -402,7 +402,7 @@ export async function getTopSearches(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -426,13 +426,13 @@ export async function getTopSearches(ef: IExecuteFunctions, i: number) {
 
 export async function getSerpCompetitors(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_200', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_200_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_200_json', i) as unknown[];
 	}
 
 	const orderBy = ef.getNodeParameter('order_by', i) as IDataObject;
@@ -445,7 +445,7 @@ export async function getSerpCompetitors(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -480,7 +480,7 @@ export async function getRankedKeywords(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -518,7 +518,7 @@ export async function getCompetitorsDomain(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -560,7 +560,7 @@ export async function getDomainIntersection(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -598,7 +598,7 @@ export async function getSubdomains(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -635,7 +635,7 @@ export async function getRelevantPages(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -721,7 +721,7 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -729,8 +729,8 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 	const parsedExcludePages = parseMultiOptionItems(excludePages);
 
 	const pages = ef.getNodeParameter('pages', i) as IDataObject;
-	const values = pages.values as Array<any>;
-	let parsedPages = {};
+	const values = (pages.values as Array<{ value: string }>) ?? [];
+	const parsedPages = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;
@@ -773,13 +773,13 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 
 export async function getBulkTrafficEstimation(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets', i) as IDataObject;
 	  parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_json', i);
+		parsedTargets = ef.getNodeParameter('targets_json', i) as unknown[];
 	}
 
 	const itemTypes = ef.getNodeParameter('item_types', i) as Array<string>;
@@ -800,13 +800,13 @@ export async function getBulkTrafficEstimation(ef: IExecuteFunctions, i: number)
 
 export async function getHistoricalBulkTrafficEstimation(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets', i) as IDataObject;
 	  parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_json', i);
+		parsedTargets = ef.getNodeParameter('targets_json', i) as unknown[];
 	}
 
 	const itemTypes = ef.getNodeParameter('item_types', i) as Array<string>;

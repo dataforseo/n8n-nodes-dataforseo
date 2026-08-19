@@ -570,7 +570,6 @@ export const BingAdsOperations: INodeProperties[] = [
 						displayName: 'Device Type',
 						name: 'value',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 						options: [
 							{
 								name: 'Mobile',
@@ -677,7 +676,6 @@ export const BingAdsOperations: INodeProperties[] = [
 		displayName: 'Aggregates the Returned Data to a Certain Time Period',
 		name: 'period',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',
@@ -973,7 +971,6 @@ export const BingAdsOperations: INodeProperties[] = [
 						displayName: 'Gender',
 						name: 'value',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 						options: [
 							{
 								name: 'Male',

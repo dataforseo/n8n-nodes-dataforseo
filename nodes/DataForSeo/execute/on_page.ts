@@ -19,10 +19,12 @@ export async function getPageAuditCheck(ef: IExecuteFunctions, i: number) {
 		validate_micromarkup: ef.getNodeParameter('validate_micromarkup', i)
 	};
 
-	for (let key in additionalFields) {
+	for (const key in additionalFields) {
 		if (key == 'checks_threshold') {
-			checksTreshold = additionalFields.checks_threshold as IDataObject;
-			Object.assign(data, {checks_threshold: parseCheckThreshold(checksTreshold)});
+			checksTreshold = parseCheckThreshold(additionalFields.checks_threshold as IDataObject);
+			if (checksTreshold && Object.keys(checksTreshold).length) {
+				Object.assign(data, {checks_threshold: checksTreshold});
+			}
 		} else {
 			Object.assign(data, {[key]: additionalFields[key]});
 		}
@@ -45,7 +47,7 @@ export async function parsePageContent(ef: IExecuteFunctions, i: number) {
 		enable_xhr: ef.getNodeParameter('enable_xhr', i),
 	};
 
-	for (let key in additionalFields) {
+	for (const key in additionalFields) {
 		Object.assign(data, {[key]: additionalFields[key]});
 	}
 

@@ -8,13 +8,13 @@ import { dataForSeoPOSTGETRequest, dataForSeoRequest } from '../../../functions/
 
 export async function getLiveBingSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -37,13 +37,13 @@ export async function getLiveBingSearchVolume(ef: IExecuteFunctions, i: number) 
 
 export async function getBingSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords:  unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -66,13 +66,13 @@ export async function getBingSearchVolume(ef: IExecuteFunctions, i: number) {
 
 export async function getLiveBingSearchVolumeHistory(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords:  unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as  unknown[];
 	}
 
 	const devices = ef.getNodeParameter('device_sv', i) as IDataObject;
@@ -97,13 +97,13 @@ export async function getLiveBingSearchVolumeHistory(ef: IExecuteFunctions, i: n
 
 export async function getBingSearchVolumeHistory(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords:  unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as  unknown[];
 	}
 
 	const devices = ef.getNodeParameter('device_sv', i) as IDataObject;
@@ -177,13 +177,13 @@ export async function getLiveBingKeywordsForKeywords(ef: IExecuteFunctions, i: n
 	const parsedKeywordsNegative = parseMultiOptionItems(keywordsNegaive);
 
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords:  unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -210,13 +210,13 @@ export async function getBingKeywordsForKeywords(ef: IExecuteFunctions, i: numbe
 	const parsedKeywordsNegative = parseMultiOptionItems(keywordsNegaive);
 
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords:  unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_for_keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_for_keywords_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -240,13 +240,13 @@ export async function getBingKeywordsForKeywords(ef: IExecuteFunctions, i: numbe
 
 export async function getLiveBingKeywordperformance(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -266,13 +266,13 @@ export async function getLiveBingKeywordperformance(ef: IExecuteFunctions, i: nu
 
 export async function getBingKeywordperformance(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords_performance', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_performance_json', i) as  unknown[];
 	}
 
 	const params: IHttpRequestOptions = {

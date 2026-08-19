@@ -198,7 +198,7 @@ export const OnPageOperations: INodeProperties[] = [
 							{
 								displayName: 'Threshold Value',
 								name: 'value',
-								type: 'string',
+								type: 'number',
 								default: '',
 								required: true,
 							},

@@ -12,7 +12,7 @@ export async function getBacklinksSummary(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -52,7 +52,7 @@ export async function getBacklinks(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -87,7 +87,7 @@ export async function getAnchors(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -95,7 +95,7 @@ export async function getAnchors(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -131,7 +131,7 @@ export async function getDomainPages(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -139,7 +139,7 @@ export async function getDomainPages(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -174,7 +174,7 @@ export async function getDomainPagesSummary(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -182,7 +182,7 @@ export async function getDomainPagesSummary(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -218,7 +218,7 @@ export async function getRefferingDomains(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -226,7 +226,7 @@ export async function getRefferingDomains(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -262,7 +262,7 @@ export async function getRefferingNetworks(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -270,7 +270,7 @@ export async function getRefferingNetworks(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -307,7 +307,7 @@ export async function getCompetitros(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -340,7 +340,7 @@ export async function getDomainIntersection(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -348,7 +348,7 @@ export async function getDomainIntersection(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = [];
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -359,8 +359,8 @@ export async function getDomainIntersection(ef: IExecuteFunctions, i: number) {
 	}
 
 	const targets = ef.getNodeParameter('targets', i) as IDataObject;
-	const values = targets.values as Array<any>;
-	let parsedTargets = {};
+	const values = (targets.values as Array<{ value: string }>) ?? [];
+	const parsedTargets = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;
@@ -407,7 +407,7 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -418,8 +418,8 @@ export async function getPageIntersection(ef: IExecuteFunctions, i: number) {
 	}
 
 	const targets = ef.getNodeParameter('targets', i) as IDataObject;
-	const values = targets.values as Array<any>;
-	let parsedTargets = {};
+	const values = (targets.values as Array<{ value: string }>) ?? [];
+	const parsedTargets = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;
@@ -493,13 +493,13 @@ export async function getNewAndLostBacklinksTimeseriesSummary(ef: IExecuteFuncti
 
 export async function getBulkRanks(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -515,13 +515,13 @@ export async function getBulkRanks(ef: IExecuteFunctions, i: number) {
 
 export async function getBulkBacklinks(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -536,13 +536,13 @@ export async function getBulkBacklinks(ef: IExecuteFunctions, i: number) {
 
 export async function getBulkSpamScores(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -557,13 +557,13 @@ export async function getBulkSpamScores(ef: IExecuteFunctions, i: number) {
 
 export async function getBulkReferringDomains(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -578,13 +578,13 @@ export async function getBulkReferringDomains(ef: IExecuteFunctions, i: number) 
 
 export async function getBulkNewAndLostBacklinks(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -600,13 +600,13 @@ export async function getBulkNewAndLostBacklinks(ef: IExecuteFunctions, i: numbe
 
 export async function getBulkNewAndLostReferringDomains(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -622,13 +622,13 @@ export async function getBulkNewAndLostReferringDomains(ef: IExecuteFunctions, i
 
 export async function getBulkPagesSummary(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedTargets;
+	let parsedTargets: unknown[];
 
 	if (input_mode == 'manual') {
 		const targets = ef.getNodeParameter('targets_1000', i) as IDataObject;
 		parsedTargets = parseMultiOptionItems(targets);
 	} else {
-		parsedTargets = ef.getNodeParameter('targets_1000_json', i);
+		parsedTargets = ef.getNodeParameter('targets_1000_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {

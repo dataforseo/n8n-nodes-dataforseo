@@ -1394,7 +1394,7 @@ export const OnPageOperations: INodeProperties[] = [
 					{
 						displayName: 'Threshold Value',
 						name: 'value',
-						type: 'string',
+						type: 'number',
 						default: '',
 						required: true,
 					},
@@ -1659,7 +1659,6 @@ export const OnPageOperations: INodeProperties[] = [
 		type: 'number',
 		description: 'Max number of results to return',
 		typeOptions: {
-			// eslint-disable-next-line n8n-nodes-base/node-param-type-options-max-value-present
 			maxValue: 1000,
 			minValue: 1,
 			numberPrecision: 0,

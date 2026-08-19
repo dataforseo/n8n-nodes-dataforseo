@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.DataForSeoKeywordsApi",
+	"node": "n8n-nodes-dataforseo.DataForSeoKeywordsApi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": [

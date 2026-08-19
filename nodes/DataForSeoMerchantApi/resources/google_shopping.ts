@@ -375,7 +375,6 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 		displayName: 'Results Sorting Rules',
 		name: 'sort_by',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',

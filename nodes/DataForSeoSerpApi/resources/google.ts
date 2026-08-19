@@ -1897,7 +1897,6 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Last Time the Dataset Was Updated',
 		name: 'last_updated',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',
@@ -1975,7 +1974,6 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Usage Rights of the Dataset',
 		name: 'usage_rights',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',

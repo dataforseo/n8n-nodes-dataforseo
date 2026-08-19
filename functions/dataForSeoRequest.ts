@@ -1,7 +1,6 @@
 import {
 	IExecuteFunctions,
 	IHttpRequestOptions,
-	//IDataObject,
 	sleep
 } from 'n8n-workflow';
 
@@ -29,7 +28,7 @@ export async function dataForSeoPOSTGETRequest(ef: IExecuteFunctions, options: I
 		return responseData;
 	}
 
-	const taskId = responseData['tasks'][0]['id'] as String;
+	const taskId = responseData['tasks'][0]['id'] as string;
 	if (taskId) {
 		const taskOptions: IHttpRequestOptions = {
 			method: 'GET',

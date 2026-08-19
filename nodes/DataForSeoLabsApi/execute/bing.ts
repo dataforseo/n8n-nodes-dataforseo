@@ -54,7 +54,7 @@ export async function getBingCompetitorsDomain(ef: IExecuteFunctions, i: number)
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -95,7 +95,7 @@ export async function getBingDomainIntersection(ef: IExecuteFunctions, i: number
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -147,7 +147,7 @@ export async function getBingPageIntersection(ef: IExecuteFunctions, i: number) 
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -155,8 +155,8 @@ export async function getBingPageIntersection(ef: IExecuteFunctions, i: number) 
 	const parsedExcludePages = parseMultiOptionItems(excludePages);
 
 	const pages = ef.getNodeParameter('pages', i) as IDataObject;
-	const values = pages.values as Array<any>;
-	let parsedPages = {};
+	const values = (pages.values as Array<{ value: string }>) ?? [];
+	const parsedPages = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;
@@ -207,7 +207,7 @@ export async function getBingRankedKeywords(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -244,7 +244,7 @@ export async function getBingRelatedKeywords(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -280,7 +280,7 @@ export async function getBingRelevantPages(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -316,7 +316,7 @@ export async function getBingSerpCompetitors(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -354,7 +354,7 @@ export async function getBingSubdomains(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 

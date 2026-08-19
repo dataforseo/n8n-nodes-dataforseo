@@ -13,7 +13,6 @@ export const GoogleTrendsOperations: INodeProperties[] = [
 						resource: ['google_trends'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Get Live Google Trends Explore',

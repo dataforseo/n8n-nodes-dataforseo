@@ -179,7 +179,6 @@ export const GoogleAdsOperations: INodeProperties[] = [
 		displayName: 'Keywords Match-Type',
 		name: 'match',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Exact',
@@ -498,7 +497,6 @@ export const GoogleAdsOperations: INodeProperties[] = [
 		name: 'date_interval',
 		description: 'If you specify date_interval, you don’t need to indicate date_from and date_to',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',

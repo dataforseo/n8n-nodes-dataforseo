@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.DataForSeoDomainAnalyticsApi",
+	"node": "n8n-nodes-dataforseo.DataForSeoDomainAnalyticsApi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": [

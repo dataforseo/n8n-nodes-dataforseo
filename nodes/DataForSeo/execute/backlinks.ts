@@ -12,7 +12,7 @@ export async function getBacklinks(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -44,7 +44,7 @@ export async function getBacklinkSummary(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -134,7 +134,7 @@ export async function getRefferingDomains(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -142,7 +142,7 @@ export async function getRefferingDomains(ef: IExecuteFunctions, i: number) {
 	let parsedBacklinksFilters = null;
 	try {
 		parsedBacklinksFilters = parseFilters(backlinksFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Backlinks Filters value");
 	}
 

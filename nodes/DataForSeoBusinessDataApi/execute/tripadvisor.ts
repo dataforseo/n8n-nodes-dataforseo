@@ -20,9 +20,9 @@ export async function searchTripadvisorBusinessData(ef: IExecuteFunctions, i: nu
 }
 
 export async function getTripadvisorReviews(ef: IExecuteFunctions, i: number) {
-	const ratings = ef.getNodeParameter('ratings', i) as Array<String>;
-	const visitType = ef.getNodeParameter('visit_type', i) as Array<String>;
-	const months = ef.getNodeParameter('months', i) as Array<String>;
+	const ratings = ef.getNodeParameter('ratings', i) as Array<string>;
+	const visitType = ef.getNodeParameter('visit_type', i) as Array<string>;
+	const months = ef.getNodeParameter('months', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/business_data/tripadvisor/reviews/task_post',

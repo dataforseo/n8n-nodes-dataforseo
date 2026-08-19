@@ -353,7 +353,6 @@ export const TechnologiesOperations: INodeProperties[] = [
 		displayName: 'Search Mode',
 		name: 'mode',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'As Is',
@@ -379,7 +378,6 @@ export const TechnologiesOperations: INodeProperties[] = [
 		displayName: 'Search Mode',
 		name: 'mode_html',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Strict Entry',
@@ -605,7 +603,6 @@ export const TechnologiesOperations: INodeProperties[] = [
 		type: 'number',
 		description: 'Max number of results to return',
 		typeOptions: {
-			// eslint-disable-next-line n8n-nodes-base/node-param-type-options-max-value-present
 			maxValue: 10000,
 			minValue: 1,
 			numberPrecision: 0,

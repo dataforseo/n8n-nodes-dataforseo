@@ -12,7 +12,7 @@ export async function getLiveAggregationTechnologies(ef: IExecuteFunctions, i: n
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -48,7 +48,7 @@ export async function getLiveTechnologiesSummary(ef: IExecuteFunctions, i: numbe
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -101,7 +101,7 @@ export async function getLiveDomainsByTechnology(ef: IExecuteFunctions, i: numbe
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -148,7 +148,7 @@ export async function getLiveDomainsByHTMLTerms(ef: IExecuteFunctions, i: number
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 

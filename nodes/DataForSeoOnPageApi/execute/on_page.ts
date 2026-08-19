@@ -68,7 +68,7 @@ async function getResponse(ef: IExecuteFunctions, i: number, options: IHttpReque
 			check_spell_language: ef.getNodeParameter('check_spell_language', i) || null,
 			check_spell_exceptions: parsedCheckSpellExeptions.length ? parsedCheckSpellExeptions : null,
 			calculate_keyword_density: ef.getNodeParameter('calculate_keyword_density', i),
-			checks_threshold: Object.keys(parsedCheckTreshold).length ? parsedCheckTreshold : null,
+			checks_threshold: (parsedCheckTreshold && Object.keys(parsedCheckTreshold).length) ? parsedCheckTreshold : null,
 			disable_sitewide_checks: disableSitewideChecks.length ? disableSitewideChecks : null,
 			disable_page_checks: parsedDisablePageChecks.length ? parsedDisablePageChecks : null,
 			switch_pool: ef.getNodeParameter('switch_pool', i),
@@ -83,8 +83,9 @@ async function getResponse(ef: IExecuteFunctions, i: number, options: IHttpReque
 		return responseData;
 	}
 
-	const taskId = responseData['tasks'][0]['id'] as String;
-	options.body[0].id = taskId;
+	const taskId = responseData['tasks'][0]['id'] as string;
+
+	(options.body as IDataObject[])[0].id = taskId;
 	let responseReceived = false;
 	let j = 0;
 	let statusCode;
@@ -104,7 +105,7 @@ export async function getPages(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -132,7 +133,7 @@ export async function getPagesByResource(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -161,7 +162,7 @@ export async function getResources(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -175,7 +176,7 @@ export async function getResources(ef: IExecuteFunctions, i: number) {
 	let parsedRelevantPagesFilters = [];
 	try {
 		parsedRelevantPagesFilters = parseFilters(relevantPagesFilters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -227,7 +228,7 @@ export async function getLinks(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -250,7 +251,7 @@ export async function getRedirectChains(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -272,7 +273,7 @@ export async function getNonIndexablePages(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -304,7 +305,7 @@ export async function getKeywordDensity(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -432,7 +433,7 @@ export async function getLiveInstantPages(ef: IExecuteFunctions, i: number) {
 			custom_js: ef.getNodeParameter('custom_js', i) || null,
 			validate_micromarkup: ef.getNodeParameter('validate_micromarkup', i),
 			check_spell: ef.getNodeParameter('check_spell', i),
-			checks_threshold: Object.keys(parsedCheckTreshold).length ? parsedCheckTreshold : null,
+			checks_threshold: (parsedCheckTreshold && Object.keys(parsedCheckTreshold).length) ? parsedCheckTreshold : null,
 			switch_pool: ef.getNodeParameter('switch_pool', i),
 			ip_pool_for_scan: ef.getNodeParameter('ip_pool_for_scan', i) || null
 		}]
@@ -442,7 +443,7 @@ export async function getLiveInstantPages(ef: IExecuteFunctions, i: number) {
 }
 
 export async function getLighthouseAuditResults(ef: IExecuteFunctions, i: number) {
-	const categories =  ef.getNodeParameter('categories', i) as Array<String>;
+	const categories =  ef.getNodeParameter('categories', i) as Array<string>;
 
 	const audits = ef.getNodeParameter('categories', i) as IDataObject;
 	const parsedAudits = parseMultiOptionItems(audits);
@@ -463,7 +464,7 @@ export async function getLighthouseAuditResults(ef: IExecuteFunctions, i: number
 }
 
 export async function getLiveLighthouseAuditResults(ef: IExecuteFunctions, i: number) {
-	const categories =  ef.getNodeParameter('categories', i) as Array<String>;
+	const categories =  ef.getNodeParameter('categories', i) as Array<string>;
 
 	const audits = ef.getNodeParameter('categories', i) as IDataObject;
 	const parsedAudits = parseMultiOptionItems(audits);

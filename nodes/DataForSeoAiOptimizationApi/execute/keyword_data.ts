@@ -8,11 +8,11 @@ import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 import { parseMultiOptionItems } from '../../../functions/generalFunctions';
 
 export async function getAiKeywordSearchVolume(ef: IExecuteFunctions, i: number) {
-	let mode = ef.getNodeParameter('mode', i);
+	const mode = ef.getNodeParameter('mode', i);
 	let keywordsArr;
 
 	if (mode == 'manual') {
-		let keywords = ef.getNodeParameter('keywords', i) as IDataObject;
+		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 		keywordsArr = parseMultiOptionItems(keywords);
 	} else {
 		keywordsArr = ef.getNodeParameter('keywords_json', i);

@@ -8,13 +8,13 @@ import {  dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getLiveClickstreamSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -32,13 +32,13 @@ export async function getLiveClickstreamSearchVolume(ef: IExecuteFunctions, i: n
 
 export async function getLiveGlobalSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -53,13 +53,13 @@ export async function getLiveGlobalSearchVolume(ef: IExecuteFunctions, i: number
 
 export async function getLiveBulkClickstreamSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {

@@ -253,7 +253,6 @@ export const AmazonOperations: INodeProperties[] = [
 		displayName: 'Amazon Product Department',
 		name: 'department',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',
@@ -430,7 +429,6 @@ export const AmazonOperations: INodeProperties[] = [
 		displayName: 'Results Sorting Rules',
 		name: 'sort_by',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Empty',
@@ -489,7 +487,6 @@ export const AmazonOperations: INodeProperties[] = [
 		displayName: 'Sort Local Reviews',
 		name: 'local_reviews_sort',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Helpful',

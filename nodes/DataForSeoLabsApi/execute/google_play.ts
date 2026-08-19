@@ -9,13 +9,13 @@ import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getGooglePlayBulkAppMetrics(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedIds;
+	let parsedIds: unknown[];
 
 	if (input_mode == 'manual') {
 		const ids = ef.getNodeParameter('app_ids', i) as IDataObject;
 	  parsedIds = parseMultiOptionItems(ids);
 	} else {
-		parsedIds = ef.getNodeParameter('app_ids_json', i);
+		parsedIds = ef.getNodeParameter('app_ids_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -41,7 +41,7 @@ export async function getGooglePlayKeywordsForApp(ef: IExecuteFunctions, i: numb
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -72,7 +72,7 @@ export async function getGooglePlayAppCompetitors(ef: IExecuteFunctions, i: numb
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -103,13 +103,13 @@ export async function getGooglePlayAppIntersection(ef: IExecuteFunctions, i: num
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const ids = ef.getNodeParameter('app_ids_20', i) as IDataObject;
-	const values = ids.values as Array<any>;
-	let parsedIds = {};
+	const values = (ids.values as Array<{ value: string }>) ?? [];
+	const parsedIds = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;

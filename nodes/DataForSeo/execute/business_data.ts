@@ -13,7 +13,7 @@ export async function getBusinessListings(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -51,7 +51,7 @@ export async function getBusinessListingsCategoriesAggregation(ef: IExecuteFunct
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Initial Dataset Filters value");
 	}
 
@@ -96,7 +96,7 @@ export async function getGoogleReviews(ef: IExecuteFunctions, i: number) {
 
 	let responseData = await dataForSeoRequest(ef, params);
 
-	const taskId = responseData['tasks'][0]['id'] as String;
+	const taskId = responseData['tasks'][0]['id'] as string;
 	if (taskId) {
 		const taskOptions: IHttpRequestOptions = {
 			method: 'GET',

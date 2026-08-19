@@ -13,7 +13,7 @@ export async function getBusinessListings(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -49,7 +49,7 @@ export async function getCategoriesAggregation(ef: IExecuteFunctions, i: number)
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Initial Dataset Filters value");
 	}
 

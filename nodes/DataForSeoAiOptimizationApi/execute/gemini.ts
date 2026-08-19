@@ -7,7 +7,7 @@ import {
 import { dataForSeoRequest, dataForSeoPOSTGETRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getLiveGeminiLlmResponses(ef: IExecuteFunctions, i: number) {
-	let messages = ef.getNodeParameter('message_chain', i) as IDataObject;
+	const messages = ef.getNodeParameter('message_chain', i) as IDataObject;
 	const params: IHttpRequestOptions = {
 		url: '/ai_optimization/gemini/llm_responses/live',
 		body: [{

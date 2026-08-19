@@ -13,7 +13,6 @@ export const SeznamOperations: INodeProperties[] = [
 						resource: ['seznam'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Get Seznam Organic SERP Regular',

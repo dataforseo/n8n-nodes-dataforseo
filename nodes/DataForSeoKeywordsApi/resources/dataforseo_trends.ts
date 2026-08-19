@@ -13,7 +13,6 @@ export const DataforseoTrendsOperations: INodeProperties[] = [
 						resource: ['dataforseo_trends'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Get Live DataForSEO Trends Explore',
@@ -102,7 +101,6 @@ export const DataforseoTrendsOperations: INodeProperties[] = [
 		displayName: 'DataForSEO Trends Type',
 		name: 'type',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Web',

@@ -1,5 +1,6 @@
 import {
 	IAuthenticateGeneric,
+	Icon,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -8,6 +9,7 @@ import {
 export class DataForSeoApi implements ICredentialType {
 	name = 'dataForSeoApi';
 	displayName = 'DataForSEO API';
+	icon: Icon = { light: 'file:../icons/dataforseo.svg', dark: 'file:../icons/dataforseo.dark.svg' };
 	documentationUrl = 'https://docs.dataforseo.com/v3/auth/?bash';
 	properties: INodeProperties[] = [
 		{

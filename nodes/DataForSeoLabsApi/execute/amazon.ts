@@ -9,13 +9,13 @@ import { dataForSeoRequest } from '../../../functions/dataForSeoRequest';
 
 export async function getBulkSearchVolume(ef: IExecuteFunctions, i: number) {
 	const input_mode = ef.getNodeParameter('input_mode', i) || 'manual';
-	let parsedKeywords;
+	let parsedKeywords: unknown[];
 
 	if (input_mode == 'manual') {
 		const keywords = ef.getNodeParameter('keywords', i) as IDataObject;
 	  parsedKeywords = parseMultiOptionItems(keywords);
 	} else {
-		parsedKeywords = ef.getNodeParameter('keywords_json', i);
+		parsedKeywords = ef.getNodeParameter('keywords_json', i) as unknown[];
 	}
 
 	const params: IHttpRequestOptions = {
@@ -59,7 +59,7 @@ export async function getAmazonRankedKeywords(ef: IExecuteFunctions, i: number) 
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -107,7 +107,7 @@ export async function getProductCompetitors(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -138,13 +138,13 @@ export async function getProductKeywordIntersections(ef: IExecuteFunctions, i: n
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const asins = ef.getNodeParameter('asins_for_intersection', i) as IDataObject;
-	const values = asins.values as Array<any>;
-	let parsedAsins = {};
+	const values = (asins.values as Array<{ value: string }>) ?? [];
+	const parsedAsins = {};
 	let index;
 	for (const key in values) {
 		index = parseInt(key) + 1;

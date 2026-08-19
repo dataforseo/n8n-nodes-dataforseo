@@ -12,7 +12,7 @@ export async function getLiveDomainWhoisOverview(ef: IExecuteFunctions, i: numbe
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 

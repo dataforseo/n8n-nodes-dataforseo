@@ -12,7 +12,7 @@ export async function getSearchResults(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
@@ -25,7 +25,7 @@ export async function getSearchResults(ef: IExecuteFunctions, i: number) {
 	const keywordFields =  ef.getNodeParameter('keyword_fields', i) as IDataObject;
 	const parsedKeywordFields = parseKeywordFields(keywordFields);
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/content_analysis/search/live',
@@ -51,14 +51,14 @@ export async function getSummary(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const keywordFields =  ef.getNodeParameter('keyword_fields', i) as IDataObject;
 	const parsedKeywordFields = parseKeywordFields(keywordFields);
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/content_analysis/summary/live',
@@ -82,14 +82,14 @@ export async function getSentimentAnalysis(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const keywordFields =  ef.getNodeParameter('keyword_fields', i) as IDataObject;
 	const parsedKeywordFields = parseKeywordFields(keywordFields);
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/content_analysis/sentiment_analysis/live',
@@ -113,14 +113,14 @@ export async function getRatingDistribution(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const keywordFields =  ef.getNodeParameter('keyword_fields', i) as IDataObject;
 	const parsedKeywordFields = parseKeywordFields(keywordFields);
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
 	const params: IHttpRequestOptions = {
 		url: '/content_analysis/rating_distribution/live',
@@ -145,21 +145,21 @@ export async function getPhraseTrends(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
 	const keywordFields =  ef.getNodeParameter('keyword_fields', i) as IDataObject;
 	const parsedKeywordFields = parseKeywordFields(keywordFields);
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
-	let dateFrom = ef.getNodeParameter('date_from', i) as String;
+	let dateFrom = ef.getNodeParameter('date_from', i) as string;
 	if (dateFrom) {
 		dateFrom = dateFrom.split('T')[0];
 	}
 
-	let dateTo = ef.getNodeParameter('date_to', i) as String;
+	let dateTo = ef.getNodeParameter('date_to', i) as string;
 	if (dateTo) {
 		dateTo = dateTo.split('T')[0];
 	}
@@ -188,18 +188,18 @@ export async function getCategoryTrends(ef: IExecuteFunctions, i: number) {
 	let parsedFilters = [];
 	try {
 		parsedFilters = parseFilters(filters);
-	} catch (e) {
+	} catch {
 		throw new NodeOperationError(ef.getNode(), "Invalid Filters value");
 	}
 
-	const pageType = ef.getNodeParameter('page_type', i) as Array<String>;
+	const pageType = ef.getNodeParameter('page_type', i) as Array<string>;
 
-	let dateFrom = ef.getNodeParameter('date_from', i) as String;
+	let dateFrom = ef.getNodeParameter('date_from', i) as string;
 	if (dateFrom) {
 		dateFrom = dateFrom.split('T')[0];
 	}
 
-	let dateTo = ef.getNodeParameter('date_to', i) as String;
+	let dateTo = ef.getNodeParameter('date_to', i) as string;
 	if (dateTo) {
 		dateTo = dateTo.split('T')[0];
 	}
