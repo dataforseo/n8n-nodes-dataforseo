@@ -760,7 +760,7 @@ export async function getLiveGoogleDatasetSERPAdvanced(ef: IExecuteFunctions, i:
 			last_updated: ef.getNodeParameter('last_updated', i) || null,
 			file_formats: ef.getNodeParameter('file_formats', i) || null,
 			usage_rights: ef.getNodeParameter('usage_rights', i) || null,
-			is_free: ef.getNodeParameter('is_free', i) || null,
+			is_free: ef.getNodeParameter('is_free', i) !== '' ? ef.getNodeParameter('is_free', i) : null,
 			topics: parsedTopics.length ? parsedTopics : null
 		}]
 	};
@@ -788,7 +788,7 @@ export async function getGoogleDatasetSERPAdvanced(ef: IExecuteFunctions, i: num
 			last_updated: ef.getNodeParameter('last_updated', i) || null,
 			file_formats: ef.getNodeParameter('file_formats', i) || null,
 			usage_rights: ef.getNodeParameter('usage_rights', i) || null,
-			is_free: ef.getNodeParameter('is_free', i) || null,
+			is_free: ef.getNodeParameter('is_free', i) !== '' ? ef.getNodeParameter('is_free', i) : null,
 			topics: parsedTopics.length ? parsedTopics : null
 		}]
 	};

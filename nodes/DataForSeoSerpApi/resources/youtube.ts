@@ -13,31 +13,18 @@ export const YouTubeOperations: INodeProperties[] = [
 						resource: ['youtube'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
+			{
+				name: 'Get Live YouTube Comments Advanced',
+				value: 'get-live-youtube-comments-advanced',
+				action: 'Get live youtube comments advanced',
+				description: 'Get Advanced YouTube Comments (live)'
+			},
 			{
 				name: 'Get Live YouTube Organic SERP Advanced',
 				value: 'get-live-youtube-organic-serp-advanced',
 				action: 'Get live youtube organic SERP advanced',
 				description: 'Get Advanced YouTube Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get YouTube Organic SERP Advanced',
-				value: 'get-youtube-organic-serp-advanced',
-				action: 'Get youtube organic SERP advanced',
-				description: 'Get Advanced YouTube Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live YouTube Video Info Advanced',
-				value: 'get-live-youtube-video-info-advanced',
-				action: 'Get live youtube video info advanced',
-				description: 'Get Advanced YouTube video info (live)'
-			},
-			{
-				name: 'Get YouTube Video Info Advanced',
-				value: 'get-youtube-video-info-advanced',
-				action: 'Get youtube video info advanced',
-				description: 'Get Advanced YouTube Video Info'
 			},
 			{
 				name: 'Get Live YouTube Subtitles Advanced',
@@ -46,22 +33,34 @@ export const YouTubeOperations: INodeProperties[] = [
 				description: 'Get Advanced YouTube subtitles (live)'
 			},
 			{
+				name: 'Get Live YouTube Video Info Advanced',
+				value: 'get-live-youtube-video-info-advanced',
+				action: 'Get live youtube video info advanced',
+				description: 'Get Advanced YouTube video info (live)'
+			},
+      {
+				name: 'Get YouTube Comments Advanced',
+				value: 'get-youtube-comments-advanced',
+				action: 'Get youtube comments advanced',
+				description: 'Get Advanced YouTube Comments'
+			},
+			{
+				name: 'Get YouTube Organic SERP Advanced',
+				value: 'get-youtube-organic-serp-advanced',
+				action: 'Get youtube organic SERP advanced',
+				description: 'Get Advanced YouTube Search results for the specified keyword'
+			},
+			{
 				name: 'Get YouTube Subtitles Advanced',
 				value: 'get-youtube-subtitles-advanced',
 				action: 'Get youtube subtitles advanced',
 				description: 'Get Advanced YouTube Subtitles'
 			},
 			{
-				name: 'Get Live YouTube Comments Advanced',
-				value: 'get-live-youtube-comments-advanced',
-				action: 'Get live youtube comments advanced',
-				description: 'Get Advanced YouTube Comments (live)'
-			},
-			{
-				name: 'Get YouTube Comments Advanced',
-				value: 'get-youtube-comments-advanced',
-				action: 'Get youtube comments advanced',
-				description: 'Get Advanced YouTube Comments'
+				name: 'Get YouTube Video Info Advanced',
+				value: 'get-youtube-video-info-advanced',
+				action: 'Get youtube video info advanced',
+				description: 'Get Advanced YouTube Video Info'
 			}
 		],
 		default: 'get-live-youtube-organic-serp-advanced',

@@ -275,8 +275,7 @@ export const LabsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include clickstream-based metrics in the result?',
+		displayName: 'Include Clickstream-Based Metrics in the Result?',
 		name: 'include_clickstream_data',
 		type: 'boolean',
 		default: false,
@@ -286,11 +285,12 @@ export const LabsOperations: INodeProperties[] = [
 				},
 		},
 	},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-from-limit
 		{
 			displayName: 'Limit (up to 1000)',
 			name: 'limit',
 			type: 'number',
+			description: 'Max number of results to return',
+			hint: 'Recommended value: 100',
 			typeOptions: {
 				maxValue: 1000,
 				minValue: 1,
@@ -301,8 +301,7 @@ export const LabsOperations: INodeProperties[] = [
 							operation: ['get-domain-rank-overview', 'get-keyword-suggestions', 'get-ranked-keywords', 'get-keyword-ideas'],
 					},
 			},
-			// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-			default: 100,
+			default: 50,
 		},
 		{
 			displayName: 'Offset',
@@ -356,47 +355,46 @@ export const LabsOperations: INodeProperties[] = [
 			type: 'multiOptions',
 			placeholder: 'Add Sorting',
 			hint: 'You can set no more than <b>three</b> sorting rules',
-			// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 			options: [
 				{
-					name: 'Search Volume Descending',
-					value: 'keyword_info.search_volume,desc'
-				},
-				{
-					name: 'Search Volume Ascending',
-					value: 'keyword_info.search_volume,asc'
+					name: 'Cost Per Click Ascending',
+					value: 'keyword_info.cpc,asc'
 				},
 				{
 					name: 'Cost Per Click Descending',
 					value: 'keyword_info.cpc,desc'
 				},
 				{
-					name: 'Cost Per Click Ascending',
-					value: 'keyword_info.cpc,asc'
-				},
-				{
-					name: 'Low Top Of Page Bid Descending',
-					value: 'keyword_info.low_top_of_page_bid,desc'
-				},
-				{
-					name: 'Low Top Of Page Bid Ascending',
-					value: 'keyword_info.low_top_of_page_bid,asc'
+					name: 'High Top Of Page Bid Ascending',
+					value: 'keyword_info.high_top_of_page_bid,asc'
 				},
 				{
 					name: 'High Top Of Page Bid Descending',
 					value: 'keyword_info.high_top_of_page_bid,desc'
 				},
 				{
-					name: 'High Top Of Page Bid Ascending',
-					value: 'keyword_info.high_top_of_page_bid,asc'
+					name: 'Keyword Difficulty Ascending',
+					value: 'keyword_properties.keyword_difficulty,asc'
 				},
 				{
 					name: 'Keyword Difficulty Descending',
 					value: 'keyword_properties.keyword_difficulty,desc'
 				},
 				{
-					name: 'Keyword Difficulty Ascending',
-					value: 'keyword_properties.keyword_difficulty,asc'
+					name: 'Low Top Of Page Bid Ascending',
+					value: 'keyword_info.low_top_of_page_bid,asc'
+				},
+				{
+					name: 'Low Top Of Page Bid Descending',
+					value: 'keyword_info.low_top_of_page_bid,desc'
+				},
+				{
+					name: 'Search Volume Ascending',
+					value: 'keyword_info.search_volume,asc'
+				},
+				{
+					name: 'Search Volume Descending',
+					value: 'keyword_info.search_volume,desc'
 				}
 			],
 			displayOptions: {
@@ -412,72 +410,73 @@ export const LabsOperations: INodeProperties[] = [
 			type: 'multiOptions',
 			placeholder: 'Add Sorting',
 			hint: 'You can set no more than <b>three</b> sorting rules',
-			// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 			options: [
 				{
-					name: 'Search Volume Descending',
-					value: 'keyword_data.keyword_info.search_volume,desc'
-				},
-				{
-					name: 'Search Volume Ascending',
-					value: 'keyword_data.keyword_info.search_volume,asc'
+					name: 'Cost Per Click Ascending',
+					value: 'keyword_data.keyword_info.cpc,asc'
 				},
 				{
 					name: 'Cost Per Click Descending',
 					value: 'keyword_data.keyword_info.cpc,desc'
 				},
 				{
-					name: 'Cost Per Click Ascending',
-					value: 'keyword_data.keyword_info.cpc,asc'
-				},
-				{
-					name: 'Low Top Of Page Bid Descending',
-					value: 'keyword_data.keyword_info.low_top_of_page_bid,desc'
-				},
-				{
-					name: 'Low Top Of Page Bid Ascending',
-					value: 'keyword_data.keyword_info.low_top_of_page_bid,asc'
-				},
-				{
-					name: 'High Top Of Page Bid Descending',
-					value: 'keyword_data.keyword_info.high_top_of_page_bid,desc'
-				},
-				{
-					name: 'High Top Of Page Bid Ascending',
-					value: 'keyword_data.keyword_info.high_top_of_page_bid,asc'
-				},
-				{
-					name: 'Keyword Difficulty Descending',
-					value: 'keyword_data.keyword_properties.keyword_difficulty,desc'
-				},
-				{
-					name: 'Keyword Difficulty Ascending',
-					value: 'keyword_data.keyword_properties.keyword_difficulty,asc'
-				},
-				{
-					name: 'Position (Rank Absolute) Descending',
-					value: 'ranked_serp_element.serp_item.rank_absolute,desc'
-				},
-				{
-					name: 'Position (Rank Absolute) Ascending',
-					value: 'ranked_serp_element.serp_item.rank_absolute,asc'
-				},
-				{
-					name: 'Position (Rank Group) Descending',
-					value: 'ranked_serp_element.serp_item.rank_group,desc'
-				},
-				{
-					name: 'Position (Rank Group) Ascending',
-					value: 'ranked_serp_element.serp_item.rank_group,asc'
+					name: 'ETV Ascending',
+					value: 'ranked_serp_element.serp_item.etv,asc'
 				},
 				{
 					name: 'ETV Descending',
 					value: 'ranked_serp_element.serp_item.etv,desc'
 				},
 				{
-					name: 'ETV Ascending',
-					value: 'ranked_serp_element.serp_item.etv,asc'
+					name: 'High Top Of Page Bid Ascending',
+					value: 'keyword_data.keyword_info.high_top_of_page_bid,asc'
+				},
+				{
+					name: 'High Top Of Page Bid Descending',
+					value: 'keyword_data.keyword_info.high_top_of_page_bid,desc'
+				},
+				{
+					name: 'Keyword Difficulty Ascending',
+					value: 'keyword_data.keyword_properties.keyword_difficulty,asc'
+				},
+				{
+					name: 'Keyword Difficulty Descending',
+					value: 'keyword_data.keyword_properties.keyword_difficulty,desc'
+				},
+				{
+					name: 'Low Top Of Page Bid Ascending',
+					value: 'keyword_data.keyword_info.low_top_of_page_bid,asc'
+				},
+				{
+					name: 'Low Top Of Page Bid Descending',
+					value: 'keyword_data.keyword_info.low_top_of_page_bid,desc'
+				},
+				{
+					name: 'Position (Rank Absolute) Ascending',
+					value: 'ranked_serp_element.serp_item.rank_absolute,asc'
+				},
+				{
+					name: 'Position (Rank Absolute) Descending',
+					value: 'ranked_serp_element.serp_item.rank_absolute,desc'
+				},
+
+				{
+					name: 'Position (Rank Group) Ascending',
+					value: 'ranked_serp_element.serp_item.rank_group,asc'
+				},
+				{
+					name: 'Position (Rank Group) Descending',
+					value: 'ranked_serp_element.serp_item.rank_group,desc'
+				},
+				{
+					name: 'Search Volume Ascending',
+					value: 'keyword_data.keyword_info.search_volume,asc'
+				},
+				{
+					name: 'Search Volume Descending',
+					value: 'keyword_data.keyword_info.search_volume,desc'
 				}
+
 			],
 			displayOptions: {
 				show: {

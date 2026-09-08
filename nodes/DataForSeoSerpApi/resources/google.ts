@@ -13,260 +13,7 @@ export const GoogleOperations: INodeProperties[] = [
 						resource: ['google'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
-			{
-				name: 'Get Live Google Organic SERP Regular',
-				value: 'get-live-google-organic-serp-regular',
-				action: 'Get live google organic SERP regular',
-				description: 'Get Regular Google Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Google Organic SERP Advanced',
-				value: 'get-live-google-organic-serp-advanced',
-				action: 'Get live google organic SERP advanced',
-				description: 'Get Advanced Google Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Google Organic SERP HTML',
-				value: 'get-live-google-organic-serp-html',
-				action: 'Get live google organic SERP HTML',
-				description: 'Get HTML Google Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Organic SERP Regular',
-				value: 'get-google-organic-serp-regular',
-				action: 'Get google organic SERP regular',
-				description: 'Get Regular Google Search results for the specified keyword',
-			},
-			{
-				name: 'Get Google Organic SERP Advanced',
-				value: 'get-google-organic-serp-advanced',
-				action: 'Get google organic SERP advanced',
-				description: 'Get Advanced Google Search results for the specified keyword'
-			},
-			{
-				name: 'Get Google Organic SERP HTML',
-				value: 'get-google-organic-serp-html',
-				action: 'Get google organic SERP html',
-				description: 'Get HTML Google Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google AI Mode SERP Advanced',
-				value: 'get-live-google-ai-mode-serp-advanced',
-				action: 'Get live google ai mode SERP advanced',
-				description: 'Get Advanced search results from the AI Mode feature of Google Search (live)'
-			},
-			{
-				name: 'Get Live Google AI Mode SERP HTML',
-				value: 'get-live-google-ai-mode-serp-html',
-				action: 'Get live google ai mode SERP HTML',
-				description: 'Get HTML search results from the AI Mode feature of Google Search (live)'
-			},
-			{
-				name: 'Get Google AI Mode SERP Advanced',
-				value: 'get-google-ai-mode-serp-advanced',
-				action: 'Get google ai mode SERP advanced',
-				description: 'Get Advanced search results from the AI Mode feature of Google Search'
-			},
-			{
-				name: 'Get Google AI Mode SERP HTML',
-				value: 'get-google-ai-mode-serp-html',
-				action: 'Get google ai mode SERP HTML',
-				description: 'Get HTML search results from the AI Mode feature of Google Search'
-			},
-			{
-				name: 'Get Live Google Maps SERP Advanced',
-				value: 'get-live-google-maps-serp-advanced',
-				action: 'Get live google maps SERP advanced',
-				description: 'Get Advanced Google Maps Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Maps SERP Advanced',
-				value: 'get-google-maps-serp-advanced',
-				action: 'Get google maps SERP advanced',
-				description: 'Get Advanced Google Maps Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Local Finder SERP Advanced',
-				value: 'get-live-google-local-finder-serp-advanced',
-				action: 'Get live google local finder SERP advanced',
-				description: 'Get Advanced Google Local Finder Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Google Local Finder SERP HTML',
-				value: 'get-live-google-local-finder-serp-html',
-				action: 'Get live google local finder SERP html',
-				description: 'Get HTML Google Local Finder Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Local Finder SERP Advanced',
-				value: 'get-google-local-finder-serp-advanced',
-				action: 'Get google local finder SERP advanced',
-				description: 'Get Advanced Google Local Finder Search results for the specified keyword'
-			},
-			{
-				name: 'Get Google Local Finder SERP HTML',
-				value: 'get-google-local-finder-serp-html',
-				action: 'Get google local finder SERP html',
-				description: 'Get HTML Google Local Finder Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google News SERP Advanced',
-				value: 'get-live-google-news-serp-advanced',
-				action: 'Get live google news SERP advanced',
-				description: 'Get Advanced Google News Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Google News SERP HTML',
-				value: 'get-live-google-news-serp-html',
-				action: 'Get live google news SERP html',
-				description: 'Get HTML Google News Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google News SERP Advanced',
-				value: 'get-google-news-serp-advanced',
-				action: 'Get google news SERP advanced',
-				description: 'Get Advanced Google News Search results for the specified keyword'
-			},
-			{
-				name: 'Get Google News SERP HTML',
-				value: 'get-google-news-serp-html',
-				action: 'Get google news SERP html',
-				description: 'Get HTML Google News Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Events SERP Advanced',
-				value: 'get-live-google-events-serp-advanced',
-				action: 'Get live google events SERP advanced',
-				description: 'Get Advanced Google Events Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Events SERP Advanced',
-				value: 'get-google-events-serp-advanced',
-				action: 'Get google events SERP advanced',
-				description: 'Get Advanced Google Events Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Images SERP Advanced',
-				value: 'get-live-google-images-serp-advanced',
-				action: 'Get live google images SERP advanced',
-				description: 'Get Advanced Google Images Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Google Images SERP HTML',
-				value: 'get-live-google-images-serp-html',
-				action: 'Get live google images SERP html',
-				description: 'Get HTML Google Images Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Images SERP Advanced',
-				value: 'get-google-images-serp-advanced',
-				action: 'Get google images SERP advanced',
-				description: 'Get Advanced Google Images Search results for the specified keyword'
-			},
-			{
-				name: 'Get Google Images SERP HTML',
-				value: 'get-google-images-serp-html',
-				action: 'Get google images SERP html',
-				description: 'Get HTML Google Images Search results for the specified keyword'
-			},
-			{
-				name: 'Get Google Search By Image SERP Advanced',
-				value: 'get-google-search-by-image-serp-advanced',
-				action: 'Get google search by image SERP advanced',
-				description: 'Get Advanced Google Search By Image results'
-			},
-			{
-				name: 'Get Google Search By Image SERP HTML',
-				value: 'get-google-search-by-image-serp-html',
-				action: 'Get google search by image SERP html',
-				description: 'Get HTML Google Search By Image results'
-			},
-			{
-				name: 'Get Google Jobs SERP Advanced',
-				value: 'get-google-jobs-serp-advanced',
-				action: 'Get google jobs SERP advanced',
-				description: 'Get Advanced Google Jobs Search results'
-			},
-			{
-				name: 'Get Google Jobs SERP HTML',
-				value: 'get-google-jobs-serp-html',
-				action: 'Get google jobs SERP html',
-				description: 'Get HTML Google Jobs Search results'
-			},
-			{
-				name: 'Get Live Google Autocomplete SERP Advanced',
-				value: 'get-live-google-autocomplete-serp-advanced',
-				action: 'Get live google autocomplete SERP advanced',
-				description: 'Get Advanced Google Autocomplete Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Autocomplete SERP Advanced',
-				value: 'get-google-autocomplete-serp-advanced',
-				action: 'Get google autocomplete SERP advanced',
-				description: 'Get Advanced Google Autocomplete Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Dataset Search SERP Advanced',
-				value: 'get-live-google-dataset-serp-advanced',
-				action: 'Get live google dataset search SERP advanced',
-				description: 'Get Advanced Google Dataset Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Dataset Search SERP Advanced',
-				value: 'get-google-dataset-serp-advanced',
-				action: 'Get google dataset search SERP advanced',
-				description: 'Get Advanced Google Dataset Search results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Dataset Info Advanced',
-				value: 'get-live-google-dataset-info-advanced',
-				action: 'Get live google dataset info advanced',
-				description: 'Get Advanced Google Dataset Info results (live)'
-			},
-			{
-				name: 'Get Google Dataset Info Advanced',
-				value: 'get-google-dataset-info-advanced',
-				action: 'Get google dataset info advanced',
-				description: 'Get Advanced Google Dataset Info results'
-			},
-			{
-				name: 'Get Live Google Ads Advertisers SERP Advanced',
-				value: 'get-live-google-ads-advertisers-serp-advanced',
-				action: 'Get live google ads advertisers SERP advanced',
-				description: 'Get Advanced Google Ads Advertisers results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Google Ads Advertisers SERP Advanced',
-				value: 'get-google-ads-advertisers-serp-advanced',
-				action: 'Get google ads advertisers SERP advanced',
-				description: 'Get Advanced Google Ads Advertisers results for the specified keyword'
-			},
-			{
-				name: 'Get Live Google Ads Search Advanced',
-				value: 'get-live-google-ads-search-advanced',
-				action: 'Get live google ads search advanced',
-				description: 'Get Advanced Google Ads Search results (live)'
-			},
-			{
-				name: 'Get Google Ads Search Advanced',
-				value: 'get-google-ads-search-advanced',
-				action: 'Get google ads search advanced',
-				description: 'Get Advanced Google Ads Search results'
-			},
-			{
-				name: 'Get Live Finance Explore SERP Advanced',
-				value: 'get-live-google-finance-explore-serp-advanced',
-				action: 'Get live google finance explore SERP advanced',
-				description: 'Get Advanced Google Finance Explore SERP results (live)'
-			},
-			{
-				name: 'Get Live Finance Explore SERP HTML',
-				value: 'get-live-google-finance-explore-serp-html',
-				action: 'Get live google finance explore SERP HTML',
-				description: 'Get HTML Google Finance Explore SERP results (live)'
-			},
 			{
 				name: 'Get Finance Explore SERP Advanced',
 				value: 'get-google-finance-explore-serp-advanced',
@@ -278,18 +25,6 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'get-google-finance-explore-serp-html',
 				action: 'Get google finance explore SERP HTML',
 				description: 'Get HTML Google Finance Explore SERP results'
-			},
-			{
-				name: 'Get Live Finance Markets SERP Advanced',
-				value: 'get-live-google-finance-markets-serp-advanced',
-				action: 'Get live google finance markets SERP advanced',
-				description: 'Get Advanced Google Finance Markets SERP results (live)'
-			},
-			{
-				name: 'Get Live Finance Markets SERP HTML',
-				value: 'get-live-google-finance-markets-serp-html',
-				action: 'Get live google finance markets SERP HTML',
-				description: 'Get HTML Google Finance Markets SERP results (live)'
 			},
 			{
 				name: 'Get Finance Markets SERP Advanced',
@@ -304,18 +39,6 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get HTML Google Finance Markets SERP results'
 			},
 			{
-				name: 'Get Live Finance Quote SERP Advanced',
-				value: 'get-live-google-finance-quote-serp-advanced',
-				action: 'Get live google finance quote SERP advanced',
-				description: 'Get Advanced Google Finance Quote SERP results (live)'
-			},
-			{
-				name: 'Get Live Finance Quote SERP HTML',
-				value: 'get-live-google-finance-quote-serp-html',
-				action: 'Get live google finance quote SERP html',
-				description: 'Get HTML Google Finance Quote SERP results (live)'
-			},
-			{
 				name: 'Get Finance Quote SERP Advanced',
 				value: 'get-google-finance-quote-serp-advanced',
 				action: 'Get google finance quote SERP advanced',
@@ -328,16 +51,293 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get HTML Google Finance Quote SERP results'
 			},
 			{
+				name: 'Get Finance Ticker Search Advanced',
+				value: 'get-google-finance-ticker-search-advanced',
+				action: 'Get google finance ticker search advanced',
+				description: 'Get Advanced Google Finance Ticker Search results'
+			},
+			{
+				name: 'Get Google Ads Advertisers SERP Advanced',
+				value: 'get-google-ads-advertisers-serp-advanced',
+				action: 'Get google ads advertisers SERP advanced',
+				description: 'Get Advanced Google Ads Advertisers results for the specified keyword'
+			},
+			{
+				name: 'Get Google Ads Search Advanced',
+				value: 'get-google-ads-search-advanced',
+				action: 'Get google ads search advanced',
+				description: 'Get Advanced Google Ads Search results'
+			},
+			{
+				name: 'Get Google AI Mode SERP Advanced',
+				value: 'get-google-ai-mode-serp-advanced',
+				action: 'Get google ai mode SERP advanced',
+				description: 'Get Advanced search results from the AI Mode feature of Google Search'
+			},
+			{
+				name: 'Get Google AI Mode SERP HTML',
+				value: 'get-google-ai-mode-serp-html',
+				action: 'Get google ai mode SERP HTML',
+				description: 'Get HTML search results from the AI Mode feature of Google Search'
+			},
+			{
+				name: 'Get Google Autocomplete SERP Advanced',
+				value: 'get-google-autocomplete-serp-advanced',
+				action: 'Get google autocomplete SERP advanced',
+				description: 'Get Advanced Google Autocomplete Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Dataset Info Advanced',
+				value: 'get-google-dataset-info-advanced',
+				action: 'Get google dataset info advanced',
+				description: 'Get Advanced Google Dataset Info results'
+			},
+			{
+				name: 'Get Google Dataset Search SERP Advanced',
+				value: 'get-google-dataset-serp-advanced',
+				action: 'Get google dataset search SERP advanced',
+				description: 'Get Advanced Google Dataset Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Events SERP Advanced',
+				value: 'get-google-events-serp-advanced',
+				action: 'Get google events SERP advanced',
+				description: 'Get Advanced Google Events Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Images SERP Advanced',
+				value: 'get-google-images-serp-advanced',
+				action: 'Get google images SERP advanced',
+				description: 'Get Advanced Google Images Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Images SERP HTML',
+				value: 'get-google-images-serp-html',
+				action: 'Get google images SERP html',
+				description: 'Get HTML Google Images Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Jobs SERP Advanced',
+				value: 'get-google-jobs-serp-advanced',
+				action: 'Get google jobs SERP advanced',
+				description: 'Get Advanced Google Jobs Search results'
+			},
+			{
+				name: 'Get Google Jobs SERP HTML',
+				value: 'get-google-jobs-serp-html',
+				action: 'Get google jobs SERP html',
+				description: 'Get HTML Google Jobs Search results'
+			},
+			{
+				name: 'Get Google Local Finder SERP Advanced',
+				value: 'get-google-local-finder-serp-advanced',
+				action: 'Get google local finder SERP advanced',
+				description: 'Get Advanced Google Local Finder Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Local Finder SERP HTML',
+				value: 'get-google-local-finder-serp-html',
+				action: 'Get google local finder SERP html',
+				description: 'Get HTML Google Local Finder Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Maps SERP Advanced',
+				value: 'get-google-maps-serp-advanced',
+				action: 'Get google maps SERP advanced',
+				description: 'Get Advanced Google Maps Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google News SERP Advanced',
+				value: 'get-google-news-serp-advanced',
+				action: 'Get google news SERP advanced',
+				description: 'Get Advanced Google News Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google News SERP HTML',
+				value: 'get-google-news-serp-html',
+				action: 'Get google news SERP html',
+				description: 'Get HTML Google News Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Organic SERP Advanced',
+				value: 'get-google-organic-serp-advanced',
+				action: 'Get google organic SERP advanced',
+				description: 'Get Advanced Google Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Organic SERP HTML',
+				value: 'get-google-organic-serp-html',
+				action: 'Get google organic SERP html',
+				description: 'Get HTML Google Search results for the specified keyword'
+			},
+			{
+				name: 'Get Google Organic SERP Regular',
+				value: 'get-google-organic-serp-regular',
+				action: 'Get google organic SERP regular',
+				description: 'Get Regular Google Search results for the specified keyword',
+			},
+			{
+				name: 'Get Google Search By Image SERP Advanced',
+				value: 'get-google-search-by-image-serp-advanced',
+				action: 'Get google search by image SERP advanced',
+				description: 'Get Advanced Google Search By Image results'
+			},
+			{
+				name: 'Get Google Search By Image SERP HTML',
+				value: 'get-google-search-by-image-serp-html',
+				action: 'Get google search by image SERP html',
+				description: 'Get HTML Google Search By Image results'
+			},
+			{
+				name: 'Get Live Finance Explore SERP Advanced',
+				value: 'get-live-google-finance-explore-serp-advanced',
+				action: 'Get live google finance explore SERP advanced',
+				description: 'Get Advanced Google Finance Explore SERP results (live)'
+			},
+			{
+				name: 'Get Live Finance Explore SERP HTML',
+				value: 'get-live-google-finance-explore-serp-html',
+				action: 'Get live google finance explore SERP HTML',
+				description: 'Get HTML Google Finance Explore SERP results (live)'
+			},
+			{
+				name: 'Get Live Finance Markets SERP Advanced',
+				value: 'get-live-google-finance-markets-serp-advanced',
+				action: 'Get live google finance markets SERP advanced',
+				description: 'Get Advanced Google Finance Markets SERP results (live)'
+			},
+			{
+				name: 'Get Live Finance Markets SERP HTML',
+				value: 'get-live-google-finance-markets-serp-html',
+				action: 'Get live google finance markets SERP HTML',
+				description: 'Get HTML Google Finance Markets SERP results (live)'
+			},
+			{
+				name: 'Get Live Finance Quote SERP Advanced',
+				value: 'get-live-google-finance-quote-serp-advanced',
+				action: 'Get live google finance quote SERP advanced',
+				description: 'Get Advanced Google Finance Quote SERP results (live)'
+			},
+			{
+				name: 'Get Live Finance Quote SERP HTML',
+				value: 'get-live-google-finance-quote-serp-html',
+				action: 'Get live google finance quote SERP html',
+				description: 'Get HTML Google Finance Quote SERP results (live)'
+			},
+			{
 				name: 'Get Live Finance Ticker Search Advanced',
 				value: 'get-live-google-finance-ticker-search-advanced',
 				action: 'Get live google finance ticker search advanced',
 				description: 'Get Advanced Google Finance Ticker Search results (live)'
 			},
 			{
-				name: 'Get Finance Ticker Search Advanced',
-				value: 'get-google-finance-ticker-search-advanced',
-				action: 'Get google finance ticker search advanced',
-				description: 'Get Advanced Google Finance Ticker Search results'
+				name: 'Get Live Google Ads Advertisers SERP Advanced',
+				value: 'get-live-google-ads-advertisers-serp-advanced',
+				action: 'Get live google ads advertisers SERP advanced',
+				description: 'Get Advanced Google Ads Advertisers results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Ads Search Advanced',
+				value: 'get-live-google-ads-search-advanced',
+				action: 'Get live google ads search advanced',
+				description: 'Get Advanced Google Ads Search results (live)'
+			},
+			{
+				name: 'Get Live Google AI Mode SERP Advanced',
+				value: 'get-live-google-ai-mode-serp-advanced',
+				action: 'Get live google ai mode SERP advanced',
+				description: 'Get Advanced search results from the AI Mode feature of Google Search (live)'
+			},
+			{
+				name: 'Get Live Google AI Mode SERP HTML',
+				value: 'get-live-google-ai-mode-serp-html',
+				action: 'Get live google ai mode SERP HTML',
+				description: 'Get HTML search results from the AI Mode feature of Google Search (live)'
+			},
+			{
+				name: 'Get Live Google Autocomplete SERP Advanced',
+				value: 'get-live-google-autocomplete-serp-advanced',
+				action: 'Get live google autocomplete SERP advanced',
+				description: 'Get Advanced Google Autocomplete Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Dataset Info Advanced',
+				value: 'get-live-google-dataset-info-advanced',
+				action: 'Get live google dataset info advanced',
+				description: 'Get Advanced Google Dataset Info results (live)'
+			},
+
+			{
+				name: 'Get Live Google Dataset Search SERP Advanced',
+				value: 'get-live-google-dataset-serp-advanced',
+				action: 'Get live google dataset search SERP advanced',
+				description: 'Get Advanced Google Dataset Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Events SERP Advanced',
+				value: 'get-live-google-events-serp-advanced',
+				action: 'Get live google events SERP advanced',
+				description: 'Get Advanced Google Events Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Images SERP Advanced',
+				value: 'get-live-google-images-serp-advanced',
+				action: 'Get live google images SERP advanced',
+				description: 'Get Advanced Google Images Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Images SERP HTML',
+				value: 'get-live-google-images-serp-html',
+				action: 'Get live google images SERP html',
+				description: 'Get HTML Google Images Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Local Finder SERP Advanced',
+				value: 'get-live-google-local-finder-serp-advanced',
+				action: 'Get live google local finder SERP advanced',
+				description: 'Get Advanced Google Local Finder Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Local Finder SERP HTML',
+				value: 'get-live-google-local-finder-serp-html',
+				action: 'Get live google local finder SERP html',
+				description: 'Get HTML Google Local Finder Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Maps SERP Advanced',
+				value: 'get-live-google-maps-serp-advanced',
+				action: 'Get live google maps SERP advanced',
+				description: 'Get Advanced Google Maps Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google News SERP Advanced',
+				value: 'get-live-google-news-serp-advanced',
+				action: 'Get live google news SERP advanced',
+				description: 'Get Advanced Google News Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google News SERP HTML',
+				value: 'get-live-google-news-serp-html',
+				action: 'Get live google news SERP html',
+				description: 'Get HTML Google News Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Organic SERP Advanced',
+				value: 'get-live-google-organic-serp-advanced',
+				action: 'Get live google organic SERP advanced',
+				description: 'Get Advanced Google Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Organic SERP HTML',
+				value: 'get-live-google-organic-serp-html',
+				action: 'Get live google organic SERP HTML',
+				description: 'Get HTML Google Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Google Organic SERP Regular',
+				value: 'get-live-google-organic-serp-regular',
+				action: 'Get live google organic SERP regular',
+				description: 'Get Regular Google Search results for the specified keyword (live)'
 			}
 		],
 		default: 'get-live-google-organic-serp-regular',
@@ -851,38 +851,37 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Date Range to get Events for',
 		name: 'date_range',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
-				name: 'Today',
+				name: '1 - Today',
 				value: 'today',
 			},
 			{
-				name: 'Tomorrow',
+				name: '2 - Tomorrow',
 				value: 'tomorrow',
 			},
 			{
-				name: 'Week',
+				name: '3 - Week',
 				value: 'week',
 			},
 			{
-				name: 'Weekend',
+				name: '4 - Weekend',
 				value: 'weekend',
 			},
 			{
-				name: 'Next Week',
+				name: '5 - Next Week',
 				value: 'next_week',
 			},
 			{
-				name: 'Month',
+				name: '6 - Month',
 				value: 'month',
 			},
 			{
-				name: 'Next Month',
+				name: '7 - Next Month',
 				value: 'next_month',
 			}
 		],
@@ -1130,10 +1129,9 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Advertising Platform',
 		name: 'platform',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -1141,12 +1139,12 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'all',
 			},
 			{
-				name: 'Google Play',
-				value: 'google_play',
-			},
-			{
 				name: 'Google Maps',
 				value: 'google_maps',
+			},
+			{
+				name: 'Google Play',
+				value: 'google_play',
 			},
 			{
 				name: 'Google Search',
@@ -1175,10 +1173,9 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Ad Format',
 		name: 'format',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -1186,12 +1183,12 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'all',
 			},
 			{
-				name: 'Text',
-				value: 'text',
-			},
-			{
 				name: 'Image',
 				value: 'image',
+			},
+			{
+				name: 'Text',
+				value: 'text',
 			},
 			{
 				name: 'Video',
@@ -1652,10 +1649,9 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Filter Results by Minimum Rating',
 		name: 'min_rating',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -1772,27 +1768,26 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Job Posting Date',
 		name: 'date_posted',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Posted Today',
-				value: 'today',
 			},
 			{
 				name: 'Posted No Longer Than 3 Days Ago',
 				value: '3days',
 			},
 			{
+				name: 'Posted No Longer Than a Month Ago',
+				value: 'month',
+			},
+			{
 				name: 'Posted No Longer Than a Week Ago',
 				value: 'week',
 			},
 			{
-				name: 'Posted No Longer Than a Month Ago',
-				value: 'month',
+				name: 'Posted Today',
+				value: 'today',
 			}
 		],
 		default: '',
@@ -1828,59 +1823,58 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Search Client for Autocomplete',
 		name: 'client',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Google Chrome',
-				value: 'chrome',
 			},
 			{
 				name: 'Address Bar in Chrome',
 				value: 'chrome-omni',
 			},
 			{
-				name: 'Google Search Home Page',
-				value: 'gws-wiz',
-			},
-			{
-				name: 'Google Search Engine Results Page',
-				value: 'gws-wiz-serp',
-			},
-			{
-				name: 'Safari Browser',
-				value: 'safari',
-			},
-			{
 				name: 'Firefox Browser',
 				value: 'firefox',
 			},
 			{
-				name: 'Google Search Opened in Google Chrome Browser',
-				value: 'psy-ab',
-			},
-			{
-				name: 'Returns XML',
-				value: 'toolbar',
-			},
-			{
-				name: 'Returns JSONP',
-				value: 'youtube',
-			},
-			{
-				name: 'Google Local',
-				value: 'gws-wiz-local',
+				name: 'Google Chrome',
+				value: 'chrome',
 			},
 			{
 				name: 'Google Image Search',
 				value: 'img',
 			},
 			{
+				name: 'Google Local',
+				value: 'gws-wiz-local',
+			},
+			{
+				name: 'Google Search Engine Results Page',
+				value: 'gws-wiz-serp',
+			},
+			{
+				name: 'Google Search Home Page',
+				value: 'gws-wiz',
+			},
+			{
+				name: 'Google Search Opened in Google Chrome Browser',
+				value: 'psy-ab',
+			},
+			{
 				name: 'Google Shopping Search',
 				value: 'products-cc',
+			},
+			{
+				name: 'Returns JSONP',
+				value: 'youtube',
+			},
+			{
+				name: 'Returns XML',
+				value: 'toolbar',
+			},
+			{
+				name: 'Safari Browser',
+				value: 'safari',
 			}
 		],
 		default: '',
@@ -1929,35 +1923,34 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'File Formats of the Dataset',
 		name: 'file_formats',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Other',
-				value: 'other',
 			},
 			{
 				name: 'Archive',
 				value: 'archive',
 			},
 			{
-				name: 'Text',
-				value: 'text',
+				name: 'Document',
+				value: 'document',
 			},
 			{
 				name: 'Image',
 				value: 'image',
 			},
 			{
-				name: 'Document',
-				value: 'document',
+				name: 'Other',
+				value: 'other',
 			},
 			{
 				name: 'Tabular',
 				value: 'tabular',
+			},
+			{
+				name: 'Text',
+				value: 'text',
 			}
 		],
 		default: '',
@@ -2001,9 +1994,22 @@ export const GoogleOperations: INodeProperties[] = [
 	{
 		displayName: 'Whether Displayed Datasets Are Free?',
 		name: 'is_free',
-		type: 'boolean',
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-boolean
-		default: null,
+		type: 'options',
+		options: [
+			{
+				name: '',
+				value: ''
+			},
+			{
+				name: 'Yes',
+				value: true
+			},
+			{
+				name: 'No',
+				value: false
+			}
+		],
+		default: '',
 		displayOptions: {
 			show: {
 				operation: [
@@ -2033,43 +2039,42 @@ export const GoogleOperations: INodeProperties[] = [
 						name: 'value',
 						type: 'options',
 						required: true,
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 						options: [
-							{
-								name: 'Humanities',
-								value: 'humanities'
-							},
-							{
-								name: 'Social Sciences',
-								value: 'social_sciences'
-							},
-							{
-								name: 'Life Sciences',
-								value: 'life_sciences'
-							},
 							{
 								name: 'Agriculture',
 								value: 'agriculture'
-							},
-							{
-								name: 'Natural Sciences',
-								value: 'natural_sciences'
-							},
-							{
-								name: 'GEO',
-								value: 'geo'
-							},
-							{
-								name: 'Computer',
-								value: 'computer'
 							},
 							{
 								name: 'Architecture and Urban Planning',
 								value: 'architecture_and_urban_planning'
 							},
 							{
+								name: 'Computer',
+								value: 'computer'
+							},
+							{
 								name: 'Engineering',
 								value: 'engineering'
+							},
+							{
+								name: 'GEO',
+								value: 'geo'
+							},
+							{
+								name: 'Humanities',
+								value: 'humanities'
+							},
+							{
+								name: 'Life Sciences',
+								value: 'life_sciences'
+							},
+							{
+								name: 'Natural Sciences',
+								value: 'natural_sciences'
+							},
+							{
+								name: 'Social Sciences',
+								value: 'social_sciences'
 							}
 						],
 						default: 'humanities',
@@ -2124,39 +2129,10 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Type of Google Finance Market',
 		name: 'market_type',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Most Active',
-				value: 'most-active',
-			},
-			{
-				name: 'Indexes',
-				value: 'indexes',
-			},
-			{
-				name: 'Indexes/Americas',
-				value: 'indexes/americas',
-			},
-			{
-				name: 'Indexes/Europe Middle East Africa',
-				value: 'indexes/europe-middle-east-africa',
-			},
-			{
-				name: 'Indexes/Asia Pacific',
-				value: 'indexes/asia-pacific',
-			},
-			{
-				name: 'Gainers',
-				value: 'gainers',
-			},
-			{
-				name: 'Losers',
-				value: 'losers',
 			},
 			{
 				name: 'Climate Leaders',
@@ -2169,6 +2145,34 @@ export const GoogleOperations: INodeProperties[] = [
 			{
 				name: 'Currencies',
 				value: 'currencies',
+			},
+			{
+				name: 'Gainers',
+				value: 'gainers',
+			},
+			{
+				name: 'Indexes',
+				value: 'indexes',
+			},
+			{
+				name: 'Indexes/Americas',
+				value: 'indexes/americas',
+			},
+			{
+				name: 'Indexes/Asia Pacific',
+				value: 'indexes/asia-pacific',
+			},
+			{
+				name: 'Indexes/Europe Middle East Africa',
+				value: 'indexes/europe-middle-east-africa',
+			},
+			{
+				name: 'Losers',
+				value: 'losers',
+			},
+			{
+				name: 'Most Active',
+				value: 'most-active',
 			}
 		],
 		default: '',
@@ -2187,38 +2191,37 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Time Window for Google_finance_quote Graph',
 		name: 'window',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: '1D',
+				name: '1 - 1D',
 				value: '1D',
 			},
 			{
-				name: '5D',
+				name: '2 - 5D',
 				value: '5D',
 			},
 			{
-				name: '1M',
+				name: '3 - 1M',
 				value: '1M',
 			},
 			{
-				name: '6M',
+				name: '4 - 6M',
 				value: '6M',
 			},
 			{
-				name: 'YTD',
+				name: '5 - YTD',
 				value: 'YTD',
 			},
 			{
-				name: '1Y',
+				name: '6 - 1Y',
 				value: '1Y',
 			},
 			{
-				name: '5Y',
+				name: '7 - 5Y',
 				value: '5Y',
 			},
 			{
-				name: 'MAX',
+				name: '8 - MAX',
 				value: 'MAX',
 			}
 		],
@@ -2238,15 +2241,18 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Category of Financial Instruments to Search for',
 		name: 'category',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'All',
 				value: 'all',
 			},
 			{
-				name: 'Stock',
-				value: 'stock',
+				name: 'Currency',
+				value: 'currency',
+			},
+			{
+				name: 'Futures',
+				value: 'futures',
 			},
 			{
 				name: 'Index',
@@ -2257,12 +2263,8 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'mutual_fund',
 			},
 			{
-				name: 'Currency',
-				value: 'currency',
-			},
-			{
-				name: 'Futures',
-				value: 'futures',
+				name: 'Stock',
+				value: 'stock',
 			}
 		],
 		default: 'all',

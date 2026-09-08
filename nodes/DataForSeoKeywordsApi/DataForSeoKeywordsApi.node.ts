@@ -45,28 +45,26 @@ export class DataForSeoKeywordsApi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
-						{
-							// eslint-disable-next-line n8n-nodes-base/node-param-resource-with-plural-option
-							name: 'Google Ads',
-							value: 'google_ads',
-						},
-						{
-							name: 'Bing Ads',
+					  {
+							name: 'Bing Ads Data',
 							value: 'bing_ads',
-						},
-						{
-							name: 'Google Trends',
-							value: 'google_trends',
-						},
-						{
-							name: 'DataForSEO Trends',
-							value: 'dataforseo_trends',
 						},
 						{
 							name: 'Clickstream Data',
 							value: 'clickstream_data',
+						},
+					  {
+							name: 'DataForSEO Trends',
+							value: 'dataforseo_trends',
+						},
+						{
+							name: 'Google Ads',
+							value: 'google_ads',
+						},
+						{
+							name: 'Google Trends',
+							value: 'google_trends',
 						}
 				],
 				default: 'google_ads',

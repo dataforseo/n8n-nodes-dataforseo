@@ -13,14 +13,7 @@ export const YahooOperations: INodeProperties[] = [
 						resource: ['yahoo'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
-			{
-				name: 'Get Live Yahoo Organic SERP Regular',
-				value: 'get-live-yahoo-organic-serp-regular',
-				action: 'Get live yahoo organic SERP regular',
-				description: 'Get Regular Yahoo Search results for the specified keyword (live)'
-			},
 			{
 				name: 'Get Live Yahoo Organic SERP Advanced',
 				value: 'get-live-yahoo-organic-serp-advanced',
@@ -34,10 +27,10 @@ export const YahooOperations: INodeProperties[] = [
 				description: 'Get HTML Yahoo Search results for the specified keyword (live)'
 			},
 			{
-				name: 'Get Yahoo Organic SERP Regular',
-				value: 'get-yahoo-organic-serp-regular',
-				action: 'Get yahoo organic SERP regular',
-				description: 'Get Regular Yahoo Search results for the specified keyword',
+				name: 'Get Live Yahoo Organic SERP Regular',
+				value: 'get-live-yahoo-organic-serp-regular',
+				action: 'Get live yahoo organic SERP regular',
+				description: 'Get Regular Yahoo Search results for the specified keyword (live)'
 			},
 			{
 				name: 'Get Yahoo Organic SERP Advanced',
@@ -50,6 +43,12 @@ export const YahooOperations: INodeProperties[] = [
 				value: 'get-yahoo-organic-serp-html',
 				action: 'Get yahoo organic SERP html',
 				description: 'Get HTML Yahoo Search results for the specified keyword'
+			},
+			{
+				name: 'Get Yahoo Organic SERP Regular',
+				value: 'get-yahoo-organic-serp-regular',
+				action: 'Get yahoo organic SERP regular',
+				description: 'Get Regular Yahoo Search results for the specified keyword',
 			}
 		],
 		default: 'get-live-yahoo-organic-serp-regular',

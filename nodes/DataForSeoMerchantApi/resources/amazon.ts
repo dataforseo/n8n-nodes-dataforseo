@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,18 +15,6 @@ export const AmazonOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get Products Advanced',
-				value: 'get-amazon-products-advanced',
-				action: 'Get products advanced',
-				description: 'Get results from Amazon product listings according to the specified keyword (product name), location, and language parameters (advanced)',
-			},
-			{
-				name: 'Get Products HTML',
-				value: 'get-amazon-products-html',
-				action: 'Get products html',
-				description: 'Get results from Amazon product listings according to the specified keyword (product name), location, and language parameters (html)',
-			},
-			{
 				name: 'Get Product ASINs Advanced',
 				value: 'get-amazon-product-asins-advanced',
 				action: 'Get product asins advanced',
@@ -38,6 +25,18 @@ export const AmazonOperations: INodeProperties[] = [
 				value: 'get-amazon-product-asins-html',
 				action: 'Get product asins html',
 				description: 'Get a full list of ASINs assigned to different modifications of a product (html)',
+			},
+			{
+				name: 'Get Products Advanced',
+				value: 'get-amazon-products-advanced',
+				action: 'Get products advanced',
+				description: 'Get results from Amazon product listings according to the specified keyword (product name), location, and language parameters (advanced)',
+			},
+			{
+				name: 'Get Products HTML',
+				value: 'get-amazon-products-html',
+				action: 'Get products html',
+				description: 'Get results from Amazon product listings according to the specified keyword (product name), location, and language parameters (html)',
 			},
 			{
 				name: 'Get Sellers Advanced',
@@ -255,7 +254,7 @@ export const AmazonOperations: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -279,8 +278,16 @@ export const AmazonOperations: INodeProperties[] = [
 				value: 'Books',
 			},
 			{
+				name: 'Boys\' Fashion',
+				value: 'Boys\' Fashion',
+			},
+			{
 				name: 'Computers',
 				value: 'Computers',
+			},
+			{
+				name: 'Deals',
+				value: 'Deals',
 			},
 			{
 				name: 'Digital Music',
@@ -291,32 +298,8 @@ export const AmazonOperations: INodeProperties[] = [
 				value: 'Electronics',
 			},
 			{
-				name: 'Kindle Store',
-				value: 'Kindle Store',
-			},
-			{
-				name: 'Prime Video',
-				value: 'Prime Video',
-			},
-			{
-				name: 'Women\'s Fashion',
-				value: 'Women\'s Fashion',
-			},
-			{
-				name: 'Men\'s Fashion',
-				value: 'Men\'s Fashion',
-			},
-			{
 				name: 'Girls\' Fashion',
 				value: 'Girls\' Fashion',
-			},
-			{
-				name: 'Boys\' Fashion',
-				value: 'Boys\' Fashion',
-			},
-			{
-				name: 'Deals',
-				value: 'Deals',
 			},
 			{
 				name: 'Health & Household',
@@ -326,13 +309,21 @@ export const AmazonOperations: INodeProperties[] = [
 				name: 'Home & Kitchen',
 				value: 'Home & Kitchen',
 			},
-			{
+      {
 				name: 'Industrial & Scientific',
 				value: 'Industrial & Scientific',
 			},
 			{
+				name: 'Kindle Store',
+				value: 'Kindle Store',
+			},
+			{
 				name: 'Luggage',
 				value: 'Luggage',
+			},
+			{
+				name: 'Men\'s Fashion',
+				value: 'Men\'s Fashion',
 			},
 			{
 				name: 'Movies & TV',
@@ -345,6 +336,10 @@ export const AmazonOperations: INodeProperties[] = [
 			{
 				name: 'Pet Supplies',
 				value: 'Pet Supplies',
+			},
+			{
+				name: 'Prime Video',
+				value: 'Prime Video',
 			},
 			{
 				name: 'Software',
@@ -365,6 +360,10 @@ export const AmazonOperations: INodeProperties[] = [
 			{
 				name: 'Video Games',
 				value: 'Video Games',
+			},
+			{
+				name: 'Women\'s Fashion',
+				value: 'Women\'s Fashion',
 			}
 		],
 		default: '',
@@ -431,32 +430,32 @@ export const AmazonOperations: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Relevance',
-				value: 'relevance',
-			},
-			{
-				name: 'Price (Low to High)',
-				value: 'price_low_to_high',
-			},
-			{
-				name: 'Price (High to Low)',
-				value: 'price_high_to_low',
-			},
-			{
-				name: 'Featured',
-				value: 'featured',
 			},
 			{
 				name: 'Avg Customer Review',
 				value: 'avg_customer_review',
 			},
 			{
+				name: 'Featured',
+				value: 'featured',
+			},
+			{
 				name: 'Newest Arrival',
 				value: 'newest_arrival',
+			},
+			{
+				name: 'Price (High to Low)',
+				value: 'price_high_to_low',
+			},
+			{
+				name: 'Price (Low to High)',
+				value: 'price_low_to_high',
+			},
+			{
+				name: 'Relevance',
+				value: 'relevance',
 			}
 		],
 		default: '',

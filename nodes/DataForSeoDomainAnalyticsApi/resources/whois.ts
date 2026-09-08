@@ -28,6 +28,7 @@ export const WhoisOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -40,8 +41,7 @@ export const WhoisOperations: INodeProperties[] = [
 				],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100
+		default: 50
 	},
 	{
 		displayName: 'Offset',

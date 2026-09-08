@@ -8,19 +8,12 @@ export const ContentGenerationOperations: INodeProperties[] = [
 		name: 'operation',
 		type: 'options',
 		noDataExpression: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Generate Text From Initial Input (Deprecated)',
-				value: 'generate-text-from-initial-input',
-				action: 'Get generated text from input - deprecated',
-				description: 'Get a text generated based on the part of the text you define and other available parameters',
-			},
-			{
-				name: 'Generate Text By Topic(Deprecated)',
-				value: 'generate-text-by-topic',
-				action: 'Generate text by topic - deprecated',
-				description: 'Get a text generated based on the topic and other parameters you specify',
+				name: 'Check Grammar (Deprecated)',
+				value: 'check-grammar',
+				action: 'Check grammar - deprecated',
+				description: 'Get grammar and spelling corrections for the text you specify',
 			},
 			{
 				name: 'Generate Meta Tags (Deprecated)',
@@ -35,22 +28,28 @@ export const ContentGenerationOperations: INodeProperties[] = [
 				description: 'Get 10 subtopics generated based on the topic and other parameters you specify',
 			},
 			{
-				name: 'Paraphrase Text (Deprecated)',
-				value: 'paraphrase-text',
-				action: 'Paraphrase text - deprecated',
-				description: 'Get a paraphrased version of the text you specify',
+				name: 'Generate Text By Topic (Deprecated)',
+				value: 'generate-text-by-topic',
+				action: 'Generate text by topic - deprecated',
+				description: 'Get a text generated based on the topic and other parameters you specify',
 			},
 			{
-				name: 'Check Grammar (Deprecated)',
-				value: 'check-grammar',
-				action: 'Check grammar - deprecated',
-				description: 'Get grammar and spelling corrections for the text you specify',
+				name: 'Generate Text From Initial Input (Deprecated)',
+				value: 'generate-text-from-initial-input',
+				action: 'Get generated text from input - deprecated',
+				description: 'Get a text generated based on the part of the text you define and other available parameters',
 			},
 			{
 				name: 'Get Text Summary (Deprecated)',
 				value: 'get-text-summary',
 				action: 'Get text summary - deprecated',
 				description: 'Get statistical data based on the given text, such as the number of words and sentences, vocabulary density, and text readability',
+			},
+			{
+				name: 'Paraphrase Text (Deprecated)',
+				value: 'paraphrase-text',
+				action: 'Paraphrase text - deprecated',
+				description: 'Get a paraphrased version of the text you specify',
 			}
 		],
 		default: 'generate-text-from-initial-input',
@@ -490,8 +489,10 @@ export const ContentGenerationOperations: INodeProperties[] = [
 	{
 		displayName: 'Token for Generating Subsequent Results',
 		name: 'supplement_token',
-		// eslint-disable-next-line n8n-nodes-base/node-param-type-options-password-missing
 		type: 'string',
+		typeOptions: {
+			password: true
+		},
 		hint: 'You can use this parameter to continue the generation of text from the initial response.',
 		displayOptions: {
 				show: {

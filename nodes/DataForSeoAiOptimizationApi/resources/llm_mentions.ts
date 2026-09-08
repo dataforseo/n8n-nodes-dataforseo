@@ -63,20 +63,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -99,30 +97,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -143,13 +147,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
-					},
+					}
 				],
 			},
 		],
@@ -193,20 +191,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -229,30 +225,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -273,13 +275,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
-					},
+					}
 				],
 			},
 		],
@@ -320,20 +316,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -356,30 +350,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -400,13 +400,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
-					},
+					}
 				],
 			},
 		],
@@ -446,20 +440,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -482,30 +474,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -526,12 +524,6 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
 					},
 				],
 			},
@@ -571,20 +563,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -607,30 +597,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -651,13 +647,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
-					},
+					}
 				],
 			},
 		],
@@ -696,20 +686,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 			{
 				name: 'values',
 				displayName: 'Target',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
 				values: [
+					{
+						displayName: 'Include Subdomains in the Search? (for Domain Only)',
+						name: 'include_subdomains',
+						type: 'boolean',
+						default: false
+					},
 					{
 						displayName: 'Target Domain',
 						name: 'domain',
 						type: 'string',
 						hint: 'Required field if you don’t specify keyword. A domain should be specified without https:// and www.',
-						default: '',
-					},
-					{
-						displayName: 'Target Keyword',
-						name: 'keyword',
-						type: 'string',
-						hint: 'Required field if you don’t specify domain',
 						default: '',
 					},
 					{
@@ -732,30 +720,36 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						displayName: 'Target Domain/Keyword Search Scope',
 						name: 'search_scope',
 						type: 'multiOptions',
-						// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 						options: [
+							{
+								name: 'Answer (for Keyword Only)',
+								value: 'answer'
+							},
 							{
 								name: 'Any',
 								value: 'any'
-							},
-							{
-								name: 'Sources (for Domain Only)',
-								value: 'sources'
-							},
-							{
-								name: 'Search Results (for Domain Only)',
-								value: 'search_results',
 							},
 							{
 								name: 'Question (for Keyword Only)',
 								value: 'question'
 							},
 							{
-								name: 'Answer (for Keyword Only)',
-								value: 'answer'
+								name: 'Search Results (for Domain Only)',
+								value: 'search_results',
+							},
+							{
+								name: 'Sources (for Domain Only)',
+								value: 'sources'
 							}
 						],
 						default: [],
+					},
+					{
+						displayName: 'Target Keyword',
+						name: 'keyword',
+						type: 'string',
+						hint: 'Required field if you don’t specify domain',
+						default: '',
 					},
 					{
 						displayName: 'Target Keyword Match Type (for Keyword Only)',
@@ -776,12 +770,6 @@ export const LlmMentionsOperations: INodeProperties[] = [
 							}
 						],
 						default: '',
-					},
-					{
-						displayName: 'Include Subdomains in the Search? (for Domain Only)',
-						name: 'include_subdomains',
-						type: 'boolean',
-						default: false
 					},
 				],
 			},
@@ -978,6 +966,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		type: 'number',
 		typeOptions: {
 			maxValue: 1000,
@@ -991,8 +980,7 @@ export const LlmMentionsOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,16 +15,16 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Search Apps Advanced',
-				value: 'search-apps-advanced',
-				action: 'Search apps advanced',
-				description: 'Get a list of apps ranking on Google Play for the specified keyword (advanced)',
+				name: 'Get App Info Advanced',
+				value: 'get-app-info-advanced',
+				action: 'Get app info advanced',
+				description: 'Get information about the Google Play application (advanced)',
 			},
 			{
-				name: 'Search Apps HTML',
-				value: 'search-apps-html',
-				action: 'Search apps html',
-				description: 'Get a list of apps ranking on Google Play for the specified keyword (html)',
+				name: 'Get App Info HTML',
+				value: 'get-app-info-html',
+				action: 'Get app info html',
+				description: 'Get information about the Google Play application (html)',
 			},
 			{
 				name: 'Get App List Advanced',
@@ -40,16 +39,10 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get a list of mobile applications published in the top charts on the Google Play platform (html)',
 			},
 			{
-				name: 'Get App Info Advanced',
-				value: 'get-app-info-advanced',
-				action: 'Get app info advanced',
-				description: 'Get information about the Google Play application (advanced)',
-			},
-			{
-				name: 'Get App Info HTML',
-				value: 'get-app-info-html',
-				action: 'Get app info html',
-				description: 'Get information about the Google Play application (html)',
+				name: 'Get App Listing Search',
+				value: 'get-app-listing-search',
+				action: 'Get app listing search',
+				description: 'Get a list of apps published on Google Play along with additional information: its ID, icon, reviews count, rating, price, and other data',
 			},
 			{
 				name: 'Get App Reviews',
@@ -58,11 +51,17 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get reviews published on the Google Play platform for the app',
 			},
 			{
-				name: 'Get App Listing Search',
-				value: 'get-app-listing-search',
-				action: 'Get app listing search',
-				description: 'Get a list of apps published on Google Play along with additional information: its ID, icon, reviews count, rating, price, and other data',
-			}
+				name: 'Search Apps Advanced',
+				value: 'search-apps-advanced',
+				action: 'Search apps advanced',
+				description: 'Get a list of apps ranking on Google Play for the specified keyword (advanced)',
+			},
+			{
+				name: 'Search Apps HTML',
+				value: 'search-apps-html',
+				action: 'Search apps html',
+				description: 'Get a list of apps ranking on Google Play for the specified keyword (html)',
+			},
 		],
 		default: 'search-apps-advanced',
 	},
@@ -95,8 +94,12 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'featured',
 			},
 			{
-				name: 'Topselling Paid',
-				value: 'topselling_paid',
+				name: 'Movers Shakers',
+				value: 'movers_shakers',
+			},
+			{
+				name: 'Topgrossing',
+				value: 'topgrossing',
 			},
 			{
 				name: 'Topselling Free',
@@ -111,12 +114,8 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'topselling_new_paid',
 			},
 			{
-				name: 'Topgrossing',
-				value: 'topgrossing',
-			},
-			{
-				name: 'Movers Shakers',
-				value: 'movers_shakers',
+				name: 'Topselling Paid',
+				value: 'topselling_paid',
 			}
 		],
 		displayOptions: {
@@ -365,28 +364,28 @@ export const GoogleOperations: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
-				name: '5',
-				value: 5,
-			},
-			{
-				name: '4',
-				value: 4,
-			},
-			{
-				name: '3',
-				value: 3,
+				name: '1',
+				value: 1,
 			},
 			{
 				name: '2',
 				value: 2,
 			},
 			{
-				name: '1',
-				value: 1,
+				name: '3',
+				value: 3,
+			},
+			{
+				name: '4',
+				value: 4,
+			},
+			{
+				name: '5',
+				value: 5,
 			}
 		],
 		displayOptions: {
@@ -519,6 +518,7 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		type: 'number',
 		typeOptions: {
 			maxValue: 1000,
@@ -532,8 +532,7 @@ export const GoogleOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

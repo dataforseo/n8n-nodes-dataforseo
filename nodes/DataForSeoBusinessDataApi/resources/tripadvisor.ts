@@ -171,19 +171,14 @@ export const TripAdvisorOperations: INodeProperties[] = [
 		displayName: 'Tripadvisor Traveler Rating for a Place of Interest',
 		name: 'ratings',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
-			{
-				name: 'Excellent',
-				value: 'excellent',
-			},
-			{
-				name: 'Very Good',
-				value: 'very_good',
-			},
 			{
 				name: 'Average',
 				value: 'average',
+			},
+			{
+				name: 'Excellent',
+				value: 'excellent',
 			},
 			{
 				name: 'Poor',
@@ -192,6 +187,10 @@ export const TripAdvisorOperations: INodeProperties[] = [
 			{
 				name: 'Terrible',
 				value: 'terrible',
+			},
+			{
+				name: 'Very Good',
+				value: 'very_good',
 			}
 		],
 		default: [],
@@ -207,27 +206,26 @@ export const TripAdvisorOperations: INodeProperties[] = [
 		displayName: 'Filter by Type of Travelers Who Left a Review',
 		name: 'visit_type',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'Families',
-				value: 'families',
+				name: 'Business',
+				value: 'business',
 			},
 			{
 				name: 'Couples',
 				value: 'couples',
 			},
 			{
-				name: 'Solo',
-				value: 'solo',
-			},
-			{
-				name: 'Business',
-				value: 'business',
+				name: 'Families',
+				value: 'families',
 			},
 			{
 				name: 'Friends',
 				value: 'friends',
+			},
+			{
+				name: 'Solo',
+				value: 'solo',
 			}
 		],
 		default: [],
@@ -243,53 +241,52 @@ export const TripAdvisorOperations: INodeProperties[] = [
 		displayName: 'Filter by Months When a Traveler Made a Visit',
 		name: 'months',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'January',
+				name: '01 January',
 				value: 'january',
 			},
 			{
-				name: 'February',
+				name: '02 February',
 				value: 'february',
 			},
 			{
-				name: 'March',
+				name: '03 March',
 				value: 'march',
 			},
 			{
-				name: 'April',
+				name: '04 April',
 				value: 'april',
 			},
 			{
-				name: 'May',
+				name: '05 May',
 				value: 'may',
 			},
 			{
-				name: 'June',
+				name: '06 June',
 				value: 'june',
 			},
 			{
-				name: 'July',
+				name: '07 July',
 				value: 'july',
 			},
 			{
-				name: 'August',
+				name: '08 August',
 				value: 'august',
 			},
 			{
-				name: 'September',
+				name: '09 September',
 				value: 'september',
 			},{
-				name: 'October',
+				name: '10 October',
 				value: 'october',
 			},
 			{
-				name: 'November',
+				name: '11 November',
 				value: 'november',
 			},
 			{
-				name: 'December',
+				name: '12 December',
 				value: 'december',
 			}
 		],

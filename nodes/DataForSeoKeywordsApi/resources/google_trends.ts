@@ -102,27 +102,26 @@ export const GoogleTrendsOperations: INodeProperties[] = [
 		displayName: 'Google Trends Type',
 		name: 'type',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Web',
-				value: 'web',
-			},
-			{
-				name: 'News',
-				value: 'news',
-			},
-			{
-				name: 'Youtube',
-				value: 'youtube',
+				name: 'Froogle',
+				value: 'froogle',
 			},
 			{
 				name: 'Images',
 				value: 'images',
 			},
 			{
-				name: 'Froogle',
-				value: 'froogle',
+				name: 'News',
+				value: 'news',
+			},
+			{
+				name: 'Web',
+				value: 'web',
+			},
+			{
+				name: 'Youtube',
+				value: 'youtube',
 			}
 		],
 		displayOptions: {
@@ -186,50 +185,49 @@ export const GoogleTrendsOperations: INodeProperties[] = [
 		displayName: 'Preset Time Ranges',
 		name: 'time_range',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
-				name: 'Past Hour',
+				name: '01 - Past Hour',
 				value: 'past_hour',
 			},
 			{
-				name: 'Past 4 Hours',
+				name: '02 - Past 4 Hours',
 				value: 'past_4_hours',
 			},
 			{
-				name: 'Past Day',
+				name: '03 - Past Day',
 				value: 'past_day',
 			},
 			{
-				name: 'Past 7 Days',
+				name: '04 - Past 7 Days',
 				value: 'past_7_days',
 			},
 			{
-				name: 'Past 30 Days',
+				name: '05 - Past 30 Days',
 				value: 'past_30_days',
 			},
 			{
-				name: 'Past 90 Days',
+				name: '06 - Past 90 Days',
 				value: 'past_90_days',
 			},
 			{
-				name: 'Past 12 Months',
+				name: '07 - Past 12 Months',
 				value: 'past_12_months',
 			},
 			{
-				name: 'Past 5 Years',
+				name: '08 - Past 5 Years',
 				value: 'past_5_years',
 			},
 			{
-				name: '2004 - Present (Web Only)',
+				name: '09 - 2004 - Present (Web Only)',
 				value: '2004_present',
 			},
 			{
-				name: '2008 - Present (for News, Youtube, Images, Froogle)',
+				name: '10 - 2008 - Present (for News, Youtube, Images, Froogle)',
 				value: '2008_present',
 			}
 		],

@@ -164,8 +164,7 @@ export const KeywordsDataOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include keywords associated with adult content?',
+		displayName: 'Include Keywords Associated with Adult Content?',
 		name: 'include_adult_keywords',
 		type: 'boolean',
 		default: false,
@@ -212,11 +211,22 @@ export const KeywordsDataOperations: INodeProperties[] = [
 		displayName: 'Sort By',
 		name: 'sort_by',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
+			},
+			{
+				name: 'Competition Index',
+				value: 'competition_index',
+			},
+			{
+				name: 'High Top Of Page Bid',
+				value: 'high_top_of_page_bid',
+			},
+			{
+				name: 'Low Top Of Page Bid',
+				value: 'low_top_of_page_bid',
 			},
 			{
 				name: 'Relevance',
@@ -225,19 +235,7 @@ export const KeywordsDataOperations: INodeProperties[] = [
 			{
 				name: 'Search Volume',
 				value: 'search_volume',
-			},
-			{
-				name: 'Competition Index',
-				value: 'competition_index',
-			},
-			{
-				name: 'Low Top Of Page Bid',
-				value: 'low_top_of_page_bid',
-			},
-			{
-				name: 'High Top Of Page Bid',
-				value: 'high_top_of_page_bid',
-			},
+			}
 		],
 		displayOptions: {
 			show: {

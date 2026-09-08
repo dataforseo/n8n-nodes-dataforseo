@@ -13,61 +13,12 @@ export const BingAdsOperations: INodeProperties[] = [
 						resource: ['bing_ads'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Get Live Bing Search Volume',
-				value: 'get-live-bing-search-volume',
-				action: 'Get live bing search volume',
-				description: 'Get Bing search volume data for the last month, search volume trend for up to 24 past months, current cost-per-click and competition values for paid search (live)',
-			},
-			{
-				name: 'Get Bing Search Volume',
-				value: 'get-bing-search-volume',
-				action: 'Get bing search volume',
-				description: 'Get Bing search volume data for the last month, search volume trend for up to 24 past months, current cost-per-click and competition values for paid search',
-			},
-			{
-				name: 'Get Live Bing Search Volume History',
-				value: 'get-live-bing-search-volume-history',
-				action: 'Get live bing search volume history',
-				description: 'Get Bing historical search volume data for up to 1000 keywords in one request (live)',
-			},
-			{
-				name: 'Get Bing Search Volume History',
-				value: 'get-bing-search-volume-history',
-				action: 'Get bing search volume history',
-				description: 'Get Bing historical search volume data for up to 1000 keywords in one request',
-			},
-			{
-				name: 'Get Live Bing Keywords for Site',
-				value: 'get-live-bing-keywords-for-site',
-				action: 'Get live bing keywords for site',
-				description: 'Get a list of keywords relevant to the specified website along with their search volume for the last month, search volume trend for up to 24 past months, current cost-per-click and competition level for paid search (live)',
-			},
-			{
-				name: 'Get Bing Keywords for Site',
-				value: 'get-bing-keywords-for-site',
-				action: 'Get bing keywords for site',
-				description: 'Get a list of keywords relevant to the specified website along with their search volume for the last month, search volume trend for up to 24 past months, current cost-per-click and competition level for paid search',
-			},
-			{
-				name: 'Get Live Bing Keywords for Keywords',
-				value: 'get-live-bing-keywords-for-keywords',
-				action: 'Get live bing keywords for keywords',
-				description: 'Get relevant keyword suggestions for the specified terms (live)',
-			},
-			{
-				name: 'Get Bing Keywords for Keywords',
-				value: 'get-bing-keywords-for-keywords',
-				action: 'Get bing keywords for keywords',
-				description: 'Get relevant keyword suggestions for the specified terms',
-			},
-			{
-				name: 'Get Live Bing Keyword Performance',
-				value: 'get-live-bing-keyword-performance',
-				action: 'Get live bing keyword performance',
-				description: 'Get a set of keyword performance stats for a group of keywords depending on the specified match type, location and language parameters (live)',
+				name: 'Get Bing Ads Audience Estimation',
+				value: 'get-bing-ads-audience-estimation',
+				action: 'Get bing ads audience estimation',
+				description: 'Get estimated audience size for an ad campaign based on specified targeting criteria',
 			},
 			{
 				name: 'Get Bing Keyword Performance',
@@ -76,16 +27,34 @@ export const BingAdsOperations: INodeProperties[] = [
 				description: 'Get a set of keyword performance stats for a group of keywords depending on the specified match type, location and language parameters',
 			},
 			{
-				name: 'Get Live Bing Keyword Suggestions for URL',
-				value: 'get-live-bing-keyword-suggestions-for-url',
-				action: 'Get live bing keyword suggestions for url',
-				description: 'Get keyword suggestions based on the content of a given webpage URL (live)',
-			},
-			{
 				name: 'Get Bing Keyword Suggestions for URL',
 				value: 'get-bing-keyword-suggestions-for-url',
 				action: 'Get bing keyword suggestions for url',
 				description: 'Get keyword suggestions based on the content of a given webpage URL',
+			},
+			{
+				name: 'Get Bing Keywords for Keywords',
+				value: 'get-bing-keywords-for-keywords',
+				action: 'Get bing keywords for keywords',
+				description: 'Get relevant keyword suggestions for the specified terms',
+			},
+			{
+				name: 'Get Bing Keywords for Site',
+				value: 'get-bing-keywords-for-site',
+				action: 'Get bing keywords for site',
+				description: 'Get a list of keywords relevant to the specified website along with their search volume for the last month, search volume trend for up to 24 past months, current cost-per-click and competition level for paid search',
+			},
+			{
+				name: 'Get Bing Search Volume',
+				value: 'get-bing-search-volume',
+				action: 'Get bing search volume',
+				description: 'Get Bing search volume data for the last month, search volume trend for up to 24 past months, current cost-per-click and competition values for paid search',
+			},
+			{
+				name: 'Get Bing Search Volume History',
+				value: 'get-bing-search-volume-history',
+				action: 'Get bing search volume history',
+				description: 'Get Bing historical search volume data for up to 1000 keywords in one request',
 			},
 			{
 				name: 'Get Live Bing Ads Audience Estimation',
@@ -94,10 +63,40 @@ export const BingAdsOperations: INodeProperties[] = [
 				description: 'Get estimated audience size for an ad campaign based on specified targeting criteria (live)',
 			},
 			{
-				name: 'Get Bing Ads Audience Estimation',
-				value: 'get-bing-ads-audience-estimation',
-				action: 'Get bing ads audience estimation',
-				description: 'Get estimated audience size for an ad campaign based on specified targeting criteria',
+				name: 'Get Live Bing Keyword Performance',
+				value: 'get-live-bing-keyword-performance',
+				action: 'Get live bing keyword performance',
+				description: 'Get a set of keyword performance stats for a group of keywords depending on the specified match type, location and language parameters (live)',
+			},
+			{
+				name: 'Get Live Bing Keyword Suggestions for URL',
+				value: 'get-live-bing-keyword-suggestions-for-url',
+				action: 'Get live bing keyword suggestions for url',
+				description: 'Get keyword suggestions based on the content of a given webpage URL (live)',
+			},
+			{
+				name: 'Get Live Bing Keywords for Keywords',
+				value: 'get-live-bing-keywords-for-keywords',
+				action: 'Get live bing keywords for keywords',
+				description: 'Get relevant keyword suggestions for the specified terms (live)',
+			},
+			{
+				name: 'Get Live Bing Keywords for Site',
+				value: 'get-live-bing-keywords-for-site',
+				action: 'Get live bing keywords for site',
+				description: 'Get a list of keywords relevant to the specified website along with their search volume for the last month, search volume trend for up to 24 past months, current cost-per-click and competition level for paid search (live)',
+			},
+			{
+				name: 'Get Live Bing Search Volume',
+				value: 'get-live-bing-search-volume',
+				action: 'Get live bing search volume',
+				description: 'Get Bing search volume data for the last month, search volume trend for up to 24 past months, current cost-per-click and competition values for paid search (live)',
+			},
+			{
+				name: 'Get Live Bing Search Volume History',
+				value: 'get-live-bing-search-volume-history',
+				action: 'Get live bing search volume history',
+				description: 'Get Bing historical search volume data for up to 1000 keywords in one request (live)',
 			}
 		],
 		default: 'get-live-bing-search-volume',
@@ -708,28 +707,27 @@ export const BingAdsOperations: INodeProperties[] = [
 		displayName: 'Sort By',
 		name: 'sort_by',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Search Volume',
-				value: 'search_volume',
-			},
-			{
-				name: 'CPC',
-				value: 'cpc',
 			},
 			{
 				name: 'Competition',
 				value: 'competition',
 			},
 			{
+				name: 'CPC',
+				value: 'cpc',
+			},
+			{
 				name: 'Relevance',
 				value: 'relevance',
 			},
+			{
+				name: 'Search Volume',
+				value: 'search_volume',
+			}
 		],
 		displayOptions: {
 			show: {
@@ -868,11 +866,26 @@ export const BingAdsOperations: INodeProperties[] = [
 						displayName: 'Age',
 						name: 'value',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 						options: [
+							{
+								name: '0 - 12',
+								value: 'zero_to_twelve'
+							},
+							{
+								name: '13 - 17',
+								value: 'thirteen_to_seventeen'
+							},
 							{
 								name: '18 - 24',
 								value: 'eighteen_to_twenty_four'
+							},
+							{
+								name: '25 - 34',
+								value: 'twenty_five_to_thirty_four'
+							},
+							{
+								name: '35 - 49',
+								value: 'thirty_five_to_forty_nine'
 							},
 							{
 								name: '50 - 64',
@@ -883,24 +896,8 @@ export const BingAdsOperations: INodeProperties[] = [
 								value: 'sixty_five_and_above'
 							},
 							{
-								name: '13 - 17',
-								value: 'thirteen_to_seventeen'
-							},
-							{
-								name: '35 - 49',
-								value: 'thirty_five_to_forty_nine'
-							},
-							{
-								name: '25 - 34',
-								value: 'twenty_five_to_thirty_four'
-							},
-							{
 								name: 'Unknown',
 								value: 'unknown'
-							},
-							{
-								name: '0 - 12',
-								value: 'zero_to_twelve'
 							}
 						],
 						default: 'eighteen_to_twenty_four',

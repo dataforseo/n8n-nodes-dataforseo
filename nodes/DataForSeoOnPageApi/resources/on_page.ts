@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -10,6 +9,72 @@ export const OnPageOperations: INodeProperties[] = [
 		type: 'options',
 		noDataExpression: true,
 		options: [
+			{
+				name: 'Get Duplicate Content',
+				value: 'get-duplicate-content',
+				action: 'Get duplicate content',
+				description: 'Get a list of pages that have content similar to the page specified in the request',
+			},
+			{
+				name: 'Get Duplicate Tags',
+				value: 'get-duplicate-tags',
+				action: 'Get duplicate tags',
+				description: 'Get a list of pages that contain duplicate title or description tags',
+			},
+			{
+				name: 'Get Keyword Density',
+				value: 'get-keyword-density',
+				action: 'Get keyword density',
+				description: 'Get keyword density and keyword frequency data for terms appearing on the specified website or web page',
+			},
+			{
+				name: 'Get Lighthouse Audit Results',
+				value: 'get-lighthouse-audit-results',
+				action: 'Get lighthouse audit results',
+				description: 'Get the results of Lighthouse Audit',
+			},
+			{
+				name: 'Get Links',
+				value: 'get-links',
+				action: 'Get links',
+				description: 'Get a list of internal and external links detected on a target website',
+			},
+			{
+				name: 'Get Live Instant Pages',
+				value: 'get-live-instant-pages',
+				action: 'Get live instant pages',
+				description: 'Get the page-specific data with detailed information on how well a particular page is optimized for organic search (live)',
+			},
+			{
+				name: 'Get Live Lighthouse Audit Results',
+				value: 'get-live-lighthouse-audit-results',
+				action: 'Get live lighthouse audit results',
+				description: 'Get the results of Lighthouse Audit (live)',
+			},
+			{
+				name: 'Get Live Parsed Content',
+				value: 'get-live-parsed-content',
+				action: 'Get live parsed content',
+				description: 'Get the structured content of the target page, including link URLs, anchors, headings, and textual content',
+			},
+			{
+				name: 'Get Microdata',
+				value: 'get-microdata',
+				action: 'Get microdata',
+				description: 'Get microdata available on the specified page of the target website and detailed results of its validation',
+			},
+			{
+				name: 'Get Non-Indexable Pages',
+				value: 'get-non-indexable-pages',
+				action: 'Get non indexable pages',
+				description: 'Get a list of pages that are blocked from being indexed by Google and other search engines through robots.txt, HTTP headers, or meta tags settings',
+			},
+			{
+				name: 'Get Page Screenshot',
+				value: 'get-page-screenshot',
+				action: 'Get page screenshot',
+				description: 'Get a full high-quality screenshot of any webpage (live)',
+			},
 			{
 				name: 'Get Pages',
 				value: 'get-pages',
@@ -23,58 +88,10 @@ export const OnPageOperations: INodeProperties[] = [
 				description: 'Get the list of pages where a specific resource is located',
 			},
 			{
-				name: 'Get Resources',
-				value: 'get-resources',
-				action: 'Get resources',
-				description: 'Get a list of resources, including images, scripts, stylesheets, and broken elements',
-			},
-			{
-				name: 'Get Duplicate Tags',
-				value: 'get-duplicate-tags',
-				action: 'Get duplicate tags',
-				description: 'Get a list of pages that contain duplicate title or description tags',
-			},
-			{
-				name: 'Get Duplicate Content',
-				value: 'get-duplicate-content',
-				action: 'Get duplicate content',
-				description: 'Get a list of pages that have content similar to the page specified in the request',
-			},
-			{
-				name: 'Get Links',
-				value: 'get-links',
-				action: 'Get links',
-				description: 'Get a list of internal and external links detected on a target website',
-			},
-			{
-				name: 'Get Redirect Chains',
-				value: 'get-redirect-chains',
-				action: 'Get redirect chains',
-				description: 'Get a full list of redirect URLs that form redirect chains',
-			},
-			{
-				name: 'Get Non-Indexable Pages',
-				value: 'get-non-indexable-pages',
-				action: 'Get non indexable pages',
-				description: 'Get a list of pages that are blocked from being indexed by Google and other search engines through robots.txt, HTTP headers, or meta tags settings',
-			},
-			{
-				name: 'Get Waterfall',
-				value: 'get-waterfall',
-				action: 'Get waterfall',
-				description: 'Get the page speed insights (page loading time, time to secure connection, the time it takes to load page resources, and so on)',
-			},
-			{
-				name: 'Get Keyword Density',
-				value: 'get-keyword-density',
-				action: 'Get keyword density',
-				description: 'Get keyword density and keyword frequency data for terms appearing on the specified website or web page',
-			},
-			{
-				name: 'Get Microdata',
-				value: 'get-microdata',
-				action: 'Get microdata',
-				description: 'Get microdata available on the specified page of the target website and detailed results of its validation',
+				name: 'Get Parsed Content',
+				value: 'get-parsed-content',
+				action: 'Get parsed content',
+				description: 'Get the structured content of the target page, including link URLs, anchors, headings, and textual content',
 			},
 			{
 				name: 'Get Raw HTML',
@@ -83,40 +100,22 @@ export const OnPageOperations: INodeProperties[] = [
 				description: 'Get the HTML of a page you indicate in the request',
 			},
 			{
-				name: 'Get Page Screenshot',
-				value: 'get-page-screenshot',
-				action: 'Get page screenshot',
-				description: 'Get a full high-quality screenshot of any webpage (live)',
+				name: 'Get Redirect Chains',
+				value: 'get-redirect-chains',
+				action: 'Get redirect chains',
+				description: 'Get a full list of redirect URLs that form redirect chains',
 			},
 			{
-				name: 'Get Parsed Content',
-				value: 'get-parsed-content',
-				action: 'Get parsed content',
-				description: 'Get the structured content of the target page, including link URLs, anchors, headings, and textual content',
+				name: 'Get Resources',
+				value: 'get-resources',
+				action: 'Get resources',
+				description: 'Get a list of resources, including images, scripts, stylesheets, and broken elements',
 			},
 			{
-				name: 'Get Live Parsed Content',
-				value: 'get-live-parsed-content',
-				action: 'Get live parsed content',
-				description: 'Get the structured content of the target page, including link URLs, anchors, headings, and textual content',
-			},
-			{
-				name: 'Get Live Instant Pages',
-				value: 'get-live-instant-pages',
-				action: 'Get live instant pages',
-				description: 'Get the page-specific data with detailed information on how well a particular page is optimized for organic search (live)',
-			},
-			{
-				name: 'Get Lighthouse Audit Results',
-				value: 'get-lighthouse-audit-results',
-				action: 'Get lighthouse audit results',
-				description: 'Get the results of Lighthouse Audit',
-			},
-			{
-				name: 'Get Live Lighthouse Audit Results',
-				value: 'get-live-lighthouse-audit-results',
-				action: 'Get live lighthouse audit results',
-				description: 'Get the results of Lighthouse Audit (live)',
+				name: 'Get Waterfall',
+				value: 'get-waterfall',
+				action: 'Get waterfall',
+				description: 'Get the page speed insights (page loading time, time to secure connection, the time it takes to load page resources, and so on)',
 			}
 		],
 		default: 'get-pages',
@@ -281,7 +280,7 @@ export const OnPageOperations: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: ''
 			},
 			{
@@ -1658,6 +1657,7 @@ export const OnPageOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -1678,8 +1678,7 @@ export const OnPageOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',
@@ -1782,27 +1781,26 @@ export const OnPageOperations: INodeProperties[] = [
 		displayName: 'Categories of Lighthouse Audits',
 		name: 'categories',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'SEO',
-				value: 'seo',
-			},
-			{
-				name: 'PWA',
-				value: 'pwa',
-			},
-			{
-				name: 'Performance',
-				value: 'performance',
+				name: 'Accessibility',
+				value: 'accessibility',
 			},
 			{
 				name: 'Best Practices',
 				value: 'best_practices',
 			},
 			{
-				name: 'Accessibility',
-				value: 'accessibility',
+				name: 'Performance',
+				value: 'performance',
+			},
+				{
+				name: 'PWA',
+				value: 'pwa',
+			},
+			{
+				name: 'SEO',
+				value: 'seo',
 			}
 		],
 		default: [],

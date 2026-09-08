@@ -13,31 +13,18 @@ export const BingOperations: INodeProperties[] = [
 						resource: ['bing'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Get Live Bing Organic SERP Regular',
-				value: 'get-live-bing-organic-serp-regular',
-				action: 'Get live bing organic SERP regular',
-				description: 'Get Regular Bing Search results for the specified keyword (live)'
+				name: 'Get Bing Local Finder SERP HTML',
+				value: 'get-bing-local-finder-serp-html',
+				action: 'Get bing local finder SERP html',
+				description: 'Get HTML Bing Local Finder Search results for the specified keyword'
 			},
 			{
-				name: 'Get Live Bing Organic SERP Advanced',
-				value: 'get-live-bing-organic-serp-advanced',
-				action: 'Get live bing organic SERP advanced',
-				description: 'Get Advanced Bing Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Live Bing Organic SERP HTML',
-				value: 'get-live-bing-organic-serp-html',
-				action: 'Get live bing organic SERP HTML',
-				description: 'Get HTML Bing Search results for the specified keyword (live)'
-			},
-			{
-				name: 'Get Bing Organic SERP Regular',
-				value: 'get-bing-organic-serp-regular',
-				action: 'Get bing organic SERP regular',
-				description: 'Get Regular Bing Search results for the specified keyword',
+				name: 'Get Bing Local Finder SERP Regular',
+				value: 'get-bing-local-finder-serp-regular',
+				action: 'Get bing local finder SERP regular',
+				description: 'Get Regular Bing Local Finder Search results for the specified keyword'
 			},
 			{
 				name: 'Get Bing Organic SERP Advanced',
@@ -52,10 +39,10 @@ export const BingOperations: INodeProperties[] = [
 				description: 'Get HTML Bing Search results for the specified keyword'
 			},
 			{
-				name: 'Get Live Bing Local Finder SERP Regular',
-				value: 'get-live-bing-local-finder-serp-regular',
-				action: 'Get live bing local finder SERP regular',
-				description: 'Get Regular Bing Local Finder Search results for the specified keyword (live)'
+				name: 'Get Bing Organic SERP Regular',
+				value: 'get-bing-organic-serp-regular',
+				action: 'Get bing organic SERP regular',
+				description: 'Get Regular Bing Search results for the specified keyword',
 			},
 			{
 				name: 'Get Live Bing Local Finder SERP HTML',
@@ -64,21 +51,32 @@ export const BingOperations: INodeProperties[] = [
 				description: 'Get HTML Bing Local Finder Search results for the specified keyword (live)'
 			},
 			{
-				name: 'Get Bing Local Finder SERP Regular',
-				value: 'get-bing-local-finder-serp-regular',
-				action: 'Get bing local finder SERP regular',
-				description: 'Get Regular Bing Local Finder Search results for the specified keyword'
+				name: 'Get Live Bing Local Finder SERP Regular',
+				value: 'get-live-bing-local-finder-serp-regular',
+				action: 'Get live bing local finder SERP regular',
+				description: 'Get Regular Bing Local Finder Search results for the specified keyword (live)'
+			},
+      {
+				name: 'Get Live Bing Organic SERP Advanced',
+				value: 'get-live-bing-organic-serp-advanced',
+				action: 'Get live bing organic SERP advanced',
+				description: 'Get Advanced Bing Search results for the specified keyword (live)'
 			},
 			{
-				name: 'Get Bing Local Finder SERP HTML',
-				value: 'get-bing-local-finder-serp-html',
-				action: 'Get bing local finder SERP html',
-				description: 'Get HTML Bing Local Finder Search results for the specified keyword'
+				name: 'Get Live Bing Organic SERP HTML',
+				value: 'get-live-bing-organic-serp-html',
+				action: 'Get live bing organic SERP HTML',
+				description: 'Get HTML Bing Search results for the specified keyword (live)'
+			},
+			{
+				name: 'Get Live Bing Organic SERP Regular',
+				value: 'get-live-bing-organic-serp-regular',
+				action: 'Get live bing organic SERP regular',
+				description: 'Get Regular Bing Search results for the specified keyword (live)'
 			}
 		],
 		default: 'get-live-bing-organic-serp-regular',
 	},
-
 	{
 		displayName: 'Keyword',
 		name: 'keyword',

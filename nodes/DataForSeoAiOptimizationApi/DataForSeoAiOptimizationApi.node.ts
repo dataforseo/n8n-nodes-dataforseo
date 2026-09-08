@@ -47,12 +47,7 @@ export class DataForSeoAiOptimizationApi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
-						{
-							name: 'Keyword Data',
-							value: 'keyword_data',
-						},
 						{
 							name: 'ChatGPT',
 							value: 'chat_gpt',
@@ -66,12 +61,16 @@ export class DataForSeoAiOptimizationApi implements INodeType {
 							value: 'gemini',
 						},
 						{
-							name: 'Perplexity',
-							value: 'perplexity',
+							name: 'Keyword Data',
+							value: 'keyword_data',
 						},
 						{
 							name: 'LLM Mentions',
 							value: 'llm_mentions',
+						},
+						{
+							name: 'Perplexity',
+							value: 'perplexity',
 						}
 				],
 				default: 'keyword_data',

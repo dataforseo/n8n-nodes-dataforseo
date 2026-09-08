@@ -67,23 +67,18 @@ export class DataForSeo implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
+					  {
+							name: 'AI Optimization',
+							value: 'ai_optimization',
+						},
 						{
 							name: 'Backlink',
 							value: 'backlinks',
 						},
 						{
-							name: 'SERP',
-							value: 'serp',
-						},
-						{
 							name: 'Business Data',
 							value: 'business_data',
-						},
-						{
-							name: 'On Page',
-							value: 'on_page',
 						},
 						{
 							name: 'Keywords Data',
@@ -94,8 +89,12 @@ export class DataForSeo implements INodeType {
 							value: 'labs',
 						},
 						{
-							name: 'AI Optimization',
-							value: 'ai_optimization',
+							name: 'On Page',
+							value: 'on_page',
+						},
+						{
+							name: 'SERP',
+							value: 'serp',
 						}
 				],
 				default: 'backlinks',

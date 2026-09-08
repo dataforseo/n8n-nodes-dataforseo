@@ -681,11 +681,12 @@ export const BingOperations: INodeProperties[] = [
 			},
 		},
 	},
-	// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-from-limit
 	{
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		type: 'number',
+		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -706,8 +707,7 @@ export const BingOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

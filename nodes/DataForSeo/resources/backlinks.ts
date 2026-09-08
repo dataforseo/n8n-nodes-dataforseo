@@ -13,14 +13,7 @@ export const BacklinksOperations: INodeProperties[] = [
 						resource: ['backlinks'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
-			{
-				name: 'Get Backlinks',
-				value: 'get-backlinks',
-				action: 'Get backlinks',
-				description: 'Get a list of backlinks for a domain, subdomain or page',
-			},
 			{
 				name: 'Get Backlink Summary',
 				value: 'get-backlink-summary',
@@ -28,10 +21,16 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get an overview of backlink data for a domain, subdomain, or webpage',
 			},
 			{
-				name: 'Get Historical Backlink Summary',
-				value: 'get-historical-backlink-summary',
-				action: 'Get historical backlink summary',
-				description: 'Get historical backlink data for a domain back to the beginning of 2019',
+				name: 'Get Backlinks',
+				value: 'get-backlinks',
+				action: 'Get backlinks',
+				description: 'Get a list of backlinks for a domain, subdomain or page',
+			},
+			{
+				name: 'Get Backlinks Pages Summary',
+				value: 'get-backlinks-page-summary',
+				action: 'Get backlinks pages summary',
+				description: 'Get an overview of backlinks and associated data in bulk',
 			},
 			{
 				name: 'Get Bulk Backlink Rank',
@@ -46,22 +45,10 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get the number of backlinks for up to 1,000 domains, subdomains, and pages',
 			},
 			{
-				name: 'Get Backlinks Pages Summary',
-				value: 'get-backlinks-page-summary',
-				action: 'Get backlinks pages summary',
-				description: 'Get an overview of backlinks and associated data in bulk',
-			},
-			{
 				name: 'Get Bulk Referring Domain Stats',
 				value: 'get-bulk-referring-domain-stats',
 				action: 'Get bulk referring domain stats',
 				description: 'Get the number of referring domains for up to 1,000 domains, subdomains, and pages',
-			},
-			{
-				name: 'Get Referring Domains',
-				value: 'get-referring-domains',
-				action: 'Get referring domains',
-				description: 'Get a detailed overview of referring domains pointing to the target you specify',
 			},
 			{
 				name: 'Get Bulk Spam Scores',
@@ -69,6 +56,18 @@ export const BacklinksOperations: INodeProperties[] = [
 				action: 'Get bulk spam scores',
 				description: 'Get Spam Scores for up to 1,000 domains, subdomains, and pages',
 			},
+			{
+				name: 'Get Historical Backlink Summary',
+				value: 'get-historical-backlink-summary',
+				action: 'Get historical backlink summary',
+				description: 'Get historical backlink data for a domain back to the beginning of 2019',
+			},
+			{
+				name: 'Get Referring Domains',
+				value: 'get-referring-domains',
+				action: 'Get referring domains',
+				description: 'Get a detailed overview of referring domains pointing to the target you specify',
+			}
 		],
 		default: 'get-backlinks',
 	},
@@ -169,6 +168,7 @@ export const BacklinksOperations: INodeProperties[] = [
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		type: 'number',
 		typeOptions: {
 			maxValue: 1000,
@@ -180,8 +180,7 @@ export const BacklinksOperations: INodeProperties[] = [
 						operation: ['get-backlinks', 'get-referring-domains'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

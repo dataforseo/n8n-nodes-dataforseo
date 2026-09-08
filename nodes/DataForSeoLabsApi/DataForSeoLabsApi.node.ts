@@ -45,27 +45,26 @@ export class DataForSeoLabsApi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
-						{
-							name: 'Google',
-							value: 'google',
-						},
 						{
 							name: 'Amazon',
 							value: 'amazon',
+						},
+						{
+							name: 'App Store',
+							value: 'app_store',
 						},
 						{
 							name: 'Bing',
 							value: 'bing',
 						},
 						{
-							name: 'Google Play',
-							value: 'google_play',
+							name: 'Google',
+							value: 'google',
 						},
 						{
-							name: 'App Store',
-							value: 'app_store',
+							name: 'Google Play',
+							value: 'google_play',
 						}
 				],
 				default: 'google',

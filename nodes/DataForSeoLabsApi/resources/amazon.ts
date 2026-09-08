@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -22,24 +21,6 @@ export const AmazonOperations: INodeProperties[] = [
 				description: 'Get search volume values for a maximum of 1,000 keywords in one API request',
 			},
 			{
-				name: 'Get Related Keywords',
-				value: 'get-amazon-related-keywords',
-				action: 'Get related keywords',
-				description: 'Get keywords appearing in the "Related Searches" section on Amazon',
-			},
-			{
-				name: 'Get Ranked Keywords',
-				value: 'get-amazon-ranked-keywords',
-				action: 'Get ranked keywords',
-				description: 'Get the list of keywords the target product ranks for on Amazon',
-			},
-			{
-				name: 'Get Product Rank Overview',
-				value: 'get-product-rank-overview',
-				action: 'Get product rank overview',
-				description: 'Get ranking data from organic and paid Amazon SERPs for the target products',
-			},
-			{
 				name: 'Get Product Competitors',
 				value: 'get-product-competitors',
 				action: 'Get product competitors',
@@ -50,6 +31,24 @@ export const AmazonOperations: INodeProperties[] = [
 				value: 'get-product-keyword-intersections',
 				action: 'Get product keyword intersections',
 				description: 'Get a list of keywords for which the target products intersect in Amazon SERP',
+			},
+			{
+				name: 'Get Product Rank Overview',
+				value: 'get-product-rank-overview',
+				action: 'Get product rank overview',
+				description: 'Get ranking data from organic and paid Amazon SERPs for the target products',
+			},
+			{
+				name: 'Get Ranked Keywords',
+				value: 'get-amazon-ranked-keywords',
+				action: 'Get ranked keywords',
+				description: 'Get the list of keywords the target product ranks for on Amazon',
+			},
+			{
+				name: 'Get Related Keywords',
+				value: 'get-amazon-related-keywords',
+				action: 'Get related keywords',
+				description: 'Get keywords appearing in the "Related Searches" section on Amazon',
 			}
 		],
 		default: 'get-bulk-search-volume',
@@ -428,11 +427,12 @@ export const AmazonOperations: INodeProperties[] = [
 			},
 		},
 	},
-	// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-from-limit
 	{
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		type: 'number',
+		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -448,8 +448,7 @@ export const AmazonOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

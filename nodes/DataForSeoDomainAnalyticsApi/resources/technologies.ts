@@ -13,13 +13,30 @@ export const TechnologiesOperations: INodeProperties[] = [
 						resource: ['technologies'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
+			{
+				name: 'Get Domains By HTML Terms',
+				value: 'get-live-domains-by-html-terms',
+				action: 'Get live domains by html terms',
+				description: 'Get domains based on the HTML terms they use on their homepage (live)',
+			},
+      {
+				name: 'Get Domains By Technology',
+				value: 'get-live-domains-by-technology',
+				action: 'Get live domains by technology',
+				description: 'Get domains based on the technology they use (live)',
+			},
 			{
 				name: 'Get Live Aggregation Technologies',
 				value: 'get-live-aggregation-technologies',
 				action: 'Get live aggregation technologies',
 				description: 'Get a list of the most popular technologies websites use alongside the technologies you specify (live)',
+			},
+			{
+				name: 'Get Live Domain Technologies',
+				value: 'get-live-domain-technologies',
+				action: 'Get live domain technologies',
+				description: 'Get a list of technologies used in a particular domain (live)',
 			},
 			{
 				name: 'Get Live Technologies Summary',
@@ -32,24 +49,6 @@ export const TechnologiesOperations: INodeProperties[] = [
 				value: 'get-live-technology-stats',
 				action: 'Get live technology stats',
 				description: 'Get historical data on the number of domains across different countries and languages that use the specified technology (live)',
-			},
-			{
-				name: 'Get Domains By Technology',
-				value: 'get-live-domains-by-technology',
-				action: 'Get live domains by technology',
-				description: 'Get domains based on the technology they use (live)',
-			},
-			{
-				name: 'Get Domains By HTML Terms',
-				value: 'get-live-domains-by-html-terms',
-				action: 'Get live domains by html terms',
-				description: 'Get domains based on the HTML terms they use on their homepage (live)',
-			},
-			{
-				name: 'Get Live Domain Technologies',
-				value: 'get-live-domain-technologies',
-				action: 'Get live domain technologies',
-				description: 'Get a list of technologies used in a particular domain (live)',
 			}
 		],
 		default: 'get-live-aggregation-technologies',
@@ -421,31 +420,30 @@ export const TechnologiesOperations: INodeProperties[] = [
 		type: 'multiOptions',
 		placeholder: 'Add Sorting',
 		hint: 'You can set no more than <b>three</b> sorting rules',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'Groups Count Descending',
-				value: 'groups_count,desc'
-			},
-			{
-				name: 'Groups Count Ascending',
-				value: 'groups_count,asc'
+				name: 'Categories Count Ascending',
+				value: 'categories_count,asc'
 			},
 			{
 				name: 'Categories Count Descending',
 				value: 'categories_count,desc'
 			},
 			{
-				name: 'Categories Count Ascending',
-				value: 'categories_count,asc'
+				name: 'Groups Count Ascending',
+				value: 'groups_count,asc'
 			},
 			{
-				name: 'Technologies Count Descending',
-				value: 'technologies_count,desc'
+				name: 'Groups Count Descending',
+				value: 'groups_count,desc'
 			},
 			{
 				name: 'Technologies Count Ascending',
 				value: 'technologies_count,asc'
+			},
+			{
+				name: 'Technologies Count Descending',
+				value: 'technologies_count,desc'
 			}
 		],
 		displayOptions: {
@@ -463,55 +461,54 @@ export const TechnologiesOperations: INodeProperties[] = [
 		type: 'multiOptions',
 		placeholder: 'Add Sorting',
 		hint: 'You can set no more than <b>three</b> sorting rules',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'Domain Rank Descending',
-				value: 'domain_rank,desc'
-			},
-			{
-				name: 'Domain Rank Ascending',
-				value: 'domain_rank,asc'
-			},
-			{
-				name: 'Domain Descending',
-				value: 'domain,desc'
-			},
-			{
-				name: 'Domain Ascending',
-				value: 'domain,asc'
-			},
-			{
-				name: 'Last Visited Descending',
-				value: 'last_visited,desc'
-			},
-			{
-				name: 'Last Visited Ascending',
-				value: 'last_visited,asc'
-			},
-			{
-				name: 'Country ISO Code Descending',
-				value: 'country_iso_code,desc'
-			},
-			{
-				name: 'Country ISO Code Ascending',
-				value: 'country_iso_code,asc'
-			},
-			{
-				name: 'Language Code Descending',
-				value: 'language_code,desc'
-			},
-			{
-				name: 'Language Code Ascending',
-				value: 'language_code,asc'
+				name: 'Content Language Code Ascending',
+				value: 'content_language_code,asc'
 			},
 			{
 				name: 'Content Language Code Descending',
 				value: 'content_language_code,desc'
 			},
 			{
-				name: 'Content Language Code Ascending',
-				value: 'content_language_code,asc'
+				name: 'Country ISO Code Ascending',
+				value: 'country_iso_code,asc'
+			},
+			{
+				name: 'Country ISO Code Descending',
+				value: 'country_iso_code,desc'
+			},
+			{
+				name: 'Domain Ascending',
+				value: 'domain,asc'
+			},
+			{
+				name: 'Domain Descending',
+				value: 'domain,desc'
+			},
+			{
+				name: 'Domain Rank Ascending',
+				value: 'domain_rank,asc'
+			},
+			{
+				name: 'Domain Rank Descending',
+				value: 'domain_rank,desc'
+			},
+			{
+				name: 'Language Code Ascending',
+				value: 'language_code,asc'
+			},
+			{
+				name: 'Language Code Descending',
+				value: 'language_code,desc'
+			},
+			{
+				name: 'Last Visited Ascending',
+				value: 'last_visited,asc'
+			},
+			{
+				name: 'Last Visited Descending',
+				value: 'last_visited,desc'
 			}
 		],
 		displayOptions: {
@@ -602,6 +599,7 @@ export const TechnologiesOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 10000,
 			minValue: 1,
@@ -616,8 +614,7 @@ export const TechnologiesOperations: INodeProperties[] = [
 				],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100
+		default: 50
 	},
 	{
 		displayName: 'Offset',

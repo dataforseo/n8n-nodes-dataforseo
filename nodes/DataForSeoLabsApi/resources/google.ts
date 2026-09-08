@@ -1003,8 +1003,7 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include clickstream-based metrics in the result?',
+		displayName: 'Include Clickstream-Based Metrics in the Result?',
 		name: 'include_clickstream_data',
 		type: 'boolean',
 		default: false,
@@ -1131,15 +1130,10 @@ export const GoogleOperations: INodeProperties[] = [
 		type: 'multiOptions',
 		placeholder: 'Add Item Type',
 		hint: 'Indicates the type of search results included in the response',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'Organic',
-				value: 'organic'
-			},
-			{
-				name: 'Paid',
-				value: 'paid'
+				name: 'AI Overview Reference',
+				value: 'ai_overview_reference'
 			},
 			{
 				name: 'Featured Snippet',
@@ -1150,9 +1144,13 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'local_pack'
 			},
 			{
-				name: 'AI Overview Reference',
-				value: 'ai_overview_reference'
+				name: 'Organic',
+				value: 'organic'
 			},
+			{
+				name: 'Paid',
+				value: 'paid'
+			}
 		],
 		displayOptions: {
 			show: {
@@ -1362,11 +1360,12 @@ export const GoogleOperations: INodeProperties[] = [
 			},
 		},
 	},
-	// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-from-limit
 	{
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		type: 'number',
+		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -1392,8 +1391,7 @@ export const GoogleOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Limit (up to 1000)',

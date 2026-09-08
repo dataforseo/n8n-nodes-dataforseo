@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -11,28 +10,10 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		noDataExpression: true,
 		options: [
 			{
-				name: 'Get Search Results',
-				value: 'get-search-results',
-				action: 'Get search results',
-				description: 'Get detailed citation data available for the target keyword',
-			},
-			{
-				name: 'Get Summary',
-				value: 'get-summary',
-				action: 'Get summary',
-				description: 'Get an overview of citation data available for the target keyword',
-			},
-			{
-				name: 'Get Sentiment Analysis',
-				value: 'get-sentiment-analysis',
-				action: 'Get sentiment analysis',
-				description: 'Get sentiment analysis data for the citations available for the target keyword',
-			},
-			{
-				name: 'Get Rating Distribution',
-				value: 'get-rating-distribution',
-				action: 'Get rating distribution',
-				description: 'Get rating distribution data for the keyword and other parameters specified in the request',
+				name: 'Get Category Trends',
+				value: 'get-category-trends',
+				action: 'Get category trends',
+				description: 'Get data on all citations in the target category for the indicated date range',
 			},
 			{
 				name: 'Get Phrase Trends',
@@ -41,10 +22,28 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 				description: 'Get data on all citations of the target keyword for the indicated date range',
 			},
 			{
-				name: 'Get Category Trends',
-				value: 'get-category-trends',
-				action: 'Get category trends',
-				description: 'Get data on all citations in the target category for the indicated date range',
+				name: 'Get Rating Distribution',
+				value: 'get-rating-distribution',
+				action: 'Get rating distribution',
+				description: 'Get rating distribution data for the keyword and other parameters specified in the request',
+			},
+			{
+				name: 'Get Search Results',
+				value: 'get-search-results',
+				action: 'Get search results',
+				description: 'Get detailed citation data available for the target keyword',
+			},
+			{
+				name: 'Get Sentiment Analysis',
+				value: 'get-sentiment-analysis',
+				action: 'Get sentiment analysis',
+				description: 'Get sentiment analysis data for the citations available for the target keyword',
+			},
+			{
+				name: 'Get Summary',
+				value: 'get-summary',
+				action: 'Get summary',
+				description: 'Get an overview of citation data available for the target keyword',
 			}
 		],
 		default: 'get-search-results',
@@ -149,28 +148,27 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		displayName: 'Target Page Types',
 		name: 'page_type',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
-			{
-				name: 'Ecommerce',
-				value: 'ecommerce',
-			},
-			{
-				name: 'News',
-				value: 'news',
-			},
 			{
 				name: 'Blogs',
 				value: 'blogs',
+			},
+			{
+				name: 'Ecommerce',
+				value: 'ecommerce',
 			},
 			{
 				name: 'Message Boards',
 				value: 'message-boards',
 			},
 			{
+				name: 'News',
+				value: 'news',
+			},
+			{
 				name: 'Organization',
 				value: 'organization',
-			},
+			}
 		],
 		default: [],
 		displayOptions: {
@@ -450,6 +448,7 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		type: 'number',
 		typeOptions: {
 			maxValue: 1000,
@@ -463,8 +462,7 @@ export const ContentAnalysisOperations: INodeProperties[] = [
 					],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

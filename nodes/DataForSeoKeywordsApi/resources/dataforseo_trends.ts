@@ -167,38 +167,37 @@ export const DataforseoTrendsOperations: INodeProperties[] = [
 		displayName: 'Preset Time Ranges',
 		name: 'time_range',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
-				name: 'Past 4 Hours',
+				name: '1 - Past 4 Hours',
 				value: 'past_4_hours',
 			},
 			{
-				name: 'Past Day',
+				name: '2 - Past Day',
 				value: 'past_day',
 			},
 			{
-				name: 'Past 7 Days',
+				name: '3 - Past 7 Days',
 				value: 'past_7_days',
 			},
 			{
-				name: 'Past 30 Days',
+				name: '4 - Past 30 Days',
 				value: 'past_30_days',
 			},
 			{
-				name: 'Past 90 Days',
+				name: '5 - Past 90 Days',
 				value: 'past_90_days',
 			},
 			{
-				name: 'Past 12 Months',
+				name: '6 - Past 12 Months',
 				value: 'past_12_months',
 			},
 			{
-				name: 'Past 5 Years',
+				name: '7 - Past 5 Years',
 				value: 'past_5_years',
 			}
 		],

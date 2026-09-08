@@ -13,37 +13,12 @@ export const GoogleAdsOperations: INodeProperties[] = [
 						resource: ['google_ads'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Get Live Google Search Volume',
-				value: 'get-live-google-search-volume',
-				action: 'Get live google search volume',
-				description: 'Get Google search volume, CPC, and competition for keywords (live)',
-			},
-			{
-				name: 'Get Google Search Volume',
-				value: 'get-google-search-volume',
-				action: 'Get google search volume',
-				description: 'Get Google search volume, CPC, and competition for keywords',
-			},
-			{
-				name: 'Get Live Google Keywords for Site',
-				value: 'get-live-google-keywords-for-site',
-				action: 'Get live google keywords for site',
-				description: 'Get a list of keywords relevant to the specified domain (live)',
-			},
-			{
-				name: 'Get Google Keywords for Site',
-				value: 'get-google-keywords-for-site',
-				action: 'Get google keywords for site',
-				description: 'Get a list of keywords relevant to the specified domain',
-			},
-			{
-				name: 'Get Live Google Keywords for Keywords',
-				value: 'get-live-google-keywords-for-keywords',
-				action: 'Get live google keywords for keywords',
-				description: 'Get relevant keyword suggestions for the specified terms (live)',
+				name: 'Get Google Ad Traffic By Keywords',
+				value: 'get-google-ad-traffic-by-keywords',
+				action: 'Get google ad traffic by keywords',
+				description: 'Get a set of stats for estimating impressions, CPC, and clicks',
 			},
 			{
 				name: 'Get Google Keywords for Keywords',
@@ -52,16 +27,40 @@ export const GoogleAdsOperations: INodeProperties[] = [
 				description: 'Get relevant keyword suggestions for the specified terms',
 			},
 			{
+				name: 'Get Google Keywords for Site',
+				value: 'get-google-keywords-for-site',
+				action: 'Get google keywords for site',
+				description: 'Get a list of keywords relevant to the specified domain',
+			},
+			{
+				name: 'Get Google Search Volume',
+				value: 'get-google-search-volume',
+				action: 'Get google search volume',
+				description: 'Get Google search volume, CPC, and competition for keywords',
+			},
+			{
 				name: 'Get Live Google Ad Traffic By Keywords',
 				value: 'get-live-google-ad-traffic-by-keywords',
 				action: 'Get live google ad traffic by keywords',
 				description: 'Get a set of stats for estimating impressions, CPC, and clicks (live)',
 			},
 			{
-				name: 'Get Google Ad Traffic By Keywords',
-				value: 'get-google-ad-traffic-by-keywords',
-				action: 'Get google ad traffic by keywords',
-				description: 'Get a set of stats for estimating impressions, CPC, and clicks',
+				name: 'Get Live Google Keywords for Keywords',
+				value: 'get-live-google-keywords-for-keywords',
+				action: 'Get live google keywords for keywords',
+				description: 'Get relevant keyword suggestions for the specified terms (live)',
+			},
+			{
+				name: 'Get Live Google Keywords for Site',
+				value: 'get-live-google-keywords-for-site',
+				action: 'Get live google keywords for site',
+				description: 'Get a list of keywords relevant to the specified domain (live)',
+			},
+			{
+				name: 'Get Live Google Search Volume',
+				value: 'get-live-google-search-volume',
+				action: 'Get live google search volume',
+				description: 'Get Google search volume, CPC, and competition for keywords (live)',
 			}
 		],
 		default: 'get-google-search-volume',
@@ -401,8 +400,7 @@ export const GoogleAdsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Include keywords associated with adult content?',
+		displayName: 'Include Keywords Associated with Adult Content?',
 		name: 'include_adult_keywords',
 		type: 'boolean',
 		default: false,
@@ -529,31 +527,30 @@ export const GoogleAdsOperations: INodeProperties[] = [
 		displayName: 'Sort By',
 		name: 'sort_by_traffic',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
-			{
-				name: 'Relevance',
-				value: 'relevance',
-			},
-			{
-				name: 'Impressions',
-				value: 'impressions',
-			},
-			{
-				name: 'CTR',
-				value: 'ctr',
-			},
 			{
 				name: 'Average CPC',
 				value: 'average_cpc',
+			},
+			{
+				name: 'Clicks',
+				value: 'clicks',
 			},
 			{
 				name: 'Cost',
 				value: 'cost',
 			},
 			{
-				name: 'Clicks',
-				value: 'clicks',
+				name: 'CTR',
+				value: 'ctr',
+			},
+			{
+				name: 'Impressions',
+				value: 'impressions',
+			},
+			{
+				name: 'Relevance',
+				value: 'relevance',
 			}
 		],
 		displayOptions: {
@@ -570,11 +567,22 @@ export const GoogleAdsOperations: INodeProperties[] = [
 		displayName: 'Sort By',
 		name: 'sort_by',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
+			},
+			{
+				name: 'Competition Index',
+				value: 'competition_index',
+			},
+			{
+				name: 'High Top Of Page Bid',
+				value: 'high_top_of_page_bid',
+			},
+			{
+				name: 'Low Top Of Page Bid',
+				value: 'low_top_of_page_bid',
 			},
 			{
 				name: 'Relevance',
@@ -583,19 +591,7 @@ export const GoogleAdsOperations: INodeProperties[] = [
 			{
 				name: 'Search Volume',
 				value: 'search_volume',
-			},
-			{
-				name: 'Competition Index',
-				value: 'competition_index',
-			},
-			{
-				name: 'Low Top Of Page Bid',
-				value: 'low_top_of_page_bid',
-			},
-			{
-				name: 'High Top Of Page Bid',
-				value: 'high_top_of_page_bid',
-			},
+			}
 		],
 		displayOptions: {
 			show: {

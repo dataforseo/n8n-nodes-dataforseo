@@ -98,7 +98,21 @@ export const BusinessListingsOperations: INodeProperties[] = [
 	{
 		displayName: 'Is Claimed',
 		name: 'is_claimed',
-		type: 'boolean',
+		type: 'options',
+		options: [
+			{
+				name: '',
+				value: '',
+			},
+			{
+				name: 'Yes',
+				value: true,
+			},
+			{
+				name: 'No',
+				value: false,
+			}
+		],
 		displayOptions: {
 				show: {
 						operation: [
@@ -107,8 +121,7 @@ export const BusinessListingsOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-boolean
-		default: null,
+		default: '',
 	},
 	{
 		displayName: 'Location Coordinate',
@@ -227,6 +240,7 @@ export const BusinessListingsOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -240,8 +254,7 @@ export const BusinessListingsOperations: INodeProperties[] = [
 				],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100
+		default: 50
 	},
 	{
 		displayName: 'Offset',

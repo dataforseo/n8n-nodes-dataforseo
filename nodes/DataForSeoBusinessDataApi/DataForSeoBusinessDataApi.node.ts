@@ -45,11 +45,9 @@ export class DataForSeoBusinessDataApi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
 						{
-							// eslint-disable-next-line n8n-nodes-base/node-param-resource-with-plural-option
-							name: 'Business Listings',
+							name: 'Business Listing',
 							value: 'business_listings',
 						},
 						{
@@ -57,16 +55,16 @@ export class DataForSeoBusinessDataApi implements INodeType {
 							value: 'google',
 						},
 						{
-							name: 'Trustpilot',
-							value: 'trustpilot',
+							name: 'Social Media',
+							value: 'social_media',
 						},
 						{
 							name: 'Tripadvisor',
 							value: 'tripadvisor',
 						},
 						{
-							name: 'Social Media',
-							value: 'social_media',
+							name: 'Trustpilot',
+							value: 'trustpilot',
 						}
 				],
 				default: 'business_listings',

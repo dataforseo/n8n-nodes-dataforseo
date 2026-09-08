@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,10 +15,10 @@ export const AppleOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Search Apps',
-				value: 'search-apps',
-				action: 'Search apps',
-				description: 'Get a list of apps ranking on the App Store for the specified keyword',
+				name: 'Get App Info',
+				value: 'get-app-info',
+				action: 'Get app info',
+				description: 'Get information about the App Store application',
 			},
 			{
 				name: 'Get App List',
@@ -28,10 +27,10 @@ export const AppleOperations: INodeProperties[] = [
 				description: 'Get a list of mobile applications published in the top app charts on the App Store platform',
 			},
 			{
-				name: 'Get App Info',
-				value: 'get-app-info',
-				action: 'Get app info',
-				description: 'Get information about the App Store application',
+				name: 'Get App Listings Search',
+				value: 'get-apple-app-listings-search',
+				action: 'Get app listings search',
+				description: 'Get a list of apps published on App Store along with additional information: its ID, icon, reviews count, rating, price, and other data',
 			},
 			{
 				name: 'Get App Reviews',
@@ -40,10 +39,10 @@ export const AppleOperations: INodeProperties[] = [
 				description: 'Get reviews published on the App Store platform by App ID',
 			},
 			{
-				name: 'Get App Listings Search',
-				value: 'get-apple-app-listings-search',
-				action: 'Get app listings search',
-				description: 'Get a list of apps published on App Store along with additional information: its ID, icon, reviews count, rating, price, and other data',
+				name: 'Search Apps',
+				value: 'search-apps',
+				action: 'Search apps',
+				description: 'Get a list of apps ranking on the App Store for the specified keyword',
 			}
 		],
 		default: 'search-apps',
@@ -72,28 +71,28 @@ export const AppleOperations: INodeProperties[] = [
 		description: 'App collection on the App Store from which apps will be collected',
 		options: [
 			{
-				name: 'Top Free IOS',
-				value: 'top_free_ios',
-			},
-			{
-				name: 'Top Paid IOS',
-				value: 'top_paid_ios',
-			},
-			{
-				name: 'Top Grossing IOS',
-				value: 'top_grossing_ios',
+				name: 'New Free IOS',
+				value: 'new_free_ios',
 			},
 			{
 				name: 'New IOS',
 				value: 'new_ios',
 			},
 			{
-				name: 'New Free IOS',
-				value: 'new_free_ios',
-			},
-			{
 				name: 'New Paid IOS',
 				value: 'new_paid_ios',
+			},
+			{
+				name: 'Top Free IOS',
+				value: 'top_free_ios',
+			},
+			{
+				name: 'Top Grossing IOS',
+				value: 'top_grossing_ios',
+			},
+			{
+				name: 'Top Paid IOS',
+				value: 'top_paid_ios',
 			}
 		],
 		displayOptions: {
@@ -410,6 +409,7 @@ export const AppleOperations: INodeProperties[] = [
 		displayName: 'Limit (up to 1000)',
 		name: 'limit',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		type: 'number',
 		typeOptions: {
 			maxValue: 1000,
@@ -423,8 +423,7 @@ export const AppleOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

@@ -15,10 +15,10 @@ export const BusinessDataOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-					name: 'Get Business Listings',
-					value: 'get-business-listings',
-					action: 'Get business listings',
-					description: 'Get information about businesses listed on Google Maps in the specified categories',
+				name: 'Get Business Listings',
+				value: 'get-business-listings',
+				action: 'Get business listings',
+				description: 'Get information about businesses listed on Google Maps in the specified categories',
 			},
 			{
 				name: 'Get Business Listings Categories Aggregation',
@@ -98,14 +98,27 @@ export const BusinessDataOperations: INodeProperties[] = [
 	{
 		displayName: 'Is Claimed',
 		name: 'is_claimed',
-		type: 'boolean',
+		type: 'options',
+		options: [
+			{
+				name: '',
+				value: ''
+			},
+			{
+				name: 'Yes',
+				value: true
+			},
+			{
+				name: 'No',
+				value: false
+			}
+		],
 		displayOptions: {
 				show: {
 						operation: ['get-business-listings', 'get-business-listings-categories-aggregation'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-boolean
-		default: null,
+		default: '',
 	},
 	{
 		displayName: 'Location Coordinate',
@@ -138,112 +151,111 @@ export const BusinessDataOperations: INodeProperties[] = [
 		type: 'multiOptions',
 		placeholder: 'Add Sorting',
 		hint: 'You can set no more than <b>three</b> sorting rules',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
-				name: 'Title, Descending',
-				value: 'title,desc'
-			},
-			{
-				name: 'Title, Ascending',
-				value: 'title,asc'
-			},
-			{
-				name: 'Description, Descending',
-				value: 'description,desc'
-			},
-			{
-				name: 'Description, Ascending',
-				value: 'description,asc'
-			},
-			{
-				name: 'Category, Descending',
-				value: 'category,desc'
-			},
-			{
-				name: 'Category, Ascending',
-				value: 'category,asc'
-			},
-			{
-				name: 'CID, Descending',
-				value: 'cid,desc'
-			},
-			{
-				name: 'CID, Ascending',
-				value: 'cid,asc'
+				name: 'Address, Ascending',
+				value: 'address,asc'
 			},
 			{
 				name: 'Address, Descending',
 				value: 'address,desc'
 			},
 			{
-				name: 'Address, Ascending',
-				value: 'address,asc'
+				name: 'Category, Ascending',
+				value: 'category,asc'
 			},
 			{
-				name: 'City, Descending',
-				value: 'address_info.city,desc'
+				name: 'Category, Descending',
+				value: 'category,desc'
+			},
+			{
+				name: 'CID, Ascending',
+				value: 'cid,asc'
+			},
+			{
+				name: 'CID, Descending',
+				value: 'cid,desc'
 			},
 			{
 				name: 'City, Ascending',
 				value: 'address_info.city,asc'
 			},
 			{
-				name: 'ZIP, Descending',
-				value: 'address_info.zip,desc'
+				name: 'City, Descending',
+				value: 'address_info.city,desc'
 			},
 			{
-				name: 'ZIP, Ascending',
-				value: 'address_info.zip,asc'
+				name: 'Description, Ascending',
+				value: 'description,asc'
 			},
 			{
-				name: 'Region, Descending',
-				value: 'address_info.region,desc'
-			},
-			{
-				name: 'Region, Ascending',
-				value: 'address_info.region,asc'
-			},
-			{
-				name: 'Phone, Descending',
-				value: 'address_info.phone,desc'
-			},
-			{
-				name: 'Phone, Ascending',
-				value: 'address_info.phone,asc'
-			},
-			{
-				name: 'Domain, Descending',
-				value: 'address_info.domain,desc'
+				name: 'Description, Descending',
+				value: 'description,desc'
 			},
 			{
 				name: 'Domain, Ascending',
 				value: 'address_info.domain,asc'
 			},
 			{
-				name: 'Total Photos, Descending',
-				value: 'total_photos,desc'
+				name: 'Domain, Descending',
+				value: 'address_info.domain,desc'
 			},
 			{
-				name: 'Total Photos, Ascending',
-				value: 'total_photos,asc'
+				name: 'Phone, Ascending',
+				value: 'address_info.phone,asc'
 			},
 			{
-				name: 'Rating Value, Descending',
-				value: 'rating.value,desc'
+				name: 'Phone, Descending',
+				value: 'address_info.phone,desc'
 			},
 			{
 				name: 'Rating Value, Ascending',
 				value: 'rating.value,asc'
 			},
 			{
-				name: 'Rating Votes, Descending',
-				value: 'rating.votes_count,desc'
+				name: 'Rating Value, Descending',
+				value: 'rating.value,desc'
 			},
 			{
 				name: 'Rating Votes, Ascending',
 				value: 'rating.votes_count,asc'
 			},
+			{
+				name: 'Rating Votes, Descending',
+				value: 'rating.votes_count,desc'
+			},
+			{
+				name: 'Region, Ascending',
+				value: 'address_info.region,asc'
+			},
+			{
+				name: 'Region, Descending',
+				value: 'address_info.region,desc'
+			},
+			{
+				name: 'Title, Ascending',
+				value: 'title,asc'
+			},
+			{
+				name: 'Title, Descending',
+				value: 'title,desc'
+			},
+			{
+				name: 'Total Photos, Ascending',
+				value: 'total_photos,asc'
+			},
+			{
+				name: 'Total Photos, Descending',
+				value: 'total_photos,desc'
+			},
+			{
+				name: 'ZIP, Ascending',
+				value: 'address_info.zip,asc'
+			},
+			{
+				name: 'ZIP, Descending',
+				value: 'address_info.zip,desc'
+			}
 		],
 		displayOptions: {
 			show: {
@@ -281,6 +293,7 @@ export const BusinessDataOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -291,8 +304,7 @@ export const BusinessDataOperations: INodeProperties[] = [
 				operation: ['get-business-listings', 'get-business-listings-categories-aggregation'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100
+		default: 50
 	},
 	{
 		displayName: 'Offset',

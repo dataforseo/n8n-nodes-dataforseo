@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,6 +15,18 @@ export const ChatGptOperations: INodeProperties[] = [
 		},
 		options: [
 			{
+				name: 'Get ChatGPT LLM Scraper Results Advanced',
+				value: 'get-chat-gpt-llm-results-advanced',
+				action: 'Get chatgpt llm scraper results advanced',
+				description: 'Provides advanced results from ChatGPT searches',
+			},
+			{
+				name: 'Get ChatGPT LLM Scraper Results HTML',
+				value: 'get-chat-gpt-llm-results-html',
+				action: 'Get chatgpt llm scraper results html',
+				description: 'Provides advanced results from ChatGPT searches',
+			},
+			{
 				name: 'Get Live ChatGPT LLM Responses',
 				value: 'get-live-chat-gpt-llm-responses',
 				action: 'Get live chat gpt llm responses',
@@ -32,18 +43,6 @@ export const ChatGptOperations: INodeProperties[] = [
 				value: 'get-live-chat-gpt-llm-results-html',
 				action: 'Get live chatgpt llm scraper results html',
 				description: 'Provides raw HTML page of the ChatGPT LLM Scraper results for the specified keyword, language, and location',
-			},
-			{
-				name: 'Get ChatGPT LLM Scraper Results Advanced',
-				value: 'get-chat-gpt-llm-results-advanced',
-				action: 'Get chatgpt llm scraper results advanced',
-				description: 'Provides advanced results from ChatGPT searches',
-			},
-			{
-				name: 'Get ChatGPT LLM Scraper Results HTML',
-				value: 'get-chat-gpt-llm-results-html',
-				action: 'Get chatgpt llm scraper results html',
-				description: 'Provides advanced results from ChatGPT searches',
 			}
 		],
 		default: 'get-live-chat-gpt-llm-responses',

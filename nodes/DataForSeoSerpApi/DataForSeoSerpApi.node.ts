@@ -105,27 +105,18 @@ export class DataForSeoSerpApi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 				options: [
-						{
-							name: 'Google',
-							value: 'google',
+					  {
+							name: 'Baidu',
+							value: 'baidu',
 						},
 						{
 							name: 'Bing',
 							value: 'bing',
 						},
 						{
-							name: 'YouTube',
-							value: 'youtube',
-						},
-						{
-							name: 'Yahoo',
-							value: 'yahoo',
-						},
-						{
-							name: 'Baidu',
-							value: 'baidu',
+							name: 'Google',
+							value: 'google',
 						},
 						{
 							name: 'Naver',
@@ -134,6 +125,14 @@ export class DataForSeoSerpApi implements INodeType {
 						{
 							name: 'Seznam',
 							value: 'seznam',
+						},
+						{
+							name: 'Yahoo',
+							value: 'yahoo',
+						},
+						{
+							name: 'YouTube',
+							value: 'youtube',
 						}
 				],
 				default: 'google',

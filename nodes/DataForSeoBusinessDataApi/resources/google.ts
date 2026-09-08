@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,10 +15,16 @@ export const GoogleOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get Google Business Info Live',
-				value: 'get-google-business-info-live',
-				action: 'Get google business info live',
-				description: 'Get information about specific business entity from Google (live)',
+				name: 'Get Business Questions and Answers',
+				value: 'get-business-questions-and-answers',
+				action: 'Get business questions and answers',
+				description: 'Get a detailed overview of questions and answers associated with a specific business entity listed on Google My Business',
+			},
+			{
+				name: 'Get Extended Google Reviews',
+				value: 'get-extended-google-reviews',
+				action: 'Get extended google reviews',
+				description: 'Fetch reviews from the “Reviews” element of Google SERPs, including not only Google user reviews but also reviews from other reputable sources',
 			},
 			{
 				name: 'Get Google Business Info',
@@ -28,34 +33,16 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get information about specific business entity from Google',
 			},
 			{
+				name: 'Get Google Business Info Live',
+				value: 'get-google-business-info-live',
+				action: 'Get google business info live',
+				description: 'Get information about specific business entity from Google (live)',
+			},
+			{
 				name: 'Get Google Business Updates',
 				value: 'get-google-business-updates',
 				action: 'Get google business updates',
 				description: 'Get the latest updates of a specific business entity from Google SERP',
-			},
-			{
-				name: 'Get Google Hotel Searches Live',
-				value: 'get-google-hotel-searches-live',
-				action: 'Get google hotel searches live',
-				description: 'Get results containing information about different hotels listed on Google Hotels (live)',
-			},
-			{
-				name: 'Get Google Hotel Searches',
-				value: 'get-google-hotel-searches',
-				action: 'Get google hotel searches',
-				description: 'Get results containing information about different hotels listed on Google Hotels',
-			},
-			{
-				name: 'Get Live Google Hotel Info Advanced',
-				value: 'get-google-hotel-info-advanced-live',
-				action: 'Get live google hotel searches advanced',
-				description: 'Get structured data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more (live)',
-			},
-			{
-				name: 'Get Live Google Hotel Info HTML',
-				value: 'get-google-hotel-info-html-live',
-				action: 'Get live google hotel searches html',
-				description: 'Get unstructured HTML data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more (live)',
 			},
 			{
 				name: 'Get Google Hotel Info Advanced',
@@ -70,16 +57,22 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get unstructured HTML data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more',
 			},
 			{
+				name: 'Get Google Hotel Searches',
+				value: 'get-google-hotel-searches',
+				action: 'Get google hotel searches',
+				description: 'Get results containing information about different hotels listed on Google Hotels',
+			},
+			{
+				name: 'Get Google Hotel Searches Live',
+				value: 'get-google-hotel-searches-live',
+				action: 'Get google hotel searches live',
+				description: 'Get results containing information about different hotels listed on Google Hotels (live)',
+			},
+			{
 				name: 'Get Google Reviews',
 				value: 'get-google-reviews',
 				action: 'Get google reviews',
 				description: 'Fetch reviews and related data from millions of Google Business Profiles around the world',
-			},
-			{
-				name: 'Get Extended Google Reviews',
-				value: 'get-extended-google-reviews',
-				action: 'Get extended google reviews',
-				description: 'Fetch reviews from the “Reviews” element of Google SERPs, including not only Google user reviews but also reviews from other reputable sources',
 			},
 			{
 				name: 'Get Live Business Questions and Answers',
@@ -88,11 +81,17 @@ export const GoogleOperations: INodeProperties[] = [
 				description: 'Get a detailed overview of questions and answers associated with a specific business entity listed on Google My Business (live)',
 			},
 			{
-				name: 'Get Business Questions and Answers',
-				value: 'get-business-questions-and-answers',
-				action: 'Get business questions and answers',
-				description: 'Get a detailed overview of questions and answers associated with a specific business entity listed on Google My Business',
+				name: 'Get Live Google Hotel Info Advanced',
+				value: 'get-google-hotel-info-advanced-live',
+				action: 'Get live google hotel searches advanced',
+				description: 'Get structured data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more (live)',
 			},
+			{
+				name: 'Get Live Google Hotel Info HTML',
+				value: 'get-google-hotel-info-html-live',
+				action: 'Get live google hotel searches html',
+				description: 'Get unstructured HTML data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more (live)',
+			}
 		],
 		default: 'get-google-business-info-live',
 	},
@@ -661,7 +660,6 @@ export const GoogleOperations: INodeProperties[] = [
 		displayName: 'Hotel Amenities',
 		name: 'amenities',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
 				name: 'Air Conditioning',
@@ -676,20 +674,40 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'bar',
 			},
 			{
-				name: 'Free Breakfast',
-				value: 'free_breakfast',
+				name: 'Beach Access',
+				value: 'beach_access',
 			},
 			{
 				name: 'Fitness Center',
 				value: 'fitness_center',
 			},
 			{
-				name: 'Kid Friendly',
-				value: 'kid_friendly',
+				name: 'Free Breakfast',
+				value: 'free_breakfast',
 			},
 			{
 				name: 'Free Parking',
 				value: 'free_parking',
+			},
+			{
+				name: 'Free WiFi',
+				value: 'free_wifi',
+			},
+			{
+				name: 'Indoor Pool',
+				value: 'indoor_pool',
+			},
+			{
+				name: 'Kid Friendly',
+				value: 'kid_friendly',
+			},
+			{
+				name: 'Outdoor Pool',
+				value: 'outdoor_pool',
+			},
+			{
+				name: 'Parking',
+				value: 'parking',
 			},
 			{
 				name: 'Pets Allowed',
@@ -712,28 +730,8 @@ export const GoogleOperations: INodeProperties[] = [
 				value: 'spa',
 			},
 			{
-				name: 'Free WiFi',
-				value: 'free_wifi',
-			},
-			{
-				name: 'Parking',
-				value: 'parking',
-			},
-			{
-				name: 'Indoor Pool',
-				value: 'indoor_pool',
-			},
-			{
-				name: 'Outdoor Pool',
-				value: 'outdoor_pool',
-			},
-			{
 				name: 'Wheelchair Accessible',
 				value: 'wheelchair_accessible',
-			},
-			{
-				name: 'Beach Access',
-				value: 'beach_access',
 			}
 		],
 		default: [],
@@ -828,19 +826,19 @@ export const GoogleOperations: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
-				name: 'Month',
+				name: '1 Month',
 				value: 'month',
 			},
 			{
-				name: 'Three Months',
+				name: '3 Months',
 				value: 'three_months',
 			},
 			{
-				name: 'Six Months',
+				name: '6 Months',
 				value: 'six_months',
 			},
 			{

@@ -44,8 +44,7 @@ export const OnPageOperations: INodeProperties[] = [
 		default: '',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Load image, stylesheets, scripts, and broken resources?',
+		displayName: 'Load Image, Stylesheets, Scripts, and Broken Resources?',
 		name: 'load_resources',
 		type: 'boolean',
 		default: false,
@@ -56,8 +55,7 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Load the scripts available on a page?',
+		displayName: 'Load the Scripts Available on a Page?',
 		name: 'enable_javascript',
 		type: 'boolean',
 		default: false,
@@ -68,8 +66,7 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Emulate browser rendering?',
+		displayName: 'Emulate Browser Rendering?',
 		name: 'enable_browser_rendering',
 		type: 'boolean',
 		default: false,
@@ -81,8 +78,7 @@ export const OnPageOperations: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-		displayName: 'Enable XMLHttpRequest on a page?',
+		displayName: 'Enable XMLHttpRequest on a Page?',
 		name: 'enable_xhr',
 		type: 'boolean',
 		default: false,
@@ -116,29 +112,7 @@ export const OnPageOperations: INodeProperties[] = [
 				operation: ['get-page-audit-check'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-collection-type-unsorted-items
 		options: [
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Disable the popup requesting cookie consent from the user?',
-				name: 'disable_cookie_popup',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Return data on pages despite the timeout error?',
-				name: 'return_despite_timeout',
-				type: 'boolean',
-				default: false,
-				hint: 'If parameter enabled, the data will be provided on pages that failed to load within 120 seconds and responded with a timeout error.',
-			},
-			{
-				displayName: 'Custom User Agent',
-				name: 'custom_user_agent',
-				type: 'string',
-				default: '',
-			},
 			{
 				displayName: 'Accept Language',
 				name: 'accept_language',
@@ -147,35 +121,46 @@ export const OnPageOperations: INodeProperties[] = [
 				default: '',
 			},
 			{
+				displayName: 'Browser Screen Height',
+				name: 'browser_screen_height',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
+			},
+			{
+				displayName: 'Browser Screen Scale Factor',
+				name: 'browser_screen_scale_factor',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
+			},
+			{
+				displayName: 'Browser Screen Width',
+				name: 'browser_screen_width',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
+			},
+			{
+				displayName: 'Check Spelling?',
+				name: 'check_spell',
+				type: 'boolean',
+				default: false,
+			},
+			{
 				displayName: 'Custom Javascript',
 				name: 'custom_js',
 				type: 'string',
 				default: '',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Enable microdata validation?',
-				name: 'validate_micromarkup',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Store HTML of a crawled page?',
-				name: 'store_raw_html',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Check spelling?',
-				name: 'check_spell',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Custom threshold values for checks',
+				displayName: 'Custom Threshold Values for Checks',
 				name: 'checks_threshold',
 				placeholder: 'Add Threshold',
 				type: 'fixedCollection',
@@ -207,35 +192,25 @@ export const OnPageOperations: INodeProperties[] = [
 				],
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Switch proxy pool?',
-				name: 'switch_pool',
+				displayName: 'Custom User Agent',
+				name: 'custom_user_agent',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Disable the Popup Requesting Cookie Consent From the User?',
+				name: 'disable_cookie_popup',
 				type: 'boolean',
 				default: false,
 			},
 			{
-				displayName: 'Proxy Pool',
-				name: 'ip_pool_for_scan',
-				type: 'options',
-				options: [
-					{
-						name: 'Empty',
-						value: '',
-					},
-					{
-						name: 'US',
-						value: 'us',
-					},
-					{
-						name: 'DE',
-						value: 'de',
-					},
-				],
-				default: '',
+				displayName: 'Enable Microdata Validation?',
+				name: 'validate_micromarkup',
+				type: 'boolean',
+				default: false,
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Preset for browser screen parameters',
+				displayName: 'Preset for Browser Screen Parameters',
 				name: 'browser_preset',
 				type: 'options',
 				options: [
@@ -259,32 +234,44 @@ export const OnPageOperations: INodeProperties[] = [
 				default: '',
 			},
 			{
-				displayName: 'Browser Screen Width',
-				name: 'browser_screen_width',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
+				displayName: 'Proxy Pool',
+				name: 'ip_pool_for_scan',
+				type: 'options',
+				options: [
+					{
+						name: 'Empty',
+						value: '',
+					},
+					{
+						name: 'US',
+						value: 'us',
+					},
+					{
+						name: 'DE',
+						value: 'de',
+					},
+				],
+				default: '',
 			},
 			{
-				displayName: 'Browser Screen Height',
-				name: 'browser_screen_height',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
+				displayName: 'Return Data on Pages Despite the Timeout Error?',
+				name: 'return_despite_timeout',
+				type: 'boolean',
+				default: false,
+				hint: 'If parameter enabled, the data will be provided on pages that failed to load within 120 seconds and responded with a timeout error.',
 			},
 			{
-				displayName: 'Browser Screen Scale Factor',
-				name: 'browser_screen_scale_factor',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
+				displayName: 'Store HTML of a Crawled Page?',
+				name: 'store_raw_html',
+				type: 'boolean',
+				default: false,
 			},
+			{
+				displayName: 'Switch Proxy Pool?',
+				name: 'switch_pool',
+				type: 'boolean',
+				default: false,
+			}
 		],
 	},
 	{
@@ -298,13 +285,40 @@ export const OnPageOperations: INodeProperties[] = [
 				operation: ['parse-page-content'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-collection-type-unsorted-items
 		options: [
 			{
-				displayName: 'Custom User Agent',
-				name: 'custom_user_agent',
+				displayName: 'Accept Language',
+				name: 'accept_language',
 				type: 'string',
+				hint: 'Language header for accessing the website. All locale formats are supported (xx, xx-XX, xxx-XX, etc.).',
 				default: '',
+			},
+			{
+				displayName: 'Browser Screen Height',
+				name: 'browser_screen_height',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
+			},
+			{
+				displayName: 'Browser Screen Scale Factor',
+				name: 'browser_screen_scale_factor',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
+			},
+			{
+				displayName: 'Browser Screen Width',
+				name: 'browser_screen_width',
+				type: 'number',
+				typeOptions: {
+					numberPrecision: 0,
+				},
+				default: null,
 			},
 			{
 				displayName: 'Custom Javascript',
@@ -313,8 +327,20 @@ export const OnPageOperations: INodeProperties[] = [
 				default: '',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Preset for browser screen parameters',
+				displayName: 'Custom User Agent',
+				name: 'custom_user_agent',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Disable the Popup Requesting Cookie Consent From the User?',
+				name: 'disable_cookie_popup',
+				type: 'boolean',
+				default: false,
+			},
+
+			{
+				displayName: 'Preset for Browser Screen Parameters',
 				name: 'browser_preset',
 				type: 'options',
 				options: [
@@ -338,61 +364,6 @@ export const OnPageOperations: INodeProperties[] = [
 				default: '',
 			},
 			{
-				displayName: 'Browser Screen Width',
-				name: 'browser_screen_width',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
-			},
-			{
-				displayName: 'Browser Screen Height',
-				name: 'browser_screen_height',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
-			},
-			{
-				displayName: 'Browser Screen Scale Factor',
-				name: 'browser_screen_scale_factor',
-				type: 'number',
-				typeOptions: {
-					numberPrecision: 0,
-				},
-				default: null,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Store HTML of a crawled page?',
-				name: 'store_raw_html',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Disable the popup requesting cookie consent from the user?',
-				name: 'disable_cookie_popup',
-				type: 'boolean',
-				default: false,
-			},
-			{
-				displayName: 'Accept Language',
-				name: 'accept_language',
-				type: 'string',
-				hint: 'Language header for accessing the website. All locale formats are supported (xx, xx-XX, xxx-XX, etc.).',
-				default: '',
-			},
-			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Switch proxy pool?',
-				name: 'switch_pool',
-				type: 'boolean',
-				default: false,
-			},
-			{
 				displayName: 'Proxy Pool',
 				name: 'ip_pool_for_scan',
 				type: 'options',
@@ -412,6 +383,18 @@ export const OnPageOperations: INodeProperties[] = [
 				],
 				default: '',
 			},
+			{
+				displayName: 'Store HTML of a Crawled Page?',
+				name: 'store_raw_html',
+				type: 'boolean',
+				default: false,
+			},
+			{
+				displayName: 'Switch Proxy Pool?',
+				name: 'switch_pool',
+				type: 'boolean',
+				default: false,
+			}
 		],
 	}
 ];

@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -16,6 +15,18 @@ export const GeminiOperations: INodeProperties[] = [
 		},
 		options: [
 			{
+				name: 'Get Gemini LLM Scraper Results Advanced',
+				value: 'get-gemini-llm-scraper-results-advanced',
+				action: 'Get gemini llm scraper results advanced',
+				description: 'Provides advanced results from Gemini searches',
+			},
+			{
+				name: 'Get Gemini LLM Scraper Results HTML',
+				value: 'get-gemini-llm-scraper-results-html',
+				action: 'Get gemini llm scraper results html',
+				description: 'Provides a raw HTML page of Gemini results for a specified keyword, language, and location',
+			},
+						{
 				name: 'Get Live Gemini LLM Responses',
 				value: 'get-live-gemini-llm-responses',
 				action: 'Get live gemini llm responses',
@@ -32,18 +43,6 @@ export const GeminiOperations: INodeProperties[] = [
 				value: 'get-live-gemini-llm-scraper-results-html',
 				action: 'Get live gemini llm scraper results html',
 				description: 'Instantly retrieves a raw HTML page of Gemini results for a specified keyword, language, and location',
-			},
-			{
-				name: 'Get Gemini LLM Scraper Results Advanced',
-				value: 'get-gemini-llm-scraper-results-advanced',
-				action: 'Get gemini llm scraper results advanced',
-				description: 'Provides advanced results from Gemini searches',
-			},
-			{
-				name: 'Get Gemini LLM Scraper Results HTML',
-				value: 'get-gemini-llm-scraper-results-html',
-				action: 'Get gemini llm scraper results html',
-				description: 'Provides a raw HTML page of Gemini results for a specified keyword, language, and location',
 			}
 		],
 		default: 'get-live-gemini-llm-responses',

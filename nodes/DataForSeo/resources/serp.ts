@@ -13,14 +13,7 @@ export const SerpOperations: INodeProperties[] = [
 						resource: ['serp'],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
-			{
-				name: 'Get Parsed SERP',
-				value: 'get-parsed-serp',
-				action: 'Get parsed serp',
-				description: 'Get Google Search results for the specified keyword',
-			},
 			{
 				name: 'Get Finance Explore',
 				value: 'get-finance-explore',
@@ -40,16 +33,22 @@ export const SerpOperations: INodeProperties[] = [
 				description: 'Get real-time data from the ‘Quote’ tab of Google Finance',
 			},
 			{
-				name: 'Search Google Finance Tickers',
-				value: 'search-google-finance-tickers',
-				action: 'Search google finance tickers',
-				description: 'Search by company name, market, or financial instrument to get Google Finance data on stocks, futures, and asset pairs, their value, growth trends, and identifiers',
-			},
-			{
 				name: 'Get Google AI Mode SERP',
 				value: 'get-google-ai-mode-serp',
 				action: 'Get google ai mode serp',
 				description: 'Get search results from the AI Mode feature of Google Search',
+			},
+			{
+				name: 'Get Parsed SERP',
+				value: 'get-parsed-serp',
+				action: 'Get parsed serp',
+				description: 'Get Google Search results for the specified keyword',
+			},
+			{
+				name: 'Search Google Finance Tickers',
+				value: 'search-google-finance-tickers',
+				action: 'Search google finance tickers',
+				description: 'Search by company name, market, or financial instrument to get Google Finance data on stocks, futures, and asset pairs, their value, growth trends, and identifiers',
 			}
 		],
 		default: 'get-parsed-serp',
@@ -272,39 +271,10 @@ export const SerpOperations: INodeProperties[] = [
 		displayName: 'Market Type',
 		name: 'market_type',
 		type: 'options',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
-			},
-			{
-				name: 'Indexes',
-				value: 'indexes',
-			},
-			{
-				name: 'Indexes/Americas',
-				value: 'indexes/americas',
-			},
-			{
-				name: 'Indexes/Europe Middle East Africa',
-				value: 'indexes/europe-middle-east-africa',
-			},
-			{
-				name: 'Indexes/Asia Pacific',
-				value: 'indexes/asia-pacific',
-			},
-			{
-				name: 'Most Active',
-				value: 'most-active',
-			},
-			{
-				name: 'Gainers',
-				value: 'gainers',
-			},
-			{
-				name: 'Losers',
-				value: 'losers',
 			},
 			{
 				name: 'Climate Leaders',
@@ -318,6 +288,34 @@ export const SerpOperations: INodeProperties[] = [
 				name: 'Currencies',
 				value: 'currencies',
 			},
+			{
+				name: 'Gainers',
+				value: 'gainers',
+			},
+			{
+				name: 'Indexes',
+				value: 'indexes',
+			},
+			{
+				name: 'Indexes/Americas',
+				value: 'indexes/americas',
+			},
+			{
+				name: 'Indexes/Asia Pacific',
+				value: 'indexes/asia-pacific',
+			},
+			{
+				name: 'Indexes/Europe Middle East Africa',
+				value: 'indexes/europe-middle-east-africa',
+			},
+			{
+				name: 'Losers',
+				value: 'losers',
+			},
+			{
+				name: 'Most Active',
+				value: 'most-active',
+			}
 		],
 		default: 'most-active',
 		displayOptions: {
@@ -331,10 +329,9 @@ export const SerpOperations: INodeProperties[] = [
 		name: 'window',
 		type: 'options',
 		hint: 'Time window for google_finance_quote graph.',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -342,32 +339,32 @@ export const SerpOperations: INodeProperties[] = [
 				value: '1D',
 			},
 			{
-				name: '5D',
-				value: '5D',
-			},
-			{
 				name: '1M',
 				value: '1M',
-			},
-			{
-				name: '6M',
-				value: '6M',
-			},
-			{
-				name: 'YTD',
-				value: 'YTD',
 			},
 			{
 				name: '1Y',
 				value: '1Y',
 			},
 			{
+				name: '5D',
+				value: '5D',
+			},
+			{
 				name: '5Y',
 				value: '5Y',
 			},
 			{
+				name: '6M',
+				value: '6M',
+			},
+			{
 				name: 'MAX',
 				value: 'MAX',
+			},
+			{
+				name: 'YTD',
+				value: 'YTD',
 			}
 		],
 		default: '1D',
@@ -382,10 +379,9 @@ export const SerpOperations: INodeProperties[] = [
 		name: 'category',
 		type: 'options',
 		hint: 'Сategory of financial instruments to search for.',
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
-				name: 'Empty',
+				name: '',
 				value: '',
 			},
 			{
@@ -393,8 +389,12 @@ export const SerpOperations: INodeProperties[] = [
 				value: 'all',
 			},
 			{
-				name: 'Stock',
-				value: 'stock',
+				name: 'Currency',
+				value: 'currency',
+			},
+			{
+				name: 'Futures',
+				value: 'futures',
 			},
 			{
 				name: 'Index',
@@ -405,12 +405,8 @@ export const SerpOperations: INodeProperties[] = [
 				value: 'mutual_fund',
 			},
 			{
-				name: 'Currency',
-				value: 'currency',
-			},
-			{
-				name: 'Futures',
-				value: 'futures',
+				name: 'Stock',
+				value: 'stock',
 			}
 		],
 		default: 'all',

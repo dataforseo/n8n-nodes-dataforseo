@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -11,16 +10,10 @@ export const BacklinksOperations: INodeProperties[] = [
 		noDataExpression: true,
 		options: [
 			{
-				name: 'Get Backlinks Summary',
-				value: 'get-backlinks-summary',
-				action: 'Get bulk keyword difficulty',
-				description: 'Get an overview of backlink data for a domain, subdomain, or webpage',
-			},
-			{
-				name: 'Get Historical Backlink Summary',
-				value: 'get-historical-backlink-summary',
-				action: 'Get historical backlink summary',
-				description: 'Get historical backlink data for a domain back to the beginning of 2019',
+				name: 'Get Anchors',
+				value: 'get-anchors',
+				action: 'Get anchors',
+				description: 'Get a detailed overview of anchors used when linking to the specified website with relevant backlink data for each of them',
 			},
 			{
 				name: 'Get Backlinks',
@@ -29,52 +22,10 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get a list of backlinks for a domain, subdomain or page',
 			},
 			{
-				name: 'Get Anchors',
-				value: 'get-anchors',
-				action: 'Get anchors',
-				description: 'Get a detailed overview of anchors used when linking to the specified website with relevant backlink data for each of them',
-			},
-			{
-				name: 'Get Domain Pages',
-				value: 'get-domain-pages',
-				action: 'Get domain pages',
-				description: 'Get a detailed overview of domain pages with backlink data for each page',
-			},
-			{
-				name: 'Get Domain Pages Summary',
-				value: 'get-domain-pages-summary',
-				action: 'Get domain pages summary',
-				description: 'Get a detailed summary data on all backlinks and related metrics for each page of the target domain or subdomain you specify',
-			},
-			{
-				name: 'Get Referring Domains',
-				value: 'get-referring-domains',
-				action: 'Get referring domains',
-				description: 'Get a detailed overview of referring domains pointing to the target you specify',
-			},
-			{
-				name: 'Get Referring Networks',
-				value: 'get-referring-networks',
-				action: 'Get referring networks',
-				description: 'Get a detailed overview of referring IPs and subnets pointing to the target you specify',
-			},
-			{
-				name: 'Get Competitors',
-				value: 'get-competitors',
-				action: 'Get competitors',
-				description: 'Get a list of competitors that share some part of the backlink profile with a target website, along with a number of backlink intersections and the rank of every competing website',
-			},
-			{
-				name: 'Get Domain Intersection',
-				value: 'get-domain-intersection',
-				action: 'Get domain intersection',
-				description: 'Get the list of domains pointing to the specified websites',
-			},
-			{
-				name: 'Get Page Intersection',
-				value: 'get-page-intersection',
-				action: 'Get page intersection',
-				description: 'Get the list of referring pages pointing to the specified targets',
+				name: 'Get Backlinks Summary',
+				value: 'get-backlinks-summary',
+				action: 'Get bulk keyword difficulty',
+				description: 'Get an overview of backlink data for a domain, subdomain, or webpage',
 			},
 			{
 				name: 'Get Backlinks Timeseries Summary',
@@ -83,34 +34,10 @@ export const BacklinksOperations: INodeProperties[] = [
 				description: 'Get an overview of backlink data for the target domain available during a period between the two indicated dates',
 			},
 			{
-				name: 'Get New & Lost Backlinks Timeseries Summary',
-				value: 'get-new-and-lost-backlinks-timeseries-summary',
-				action: 'Get new and lost backlinks timeseries summary',
-				description: 'Get the number of new and lost backlinks and referring domains for the domain specified in the target field',
-			},
-			{
-				name: 'Get Bulk Ranks',
-				value: 'get-bulk-ranks',
-				action: 'Get bulk ranks',
-				description: 'Get rank scores for up to 1,000 domains, subdomains, and pages',
-			},
-			{
 				name: 'Get Bulk Backlinks',
 				value: 'get-bulk-backlinks',
 				action: 'Get bulk backlinks',
 				description: 'Get the number of backlinks for up to 1,000 domains, subdomains, and pages',
-			},
-			{
-				name: 'Get Bulk Spam Scores',
-				value: 'get-bulk-spam-scores',
-				action: 'Get bulk spam scores',
-				description: 'Get Spam Scores for up to 1,000 domains, subdomains, and pages',
-			},
-			{
-				name: 'Get Bulk Referring Domains',
-				value: 'get-bulk-referring-domains',
-				action: 'Get bulk referring domains',
-				description: 'Get the number of referring domains for up to 1,000 domains, subdomains, and pages',
 			},
 			{
 				name: 'Get Bulk New & Lost Backlinks',
@@ -129,6 +56,79 @@ export const BacklinksOperations: INodeProperties[] = [
 				value: 'get-bulk-pages-summary',
 				action: 'Get bulk pages summary',
 				description: 'Get a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains',
+			},
+			{
+				name: 'Get Bulk Ranks',
+				value: 'get-bulk-ranks',
+				action: 'Get bulk ranks',
+				description: 'Get rank scores for up to 1,000 domains, subdomains, and pages',
+			},
+			{
+				name: 'Get Bulk Referring Domains',
+				value: 'get-bulk-referring-domains',
+				action: 'Get bulk referring domains',
+				description: 'Get the number of referring domains for up to 1,000 domains, subdomains, and pages',
+			},
+			{
+				name: 'Get Bulk Spam Scores',
+				value: 'get-bulk-spam-scores',
+				action: 'Get bulk spam scores',
+				description: 'Get Spam Scores for up to 1,000 domains, subdomains, and pages',
+			},
+			{
+				name: 'Get Competitors',
+				value: 'get-competitors',
+				action: 'Get competitors',
+				description: 'Get a list of competitors that share some part of the backlink profile with a target website, along with a number of backlink intersections and the rank of every competing website',
+			},
+			{
+				name: 'Get Domain Intersection',
+				value: 'get-domain-intersection',
+				action: 'Get domain intersection',
+				description: 'Get the list of domains pointing to the specified websites',
+			},
+			{
+				name: 'Get Domain Pages',
+				value: 'get-domain-pages',
+				action: 'Get domain pages',
+				description: 'Get a detailed overview of domain pages with backlink data for each page',
+			},
+			{
+				name: 'Get Domain Pages Summary',
+				value: 'get-domain-pages-summary',
+				action: 'Get domain pages summary',
+				description: 'Get a detailed summary data on all backlinks and related metrics for each page of the target domain or subdomain you specify',
+			},
+			{
+				name: 'Get Historical Backlink Summary',
+				value: 'get-historical-backlink-summary',
+				action: 'Get historical backlink summary',
+				description: 'Get historical backlink data for a domain back to the beginning of 2019',
+			},
+			{
+				name: 'Get New & Lost Backlinks Timeseries Summary',
+				value: 'get-new-and-lost-backlinks-timeseries-summary',
+				action: 'Get new and lost backlinks timeseries summary',
+				description: 'Get the number of new and lost backlinks and referring domains for the domain specified in the target field',
+			},
+			{
+				name: 'Get Page Intersection',
+				value: 'get-page-intersection',
+				action: 'Get page intersection',
+				description: 'Get the list of referring pages pointing to the specified targets',
+			},
+
+			{
+				name: 'Get Referring Domains',
+				value: 'get-referring-domains',
+				action: 'Get referring domains',
+				description: 'Get a detailed overview of referring domains pointing to the target you specify',
+			},
+			{
+				name: 'Get Referring Networks',
+				value: 'get-referring-networks',
+				action: 'Get referring networks',
+				description: 'Get a detailed overview of referring IPs and subnets pointing to the target you specify',
 			}
 		],
 		default: 'get-backlinks-summary',
@@ -815,6 +815,7 @@ export const BacklinksOperations: INodeProperties[] = [
 		name: 'limit',
 		type: 'number',
 		description: 'Max number of results to return',
+		hint: 'Recommended value: 100',
 		typeOptions: {
 			maxValue: 1000,
 			minValue: 1,
@@ -835,8 +836,7 @@ export const BacklinksOperations: INodeProperties[] = [
 						],
 				},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-limit
-		default: 100,
+		default: 50,
 	},
 	{
 		displayName: 'Offset',

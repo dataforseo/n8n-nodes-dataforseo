@@ -1,4 +1,3 @@
-/* eslint-disable n8n-nodes-base/node-param-options-type-unsorted-items */
 import {
 	INodeProperties,
 } from 'n8n-workflow';
@@ -15,6 +14,30 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 			},
 		},
 		options: [
+			{
+				name: 'Get Product Info',
+				value: 'get-product-info',
+				action: 'Get product info',
+				description: 'Get data on a product listed on Google Shopping, including product description, images, rating, variations, and sellers',
+			},
+			{
+				name: 'Get Product Reviews',
+				value: 'get-product-reviews',
+				action: 'Get product reviews',
+				description: 'Get a list of reviews for any product listed on the Google Shopping platform',
+			},
+      {
+				name: 'Get Product Specification Advanced (Deprectaed)',
+				value: 'get-product-specification-advanced',
+				action: 'Get product specification advanced',
+				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (advanced)',
+			},
+			{
+				name: 'Get Product Specification HTML (Deprecated)',
+				value: 'get-product-specification-html',
+				action: 'Get product specification html',
+				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (html)',
+			},
 			{
 				name: 'Get Products Advanced',
 				value: 'get-products-advanced',
@@ -38,30 +61,6 @@ export const GoogleShoppingOperations: INodeProperties[] = [
 				value: 'get-sellers-html',
 				action: 'Get sellers html',
 				description: 'Get the list of sellers that listed the specified product on Google Shopping (html)',
-			},
-			{
-				name: 'Get Product Specification Advanced (Deprectaed)',
-				value: 'get-product-specification-advanced',
-				action: 'Get product specification advanced',
-				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (advanced)',
-			},
-			{
-				name: 'Get Product Specification HTML (Deprecated)',
-				value: 'get-product-specification-html',
-				action: 'Get product specification html',
-				description: 'Get a full detailed product description as it is given on the Google Shopping product specification page (html)',
-			},
-			{
-				name: 'Get Product Info',
-				value: 'get-product-info',
-				action: 'Get product info',
-				description: 'Get data on a product listed on Google Shopping, including product description, images, rating, variations, and sellers',
-			},
-			{
-				name: 'Get Product Reviews',
-				value: 'get-product-reviews',
-				action: 'Get product reviews',
-				description: 'Get a list of reviews for any product listed on the Google Shopping platform',
 			}
 		],
 		default: 'get-products-advanced',
