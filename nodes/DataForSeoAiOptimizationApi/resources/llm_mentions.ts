@@ -22,18 +22,6 @@ export const LlmMentionsOperations: INodeProperties[] = [
 				description: 'Provides mention data and related metrics from AI searches',
 			},
 			{
-				name: 'Get Live LLM Mentions Top Pages',
-				value: 'get-live-llm-mentions-top-pages',
-				action: 'Get live llm mentions top pages',
-				description: 'Provides aggregated LLM mentions metrics grouped by the most frequently mentioned pages for the specified target',
-			},
-			{
-				name: 'Get Live LLM Mentions Top Domains',
-				value: 'get-live-llm-mentions-top-domains',
-				action: 'Get live llm mentions top domains',
-				description: 'Provides aggregated LLM mentions metrics grouped by the most frequently mentioned domains for the specified target',
-			},
-			{
 				name: 'Get Live LLM Mentions Aggregated Metrics',
 				value: 'get-live-llm-mentions-aggregated-metrics',
 				action: 'Get live llm mentions aggregated metrics',
@@ -44,6 +32,18 @@ export const LlmMentionsOperations: INodeProperties[] = [
 				value: 'get-live-llm-mentions-cross-aggregated-metrics',
 				action: 'Get live llm mentions cross aggregated metrics',
 				description: 'Provides aggregated metrics grouped by custom keys for mentions of the keywords or domains specified in the target array of the request',
+			},
+			{
+				name: 'Get Live LLM Mentions Top Domains',
+				value: 'get-live-llm-mentions-top-domains',
+				action: 'Get live llm mentions top domains',
+				description: 'Provides aggregated LLM mentions metrics grouped by the most frequently mentioned domains for the specified target',
+			},
+			{
+				name: 'Get Live LLM Mentions Top Pages',
+				value: 'get-live-llm-mentions-top-pages',
+				action: 'Get live llm mentions top pages',
+				description: 'Provides aggregated LLM mentions metrics grouped by the most frequently mentioned pages for the specified target',
 			}
 		],
 		default: 'get-live-llm-mentions',

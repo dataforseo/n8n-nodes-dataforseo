@@ -203,39 +203,38 @@ export const BacklinksOperations: INodeProperties[] = [
 		type: 'multiOptions',
 		placeholder: 'Add Sorting',
 		hint: 'You can set no more than <b>three</b> sorting rules',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
-			{
-				name: 'Backlink Rank Descending',
-				value: 'rank,desc'
-			},
 			{
 				name: 'Backlink Rank Ascending',
 				value: 'rank,asc'
 			},
 			{
-				name: 'Referring Page Rank Descending',
-				value: 'page_from_rank,desc'
+				name: 'Backlink Rank Descending',
+				value: 'rank,desc'
 			},
 			{
-				name: 'Referring Page Rank Ascending',
-				value: 'page_from_rank,asc'
-			},
-			{
-				name: 'Referring Domain Rank Descending',
-				value: 'domain_from_rank,desc'
-			},
-			{
-				name: 'Referring Domain Rank Ascending',
-				value: 'domain_from_rank,asc'
+				name: 'Backlink Spam Score Ascending',
+				value: 'backlink_spam_score,asc'
 			},
 			{
 				name: 'Backlink Spam Score Descending',
 				value: 'backlink_spam_score,desc'
 			},
 			{
-				name: 'Backlink Spam Score Ascending',
-				value: 'backlink_spam_score,asc'
+				name: 'Referring Domain Rank Ascending',
+				value: 'domain_from_rank,asc'
+			},
+			{
+				name: 'Referring Domain Rank Descending',
+				value: 'domain_from_rank,desc'
+			},
+			{
+				name: 'Referring Page Rank Ascending',
+				value: 'page_from_rank,asc'
+			},
+			{
+				name: 'Referring Page Rank Descending',
+				value: 'page_from_rank,desc'
 			}
 		],
 		displayOptions: {
